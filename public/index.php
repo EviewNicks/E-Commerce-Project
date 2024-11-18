@@ -10,7 +10,12 @@
 
 <body class="bg-gray-100 text-gray-800">
     <!-- Include Navbar -->
-    <?php include __DIR__ . '/../src/Frontend/assets/navbar.php'; ?>
+    <?php
+    define('BASE_PATH', __DIR__ . '/../src/');
+
+    include __DIR__ . '/../src/Frontend/assets/navbar.php';
+
+    ?>
 
     <!-- Main Content -->
     <div class="container mx-auto p-4">
@@ -20,20 +25,33 @@
 
         switch ($page) {
             case 'products':
-                include __DIR__ . '/../src/Frontend/product.php';
+                include BASE_PATH . 'Frontend/product/product.php';
                 break;
             case 'categories':
-                include __DIR__ . '/../src/Frontend/category.php';
+                include BASE_PATH . 'Frontend/category/category.php';
                 break;
             case 'orders':
-                include __DIR__ . '/../src/Frontend/orders.php';
+                include BASE_PATH . 'Frontend/orders.php';
                 break;
             case 'orderItems':
-                include __DIR__ . '/../src/Frontend/orderItems.php';
+                include BASE_PATH . 'Frontend/orderItems.php';
                 break;
             case 'promotions':
-                include __DIR__ . '/../src/Frontend/promotions.php';
+                include BASE_PATH . 'Frontend/promotions.php';
                 break;
+            case 'productController':
+                include BASE_PATH . 'backend/product/productController.php';
+                break;
+            case 'formProduct':
+                include BASE_PATH . 'Frontend/product/formProduct.php';
+                break;
+            case 'categories':
+                include BASE_PATH . 'Frontend/category/category.php';
+                break;
+            case 'addCategory':
+                include BASE_PATH . 'Frontend/category/formCategory.php';
+            case 'editCategory':
+                include BASE_PATH . 'Frontend/category/formCategory.php';
             default:
                 echo "<p>Page not found.</p>";
         }
