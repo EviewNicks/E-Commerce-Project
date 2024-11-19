@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component2</title>
+    <style>
+        .frame {
+            display: flex;
+            width: 274px;
+            height: 168px;
+            padding: 24px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            flex-shrink: 0;
+            position: relative;
+
+            border-radius: 24px;
+        }
+
+        .subtract {
+            width: 274px;
+            height: 168px;
+
+            position: absolute;
+            fill: var(--Primary-Colors-Layer-3, #35526F);
+        }
+
+       
+        .frame-in {
+            display: flex;
+            width: 179px;
+            padding: 2px 2px 2px 12px;
+            justify-content: space-between;
+            align-items: center;
+
+            border-radius: 24px;
+            background: var(--Primary-Colors-Layer-2, #416788);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="frame">
+       <div class="subtract">
+        <svg xmlns="http://www.w3.org/2000/svg" width="274" height="168" viewBox="0 0 274 168" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 24C0 10.7452 10.7452 0 24 0H220.518C230.459 0 238.518 8.18931 238.518 18.1304C238.518 27.9285 246.461 36 256.259 36C266.057 36 274 43.9429 274 53.741V144C274 157.255 263.255 168 250 168H202.5C190.074 168 180 157.926 180 145.5C180 133.074 169.926 123 157.5 123H24C10.7452 123 0 112.255 0 99V24Z" fill="#35526F"/>
+          </svg>
+       </div>
+        <div class="frame-in">
+            <div class="subtitle">
+                <p>Lihat Kolekasi</p>                
+            </div>
+
+        </div>
+
+       </div>
+
+    </div>
+</body>
+</html>
