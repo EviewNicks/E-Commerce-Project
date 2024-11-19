@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+nav.navbar {
+    display: flex;
+    width: 930px;
+    padding: 8px 48px;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 48px;
+    background: var(--Primary, #2C3E50);
+}
+
+h2.logo {
+    align-self: stretch;
+    color: #FFF;
+
+    /* Headline/small */
+    font-family: Quicksand;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 160% */
+}
+
+.search-container {
+    display: flex;
+    width: 334px;
+    height: 36px;
+    padding: 2px 4px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 24px;
+    background: var(--Primary-Colors-Layer-2, #416788);
+}
+
+.mingcute {
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 24px;
+}
+.mingcute svg {
+    width: 20.998px;
+    height: 22.814px;
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.solar-bag {
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 24px;
+    background: var(--Secondary, #E74C3C);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-button-container {
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 8px;
+    border: 1px solid var(--Secondary, #E74C3C);
+}
+
+.login-button-container span {
+    color: var(--Third, #ECF0F1);
+
+    /* label/medium */
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 125% */
+    letter-spacing: 0.1px;
+}
+
+.register-button-container {
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 8px;
+    background: var(--Secondary, #E74C3C);
+}
+
+.register-button-container span {
+    color: var(--Lofi-Colors-Layer-1, #FFF);
+
+    /* label/medium */
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 125% */
+    letter-spacing: 0.1px;
+}
