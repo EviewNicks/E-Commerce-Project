@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "MadeSaonara";
+  src: url("./fonts/MADE SAONARA PERSONAL USE.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --Primary: #2c3e50;
   --Secondary: #e74c3c;
@@ -95,7 +102,7 @@
   --backdrop-filter: blur(2px);
 }
 
-body {
+/* body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -103,25 +110,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #1cca19;
-}
-
-.color-container {
-  display: grid;
-  grid-template-columns: repeat(4, 150px);
-  gap: 10px;
-}
-
-.color-box {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-}
+} */
 
 .primary {
   background-color: var(--Primary);

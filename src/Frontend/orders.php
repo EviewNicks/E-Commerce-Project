@@ -7,30 +7,40 @@ $result = $conn->query($sql);
 
 // Menampilkan data pesanan
 if ($result->num_rows > 0) {
-    echo "<table border='1'>
-    <tr>
-        <th>ID</th>
-        <th>User ID</th>
-        <th>Total Price</th>
-        <th>Status</th>
-        <th>Shipping Cost</th>
-        <th>Promo Applied</th>
-        <th>Created At</th>
-    </tr>";
+    echo "
+    <div class='overflow-x-auto'>
+        <table class='min-w-full border-collapse border border-gray-300 shadow-md rounded-lg'>
+        <thead class='bg-blue-600 text-white'>
+            <tr>
+                <th class='px-4 py-2 border border-gray-300'>Order ID</th>
+                <th class='px-4 py-2 border border-gray-300'>User ID</th>
+                <th class='px-4 py-2 border border-gray-300'>Total Price</th>
+                <th class='px-4 py-2 border border-gray-300'>Status</th>
+                <th class='px-4 py-2 border border-gray-300'>Shipping Cost</th>
+                <th class='px-4 py-2 border border-gray-300'>Promo Applied</th>
+                <th class='px-4 py-2 border border-gray-300'>Created At</th>
+            </tr>
+        </thead>
+        <tbody class='bg-white'>";
     while ($row = $result->fetch_assoc()) {
         $promo = $row["promo_applied"] ? $row["promo_applied"] : "None";
-        echo "<tr>
-        <td>" . $row["order_id"] . "</td>
-        <td>" . $row["user_id"] . "</td>
-        <td>Rp " . number_format($row["total_price"], 0, ',', '.') . "</td>
-        <td>" . ucfirst($row["status"]) . "</td>
-        <td>Rp " . number_format($row["shipping_cost"], 0, ',', '.') . "</td>
-        <td>" . $promo . "</td>
-        <td>" . $row["created_at"] . "</td>
-      </tr>";
+        $statusColor = $row["status"] === "completed" ? "text-green-600" : "text-red-600";
+        echo "
+            <tr class='border border-gray-300 hover:bg-gray-100'>
+                <td class='px-4 py-2 text-center'>" . $row["order_id"] . "</td>
+                <td class='px-4 py-2 text-center'>" . $row["user_id"] . "</td>
+                <td class='px-4 py-2 text-right'>Rp " . number_format($row["total_price"], 0, ',', '.') . "</td>
+                <td class='px-4 py-2 text-center " . $statusColor . "'>" . ucfirst($row["status"]) . "</td>
+                <td class='px-4 py-2 text-right'>Rp " . number_format($row["shipping_cost"], 0, ',', '.') . "</td>
+                <td class='px-4 py-2 text-center'>" . $promo . "</td>
+                <td class='px-4 py-2 text-center'>" . $row["created_at"] . "</td>
+            </tr>";
     }
-    echo "</table>";
+    echo "
+        </tbody>
+        </table>
+    </div>";
 } else {
-    echo "Tidak ada pesanan ditemukan.";
+    echo "<p class='text-gray-600'>Tidak ada pesanan ditemukan.</p>";
 }
 $conn->close(); // Menutup koneksi
