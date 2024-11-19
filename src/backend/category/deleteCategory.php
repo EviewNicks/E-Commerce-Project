@@ -1,5 +1,5 @@
 <?php
-include BASE_PATH . 'backend/connection.php';
+include '../../connection.php'; // Sesuaikan path ke connection.php
 
 $id = isset($_GET['id']) && is_numeric($_GET['id']) ? $_GET['id'] : null;
 if (!$id) {
@@ -18,8 +18,23 @@ $result = $stmt->get_result();
 $count = $result->fetch_assoc()['count'];
 
 if ($count > 0) {
-    header("Location: index.php?page=categories&error=1");
+    header("Location: ../../index.php?page=categories&error=1");
     exit;
+}
+
+// Hapus file gambar jika ada
+$sql = "SELECT image_url FROM categories WHERE category_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$category = $result->fetch_assoc();
+
+if ($category && $category['image_url']) {
+    $filePath = __DIR__ . '/../../' . $category['image_url'];
+    if (file_exists($filePath)) {
+        unlink($filePath);
+    }
 }
 
 // Hapus kategori
@@ -31,7 +46,8 @@ if (!$delete_stmt) {
 
 $delete_stmt->bind_param('i', $id);
 if ($delete_stmt->execute()) {
-    header("Location: index.php?page=categories&success=3");
+    header("Location: ../../index.php?page=categories&success=3");
+    exit;
 } else {
     die("Error: Unable to execute the delete statement. " . $delete_stmt->error);
 }

@@ -1,7 +1,10 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
 
+// Notifikasi sukses atau error
 $success = isset($_GET['success']) ? intval($_GET['success']) : null;
+$error = isset($_GET['error']) ? intval($_GET['error']) : null;
+
 if ($success) {
     $messages = [
         1 => 'Kategori berhasil ditambahkan.',
@@ -11,6 +14,12 @@ if ($success) {
     echo "<p class='bg-green-100 text-green-600 p-2 rounded-md'>{$messages[$success]}</p>";
 }
 
+if ($error) {
+    $errors = [
+        1 => 'Kategori tidak dapat dihapus karena masih digunakan.',
+    ];
+    echo "<p class='bg-red-100 text-red-600 p-2 rounded-md'>{$errors[$error]}</p>";
+}
 
 // Query untuk mengambil data kategori
 $sql = "SELECT c.category_id, c.name, c.description, p.name AS parent_name, c.is_active 
@@ -21,13 +30,12 @@ if (!$result) {
     die("Query error: " . $conn->error);
 }
 
-
 // Menampilkan data kategori
 if ($result->num_rows > 0) {
     echo "
     <div class='flex justify-between items-center mb-4'>
         <h2 class='text-xl font-semibold'>Daftar Kategori</h2>
-        <a href='index.php?page=editCategory' class='bg-blue-600 text-white px-4 py-2 rounded-md'>Tambah Kategori</a>
+        <a href='index.php?page=addCategory' class='bg-blue-600 text-white px-4 py-2 rounded-md'>Tambah Kategori</a>
     </div>
     
     <div class='overflow-x-auto'>
@@ -35,11 +43,11 @@ if ($result->num_rows > 0) {
         <thead class='bg-blue-600 text-white'>
             <tr>
                 <th class='px-4 py-2 border border-gray-300'>ID</th>
-                <th class='px-4 py-2 border border-gray-300'>Name</th>
-                <th class='px-4 py-2 border border-gray-300'>Description</th>
-                <th class='px-4 py-2 border border-gray-300'>Parent Category</th>
+                <th class='px-4 py-2 border border-gray-300'>Nama</th>
+                <th class='px-4 py-2 border border-gray-300'>Deskripsi</th>
+                <th class='px-4 py-2 border border-gray-300'>Kategori Induk</th>
                 <th class='px-4 py-2 border border-gray-300'>Status</th>
-                <th class='px-4 py-2 border border-gray-300'>Action</th>
+                <th class='px-4 py-2 border border-gray-300'>Aksi</th>
             </tr>
         </thead>
         <tbody class='bg-white'>";
@@ -50,14 +58,14 @@ if ($result->num_rows > 0) {
         $status = $row["is_active"] ? "<span class='text-green-600'>Active</span>" : "<span class='text-red-600'>Inactive</span>";
         echo "
             <tr class='border border-gray-300 hover:bg-gray-100'>
-                <td class='px-4 py-2 text-center'>" . $row["category_id"] . "</td>
-                <td class='px-4 py-2'>" . $row["name"] . "</td>
-                <td class='px-4 py-2'>" . $row["description"] . "</td>
-                <td class='px-4 py-2'>" . $parent . "</td>
-                <td class='px-4 py-2 text-center'>" . $status . "</td>
+                <td class='px-4 py-2 text-center'>{$row["category_id"]}</td>
+                <td class='px-4 py-2'>{$row["name"]}</td>
+                <td class='px-4 py-2'>{$row["description"]}</td>
+                <td class='px-4 py-2'>{$parent}</td>
+                <td class='px-4 py-2 text-center'>{$status}</td>
                 <td class='px-4 py-2 text-center'>
                     <a href='index.php?page=editCategory&id={$row['category_id']}' class='text-blue-600'>Edit</a>
-                    <a href='" . BASE_PATH . "backend/category/deleteCategory.php?id=" . $row['category_id'] . "' class='text-red-600' onclick='return confirm(\"Apakah Anda yakin ingin menghapus kategori ini?\")'>Hapus</a>
+                    <a href='" . BASE_PATH . "backend/category/deleteCategory.php?id={$row['category_id']}' class='text-red-600' onclick='return confirm(\"Apakah Anda yakin ingin menghapus kategori ini?\")'>Hapus</a>
                 </td>
             </tr>";
     }

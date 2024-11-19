@@ -1,59 +1,95 @@
 <?php
-include BASE_PATH . '/backend/connection.php';
+include BASE_PATH . '/backend/connection.php'; // Koneksi database
 
-$product = [
-    'product_id' => '',
-    'name' => '',
-    'description' => '',
-    'price' => '',
-    'category_id' => '',
-    'is_featured' => 0,
-];
-
-if ($_GET['action'] === 'edit' && isset($_GET['id'])) {
-    $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
-    $stmt->bind_param("i", $_GET['id']);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $product = $result->fetch_assoc();
+// Ambil kategori dari tabel categories
+$sql = "SELECT category_id, name FROM categories WHERE is_active = 1";
+$result = $conn->query($sql);
+$categories = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $categories[] = $row;
+    }
 }
+
+// Tutup koneksi
+$conn->close();
 ?>
 
-<h1 class="text-xl font-bold mb-4">
-    <?php echo $_GET['action'] === 'edit' ? 'Edit Produk' : 'Tambah Produk Baru'; ?>
-</h1>
-<form action="/E-Commerce-Project/index.php?page=productController&action=<?php echo $_GET['action']; ?>" method="POST" class="bg-white p-6 rounded shadow-md">
-    <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
-    <div class="mb-4">
-        <label for="name" class="block text-gray-700">Nama Produk</label>
-        <input type="text" name="name" id="name" class="w-full px-4 py-2 border rounded" required value="<?php echo htmlspecialchars($product['name']); ?>">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Produk</title>
+    <link href="./../../output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4">Tambah Produk</h2>
+
+        <form action="?page=addProductAction" method="POST" enctype="multipart/form-data">
+            <!-- Nama Produk -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium">Nama Produk</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <!-- Kategori -->
+            <div class="mb-4">
+                <label for="category" class="block text-sm font-medium">Kategori</label>
+                <select id="category" name="category_id" required class="w-full p-2 border border-gray-300 rounded">
+                    <option value="">Pilih Kategori</option>
+                    <?php foreach ($categories as $category) : ?>
+                        <option value="<?= $category['category_id'] ?>"><?= $category['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium">Deskripsi</label>
+                <textarea id="description" name="description" rows="4"
+                    class="w-full p-2 border border-gray-300 rounded"></textarea>
+            </div>
+
+            <!-- Harga -->
+            <div class="mb-4">
+                <label for="price" class="block text-sm font-medium">Harga</label>
+                <input type="number" id="price" name="price" required step="0.01"
+                    class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <!-- Gambar -->
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium">Gambar Produk</label>
+                <input type="file" id="image" name="image" required
+                    class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <!-- Produk Unggulan -->
+            <div class="mb-4">
+                <label for="featured" class="inline-flex items-center">
+                    <input type="checkbox" id="featured" name="is_featured" value="1"
+                        class="form-checkbox h-5 w-5 text-blue-600">
+                    <span class="ml-2 text-sm">Tandai sebagai produk unggulan</span>
+                </label>
+            </div>
+
+            <!-- Tags -->
+            <div class="mb-4">
+                <label for="tags" class="block text-sm font-medium">Tags (Opsional)</label>
+                <input type="text" id="tags" name="tags" placeholder="Contoh: fashion, pakaian"
+                    class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <!-- Tombol Submit -->
+            <button type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Tambah Produk</button>
+        </form>
     </div>
-    <div class="mb-4">
-        <label for="description" class="block text-gray-700">Deskripsi</label>
-        <textarea name="description" id="description" class="w-full px-4 py-2 border rounded" required><?php echo htmlspecialchars($product['description']); ?></textarea>
-    </div>
-    <div class="mb-4">
-        <label for="price" class="block text-gray-700">Harga</label>
-        <input type="number" name="price" id="price" class="w-full px-4 py-2 border rounded" required value="<?php echo htmlspecialchars($product['price']); ?>">
-    </div>
-    <div class="mb-4">
-        <label for="category_id" class="block text-gray-700">Kategori</label>
-        <select name="category_id" id="category_id" class="w-full px-4 py-2 border rounded" required>
-            <?php
-            $categories = $conn->query("SELECT category_id, name FROM categories");
-            while ($row = $categories->fetch_assoc()) {
-                $selected = $row['category_id'] == $product['category_id'] ? 'selected' : '';
-                echo "<option value='{$row['category_id']}' $selected>{$row['name']}</option>";
-            }
-            ?>
-        </select>
-    </div>
-    <div class="mb-4">
-        <label class="block text-gray-700">
-            <input type="checkbox" name="is_featured" id="is_featured" class="mr-2" <?php echo $product['is_featured'] ? 'checked' : ''; ?>> Tandai sebagai "Featured"
-        </label>
-    </div>
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-        <?php echo $_GET['action'] === 'edit' ? 'Update' : 'Simpan'; ?>
-    </button>
-</form>
+</body>
+
+</html>
