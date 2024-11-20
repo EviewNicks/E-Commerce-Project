@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Card</title>
+    <style>
+        body {
+            font-family: Quicksand, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #F5F6F8;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 652px;
+            padding: 16px;
+            border-radius: 12px;
+            background: #EAEFF4;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .produk-name {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .container-a {
+            display: flex;
+            gap: 16px;
+        }
+
+        .produk-img {
+            width: 97px;
+            height: 124px;
+            border-radius: 8px;
+            background: url('https://via.placeholder.com/97x124') no-repeat center;
+            background-size: cover;
+            border: 1px solid #A6A5A5;
+        }
+
+        .container-b {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .container-c {
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #FFFFFF;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .delivery-teks {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .container-d {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .container-e {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .rekomendation {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .arrival-teks {
+            font-size: 12px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .price-teks {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .container-f {
+            margin-top: 16px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #A6BFD3;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F9B0A8;
+            border-radius: 4px;
+        }
+
+        .container-g {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .teks-option {
+            font-size: 12px;
+            font-weight: 500;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="produk-name">Produk Name Produk Name Produk Name Produk Name A</p>
+        <div class="container-a">
+            <div class="produk-img"></div>
+            <div class="container-b">
+                <div class="container-c">
+                    <p class="delivery-teks">Reguler</p>
+                </div>
+                <div class="container-d">
+                    <div class="container-e">
+                        <p class="rekomendation">Kurir Rekomendasi</p>
+                        <p class="arrival-teks">Estimasi tiba 14 - 19 Nov</p>
+                    </div>
+                    <p class="price-teks">Rp.950.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-f">
+            <div class="checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                    <path d="M11.0528 0.732472C10.8412 0.614682 10.6086 0.539796 10.3682 0.512091C10.1277 0.484386 9.8842 0.504404 9.65149 0.571003C9.41877 0.637603 9.20144 0.749477 9.01189 0.900238C8.82234 1.051 8.66429 1.23769 8.54677 1.44966L5.12588 7.61725L3.16806 5.65584C2.99808 5.47952 2.79475 5.33889 2.56994 5.24214C2.34513 5.14539 2.10333 5.09447 1.85867 5.09234C1.614 5.09021 1.37136 5.13691 1.14491 5.22973C0.91845 5.32255 0.712714 5.45963 0.539702 5.63296C0.36669 5.80629 0.229867 6.0124 0.137216 6.23927C0.0445659 6.46614 -0.00205651 6.70922 6.95726e-05 6.95434C0.00219566 7.19945 0.0530277 7.44169 0.149599 7.66691C0.246171 7.89214 0.386549 8.09584 0.562541 8.26613L4.24785 11.9582C4.59612 12.308 5.06599 12.5 5.55061 12.5L5.80582 12.4815C6.08825 12.442 6.35766 12.3372 6.59284 12.1756C6.82801 12.014 7.02253 11.7999 7.16109 11.5502L11.7677 3.24307C11.8853 3.0312 11.9601 2.79819 11.9879 2.55735C12.0156 2.31651 11.9957 2.07256 11.9293 1.83942C11.8629 1.60629 11.7513 1.38854 11.6009 1.19861C11.4505 1.00868 11.2643 0.850284 11.0528 0.732472Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="container-g">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path opacity="0.5" d="M3.378 5.582C3 6.12 3 7.72 3 10.917V12.491C3 18.129 7.239 20.866 9.899 22.027C10.62 22.342 10.981 22.5 12 22.5C13.02 22.5 13.38 22.342 14.101 22.027C16.761 20.865 21 18.13 21 12.491V10.917C21 7.719 21 6.12 20.622 5.582C20.245 5.045 18.742 4.53 15.735 3.501L15.162 3.305C13.595 2.768 12.812 2.5 12 2.5C11.188 2.5 10.405 2.768 8.838 3.305L8.265 3.5C5.258 4.53 3.755 5.045 3.378 5.582Z" fill="#E74C3C"/>
+                </svg>
+                <p class="teks-option">Pakai asuransi pengiriman (Rp.800)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
