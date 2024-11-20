@@ -1,6 +1,8 @@
 <?php
 define('BASE_PATH', __DIR__ . '/../src/');
 
+var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
+
 // Routing sederhana
 $page = $_GET['page'] ?? 'products';
 
@@ -14,11 +16,10 @@ if (in_array($page, $process_pages)) {
     } else {
         header('Content-Type: application/json');
         echo json_encode(['success' => false, 'message' => 'Page not found']);
+        exit;
     }
-    exit;
 }
 
-var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
 
 
 ?>
@@ -60,7 +61,8 @@ var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
                 include BASE_PATH . 'Frontend/promotions.php';
                 break;
             default:
-                echo "<p>Page not found. Please check the URL or contact the administrator.</p>";
+                http_response_code(404);
+                echo "<p>Halaman yang Anda cari tidak ditemukan. Silakan cek URL Anda.</p>";
                 break;
         }
         ?>
