@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container {
+            display: flex;
+            width: 646px;
+            height: 256px;
+            padding: 13px 39px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            flex-shrink: 0;
+            border-radius: 24px;
+            background: var(--Primary-Layer-Layer-3, #A6BFD3);
+        }
+        .container-a {
+            display: flex;
+            height: 224px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-shrink: 0;
+            align-self: stretch;
+        }
+
+        .header {
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .title {
+            color: #000;
+
+            /* label/Large */
+            font-family: Quicksand;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px; /* 120% */
+            letter-spacing: 0.3px;
+        }
+
+        .container-b {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            align-self: stretch;
+        }
+
+        .location-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .location-info svg{
+            width: 24px;
+            height: 24px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .location {
+            color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 125% */
+            letter-spacing: 0.1px;
+        }
+
+        .separator {
+            color: #000;
+
+            /* label/Large */
+            font-family: Quicksand;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px; /* 120% */
+            letter-spacing: 0.3px;
+        }
+
+        .name {
+            color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 125% */
+            letter-spacing: 0.1px;
+        }
+
+        .description-container {
+            display: flex;
+            padding: 4px 10px;
+            align-items: center;
+            gap: 10px;
+            align-self: stretch;
+        }
+
+        .deskripsi {
+            flex: 1 0 0;
+            color: #000;
+
+            /* Body/Large */
+            font-family: Quicksand;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 171.429% */
+        }
+
+        .phone-container {
+            display: flex;
+            padding: 4px 10px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phone-teks {
+            color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 125% */
+            letter-spacing: 0.1px;
+        }
+
+        .button-container {
+            display: flex;
+            padding: 10px 48px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 12px;
+            border: 1px solid #405168;
+        }
+
+        .button-teks {
+            color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px; /* 125% */
+            letter-spacing: 0.1px;
+        }
+
+
+
+
+    </style>
+</body>
+
+<div class="container">
+    <div class="container-a">
+        <div class="header">
+            <p class="title">Alamat Pengiriman</p>
+        </div>
+        <div class="container-b">
+            <div class="location-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M8.75 10C8.75 9.13805 9.09241 8.3114 9.7019 7.7019C10.3114 7.09241 11.138 6.75 12 6.75C12.862 6.75 13.6886 7.09241 14.2981 7.7019C14.9076 8.3114 15.25 9.13805 15.25 10C15.25 10.862 14.9076 11.6886 14.2981 12.2981C13.6886 12.9076 12.862 13.25 12 13.25C11.138 13.25 10.3114 12.9076 9.7019 12.2981C9.09241 11.6886 8.75 10.862 8.75 10Z" fill="black"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.77383 8.877C3.94017 6.86675 4.85605 4.99247 6.33979 3.62598C7.82353 2.2595 9.76671 1.50066 11.7838 1.5H12.2158C14.2329 1.50066 16.1761 2.2595 17.6599 3.62598C19.1436 4.99247 20.0595 6.86675 20.2258 8.877C20.4104 11.1214 19.7175 13.3499 18.2928 15.094L13.4998 20.956C13.3182 21.1783 13.0893 21.3575 12.8299 21.4806C12.5705 21.6036 12.287 21.6675 11.9998 21.6675C11.7127 21.6675 11.4292 21.6036 11.1697 21.4806C10.9103 21.3575 10.6815 21.1783 10.4998 20.956L5.70783 15.094C4.28279 13.3501 3.58953 11.1215 3.77383 8.877ZM11.9998 5.25C10.7401 5.25 9.53187 5.75045 8.64107 6.64124C7.75028 7.53204 7.24983 8.74022 7.24983 10C7.24983 11.2598 7.75028 12.468 8.64107 13.3588C9.53187 14.2496 10.7401 14.75 11.9998 14.75C13.2596 14.75 14.4678 14.2496 15.3586 13.3588C16.2494 12.468 16.7498 11.2598 16.7498 10C16.7498 8.74022 16.2494 7.53204 15.3586 6.64124C14.4678 5.75045 13.2596 5.25 11.9998 5.25Z" fill="black"/>
+                  </svg>
+                <div class="user-info">
+                    <p class="location">Location user</p>
+                    <p class="separator">.</p>
+                    <p class="name">username</p>
+                </div>
+            </div>
+            <div class="description-container">
+                <p class="deskripsi">Deksripsi lokasi Deksripsi lokasi Deksripsi  lokasi Deksripsi  lokasi Deksripsi , kelurahan, kecamatan, kabupaten, provinsi</p>
+            </div>
+            <div class="phone-container">
+                <p class="phone-teks">nomor Handphone</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <p class="teks-button">button text</p>
+        </div>
+    </div>
+
+</div>
+</html>
