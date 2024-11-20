@@ -18,6 +18,9 @@ if (in_array($page, $process_pages)) {
     exit;
 }
 
+var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
+
+
 ?>
 
 <!DOCTYPE html>
