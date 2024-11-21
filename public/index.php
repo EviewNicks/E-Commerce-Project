@@ -7,7 +7,7 @@ var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
 $page = $_GET['page'] ?? 'products';
 
 // File khusus proses (tanpa HTML)
-$process_pages = ['addProductAction', 'updateFeatured'];
+$process_pages = ['addProductAction', 'updateFeatured', 'editProductAction', 'deleteProductAction'];
 
 if (in_array($page, $process_pages)) {
     $file_path = BASE_PATH . "backend/product/$page.php";
@@ -16,8 +16,8 @@ if (in_array($page, $process_pages)) {
     } else {
         header('Content-Type: application/json');
         echo json_encode(['success' => false, 'message' => 'Page not found']);
-        exit;
     }
+    exit;
 }
 
 

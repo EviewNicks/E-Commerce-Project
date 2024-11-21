@@ -7,6 +7,7 @@ if (isset($_GET['status'])) {
         'success' => "<p class='text-green-500'>Produk berhasil ditambahkan!</p>",
         'error' => "<p class='text-red-500'>Terjadi kesalahan saat menambahkan produk.</p>",
         'upload_error' => "<p class='text-yellow-500'>Gagal mengunggah gambar produk.</p>",
+        'deleted' => "<p class='text-green-500'>Produk berhasil dihapus!</p>",
         'invalid' => "<p class='text-yellow-500'>Akses tidak valid.</p>",
     ];
     echo $statusMessages[$_GET['status']] ?? '';
@@ -48,7 +49,11 @@ if ($result->num_rows > 0) {
     $no = 1; // Nomor urut
     while ($row = $result->fetch_assoc()) {
         $featured_checkbox = $row["is_featured"] ? "checked" : "";
-        $image_html = "<img src='" . $row["image_url"] . "' alt='Product Image' class='h-16 w-16 object-cover rounded'>";
+        error_log("Image URL: " . $row["image_url"]);
+        $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
+        $image_html = $row["image_url"]
+            ? "<img src='" . $base_url . $row["image_url"] . "' alt='Product Image'style='max-width: 80px; height: auto;' class='max-w-[80px] h-auto object-cover rounded '>"
+            : "<span class='text-gray-500'>No Image</span>";
         echo "
             <tr class='border border-gray-300 hover:bg-gray-100'>
                 <td class='px-4 py-2 text-center'>" . $no++ . "</td>
@@ -66,8 +71,8 @@ if ($result->num_rows > 0) {
                 >
                 </td>
                 <td class='px-4 py-2 text-center'>
-                    <a href='?page=editProduct&id=" . $row["product_id"] . "' class='text-blue-500 hover:underline'>Edit</a> |
-                    <a href='?page=deleteProduct&id=" . $row["product_id"] . "' class='text-red-500 hover:underline' onclick='return confirm(\"Yakin ingin menghapus produk ini?\");'>Delete</a>
+                    <a href='?page=formProduct&action=edit&id=" . $row["product_id"] . "' class='text-blue-500 hover:underline'>Edit</a>
+                    <a href='?page=deleteProductAction&id=" . $row["product_id"] . "' class='text-red-500 hover:underline' onclick='return confirm(\"Yakin ingin menghapus produk ini?\");'>Delete</a>
                 </td>
             </tr>";
     }

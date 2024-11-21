@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image_url = null; // Default jika gambar tidak diunggah
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $image = $_FILES['image'];
-        $target_dir = BASE_PATH . '/uploads/products/';
+        $target_dir = __DIR__ . '/../../../public/uploads/products/';
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true); // Membuat folder jika belum ada
             error_log("Step 3: Folder upload dibuat");
@@ -43,10 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Pindahkan file
-        $target_file = $target_dir . uniqid() . "_" . basename($image['name']); // Gunakan nama unik
-        if (!move_uploaded_file($image['tmp_name'], $target_file)) {
-            error_log("Step 6: Gagal memindahkan file");
-            header('Location: ?page=products&status=upload_failed');
+        $target_file = $target_dir . uniqid() . "_" . basename($_FILES['image']['name']); // Gunakan nama Unique
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            header('Location: ?page=products&status=upload_error');
             exit;
         }
 
@@ -58,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO products (category_id, name, description, price, image_url, is_featured, tags)
             VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
+    $stmt->bind_param("issdiss", $category_id, $name, $description, $price, $image_url, $is_featured, $tags);
 
     if (!$stmt) {
         error_log("Step 8: Kesalahan pada prepare statement - " . $conn->error);
