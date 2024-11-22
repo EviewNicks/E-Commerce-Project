@@ -1,26 +1,45 @@
 <?php
 define('BASE_PATH', __DIR__ . '/../src/');
 
-var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
 
 // Routing sederhana
 $page = $_GET['page'] ?? 'products';
 
 // File khusus proses (tanpa HTML)
-$process_pages = ['addProductAction', 'updateFeatured', 'editProductAction', 'deleteProductAction'];
+$product_pages = [
+    'addProductAction',
+    'updateFeatured',
+    'editProductAction',
+    'deleteProductAction'
+];
 
-if (in_array($page, $process_pages)) {
+$category_pages = [
+    'addCategoryAction',
+    'editCategoryAction',
+    'deleteCategoryAction'
+];
+
+if (in_array($page, $product_pages)) {
     $file_path = BASE_PATH . "backend/product/$page.php";
-    if (file_exists($file_path)) {
-        include $file_path;
-    } else {
-        header('Content-Type: application/json');
-        echo json_encode(['success' => false, 'message' => 'Page not found']);
-    }
-    exit;
+} elseif (in_array($page, $category_pages)) {
+    $file_path = BASE_PATH . "backend/category/$page.php";
+} else {
+    $file_path = null;
 }
 
 
+if ($file_path && file_exists($file_path)) {
+    include $file_path;
+    exit;
+} elseif ($file_path === null) {
+    http_response_code(404);
+    echo json_encode(['success' => false, 'message' => 'Page not found']);
+}
+
+
+var_dump($_GET['page']); // Pastikan nilainya 'addProductAction'
+error_log("Debug: Page value is " . $_GET['page']); // Log ke file
+error_log("Debug: File path for process is $file_path"); // Log jalur file
 
 ?>
 
@@ -50,6 +69,9 @@ if (in_array($page, $process_pages)) {
                 break;
             case 'categories':
                 include BASE_PATH . 'Frontend/category/category.php';
+                break;
+            case 'formCategory':
+                include BASE_PATH . 'Frontend/category/formCategory.php';
                 break;
             case 'orders':
                 include BASE_PATH . 'Frontend/orders.php';

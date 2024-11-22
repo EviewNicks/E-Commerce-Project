@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>catatan pembayaran</title>
 </head>
+
 <body>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--default-font-family);
+            background-color: var(--white-layer-layer-2);
+        }
+
+
         
         * {
             box-sizing: border-box;
@@ -53,7 +69,8 @@
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            line-height: 24px; /* 120% */
+            line-height: 24px;
+            /* 120% */
             letter-spacing: 0.3px;
         }
 
@@ -124,7 +141,8 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: 20px; /* 125% */
+            line-height: 20px;
+            /* 125% */
             letter-spacing: 0.1px;
         }
 
@@ -157,8 +175,9 @@
             font-family: Quicksand;
             font-size: 14px;
             font-style: normal;
-            font-weight: 500;
-            line-height: 24px; /* 171.429% */
+            font-weight: 400;
+            line-height: 24px;
+            /* 171.429% */
         }
 
         .subtotal-container {
@@ -168,7 +187,7 @@
             align-items: center;
             align-self: stretch;
         }
-        
+
         .subtotal-label {
             flex: 1 0 0;
 
@@ -179,7 +198,8 @@
             font-size: 14px;
             font-style: normal;
             font-weight: 500;
-            line-height: 24px; /* 171.429% */
+            line-height: 24px;
+            /* 171.429% */
         }
 
         .subtotal-amount {
@@ -191,7 +211,8 @@
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
-            line-height: 32px; /* 160% */
+            line-height: 32px;
+            /* 160% */
             letter-spacing: 0.15px;
         }
 
@@ -226,7 +247,8 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: 20px; /* 125% */
+            line-height: 20px;
+            /* 125% */
             letter-spacing: 0.1px;
         }
 
@@ -250,11 +272,10 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: 20px; /* 125% */
+            line-height: 20px;
+            /* 125% */
             letter-spacing: 0.1px;
         }
-
-
     </style>
 </body>
 
@@ -263,22 +284,27 @@
         <p class="title">Atur Jumlah dan Catatan</p>
     </div>
     <div class="konten">
-        <div class="quatity-stock">
+        <div class="quantity-stock">
             <div class="quantity-selector">
                 <div class="dec-button">
                     <div class="typon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
-                            <path d="M14 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585787C0.210714 0.96086 0 1.46957 0 2C0 2.53043 0.210714 3.03914 0.585786 3.41421C0.960859 3.78929 1.46957 4 2 4H14C14.5304 4 15.0391 3.78929 15.4142 3.41421C15.7893 3.03914 16 2.53043 16 2C16 1.46957 15.7893 0.96086 15.4142 0.585787C15.0391 0.210714 14.5304 0 14 0Z" fill="#ECF0F1"/>
-                          </svg>
+                            <path
+                                d="M14 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585787C0.210714 0.96086 0 1.46957 0 2C0 2.53043 0.210714 3.03914 0.585786 3.41421C0.960859 3.78929 1.46957 4 2 4H14C14.5304 4 15.0391 3.78929 15.4142 3.41421C15.7893 3.03914 16 2.53043 16 2C16 1.46957 15.7893 0.96086 15.4142 0.585787C15.0391 0.210714 14.5304 0 14 0Z"
+                                fill="#ECF0F1" />
+                        </svg>
                     </div>
                     <span class="kuantity">122</span>
-                    <div class="inrease">
+                    <div class="increase">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C6 1.46957 6.21071 0.960859 6.58579 0.585786C6.96086 0.210714 7.46957 0 8 0H10C10.5304 0 11.0391 0.210714 11.4142 0.585786C11.7893 0.960859 12 1.46957 12 2V6H16C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8V10C18 10.5304 17.7893 11.0391 17.4142 11.4142C17.0391 11.7893 16.5304 12 16 12H12V16C12 16.5304 11.7893 17.0391 11.4142 17.4142C11.0391 17.7893 10.5304 18 10 18H8C7.46957 18 6.96086 17.7893 6.58579 17.4142C6.21071 17.0391 6 16.5304 6 16V12H2C1.46957 12 0.960859 11.7893 0.585786 11.4142C0.210714 11.0391 0 10.5304 0 10V8C0 7.46957 0.210714 6.96086 0.585786 6.58579C0.960859 6.21071 1.46957 6 2 6H6V2Z" fill="#ECF0F1"/>
-                          </svg>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6 2C6 1.46957 6.21071 0.960859 6.58579 0.585786C6.96086 0.210714 7.46957 0 8 0H10C10.5304 0 11.0391 0.210714 11.4142 0.585786C11.7893 0.960859 12 1.46957 12 2V6H16C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8V10C18 10.5304 17.7893 11.0391 17.4142 11.4142C17.0391 11.7893 16.5304 12 16 12H12V16C12 16.5304 11.7893 17.0391 11.4142 17.4142C11.0391 17.7893 10.5304 18 10 18H8C7.46957 18 6.96086 17.7893 6.58579 17.4142C6.21071 17.0391 6 16.5304 6 16V12H2C1.46957 12 0.960859 11.7893 0.585786 11.4142C0.210714 11.0391 0 10.5304 0 10V8C0 7.46957 0.210714 6.96086 0.585786 6.58579C0.960859 6.21071 1.46957 6 2 6H6V2Z"
+                                fill="#ECF0F1" />
+                        </svg>
                     </div>
-                    <p class="stok">Stok Total 420</p>
                 </div>
+                <p class="stok">Stok Total 420</p>
+
             </div>
             <div class="subtotal-container">
                 <p class="subtotal-label">SubTotal</p>
@@ -288,7 +314,7 @@
         </div>
         <div class="action">
             <div class="add-cart">
-                <p class="cart teks">+ Keranjang</p>
+                <p class="cart-teks">+ Keranjang</p>
             </div>
             <div class="buy-buttom">
                 <p class="buy-teks">Beli</p>

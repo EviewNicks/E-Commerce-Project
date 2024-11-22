@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulasan</title>
 </head>
+
 <body>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--default-font-family);
+            background-color: var(--white-layer-layer-2);
+        }
+
+
         .container {
             display: flex;
             width: 506px;
             padding: 8px 0px;
             justify-content: space-between;
             align-items: center;
+            background-color: var(--Primary-Layer-Layer-3, #a6bfd3);
         }
 
         .review {
@@ -24,6 +41,7 @@
             justify-content: space-between;
             align-items: center;
             flex-shrink: 0;
+
         }
 
         .ulasan-teks {
@@ -36,7 +54,8 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            line-height: 24px; /* 150% */
+            line-height: 24px;
+            /* 150% */
         }
 
         .tampil {
@@ -49,10 +68,11 @@
             font-size: 12px;
             font-style: normal;
             font-weight: 500;
-            line-height: 20px; /* 166.667% */
+            line-height: 20px;
+            /* 166.667% */
         }
 
-        .sort-container{
+        .sort-container {
             display: flex;
             align-items: center;
             gap: 22px;
@@ -66,11 +86,12 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: 20px; /* 125% */
+            line-height: 20px;
+            /* 125% */
             letter-spacing: 0.1px;
         }
 
-        .dropdowb-container {
+        .dropdown-container {
             display: flex;
             width: 198px;
             padding: 8px 16px;
@@ -89,7 +110,8 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: 20px; /* 125% */
+            line-height: 20px;
+            /* 125% */
             letter-spacing: 0.1px;
         }
 
@@ -98,9 +120,8 @@
             height: 20px;
             flex-shrink: 0;
         }
-
     </style>
-    
+
 </body>
 <div class="container">
     <div class="review">
@@ -109,15 +130,18 @@
     </div>
     <div class="sort-container">
         <span class="sort-urutan">Urutkan</span>
-    </div>
-    <div class="dropdown-container">
-        <span class="dropdown-label">Terbaru</span>
-        <div class="entypo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M4.51581 7.548C4.95181 7.102 5.55881 7.067 6.09181 7.548L9.99981 11.295L13.9078 7.548C14.4408 7.067 15.0488 7.102 15.4818 7.548C15.9178 7.993 15.8898 8.745 15.4818 9.163C15.0758 9.581 10.7868 13.665 10.7868 13.665C10.6847 13.7709 10.5623 13.855 10.4269 13.9125C10.2915 13.97 10.1459 13.9997 9.99881 13.9997C9.85171 13.9997 9.70613 13.97 9.57074 13.9125C9.43535 13.855 9.31294 13.7709 9.21081 13.665C9.21081 13.665 4.92381 9.581 4.51581 9.163C4.10781 8.745 4.07981 7.993 4.51581 7.548Z" fill="black"/>
-              </svg>
+        <div class="dropdown-container">
+            <span class="dropdown-label">Terbaru</span>
+            <div class="entypo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                        d="M4.51581 7.548C4.95181 7.102 5.55881 7.067 6.09181 7.548L9.99981 11.295L13.9078 7.548C14.4408 7.067 15.0488 7.102 15.4818 7.548C15.9178 7.993 15.8898 8.745 15.4818 9.163C15.0758 9.581 10.7868 13.665 10.7868 13.665C10.6847 13.7709 10.5623 13.855 10.4269 13.9125C10.2915 13.97 10.1459 13.9997 9.99881 13.9997C9.85171 13.9997 9.70613 13.97 9.57074 13.9125C9.43535 13.855 9.31294 13.7709 9.21081 13.665C9.21081 13.665 4.92381 9.581 4.51581 9.163C4.10781 8.745 4.07981 7.993 4.51581 7.548Z"
+                        fill="black" />
+                </svg>
+            </div>
         </div>
     </div>
 
 </div>
+
 </html>
