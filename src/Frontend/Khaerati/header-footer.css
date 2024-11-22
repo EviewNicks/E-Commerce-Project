@@ -1,0 +1,286 @@
+/* Header-Footer STYLE */
+
+aside.header-footer {
+  display: flex;
+  padding: 8px 96px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: stretch;
+
+  border-radius: 48px;
+  background: var(--Primary-Colors-Layer-3, #35526f);
+}
+
+.category {
+  display: flex;
+  padding: 0px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 48px;
+  border: 2px solid #789dbc;
+  background: var(
+    --Grad-Glass,
+    linear-gradient(
+      225deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    )
+  );
+}
+
+.category p {
+  color: var(--Third, #ecf0f1);
+
+  /* Headline/small */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 160% */
+}
+
+.recommend {
+  display: flex;
+  width: 208px;
+  padding: 115px 16px 55px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-2, #416788);
+
+  position: relative;
+}
+
+.click-di-sini-container {
+  display: flex;
+  padding: 2px 8px 8px 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  position: absolute;
+  right: 0.221px;
+  bottom: 0px;
+
+  position: absolute;
+}
+
+button.click-di-sini {
+  display: flex;
+  width: 179px;
+  padding: 2px 2px 2px 12px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #416788;
+
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-1, #5480a3);
+
+  cursor: pointer; /* Tampilkan pointer */
+  transition: all 0.3s ease; /* Tambahkan transisi */
+}
+
+button.click-di-sini:hover {
+  background: linear-gradient(135deg, #35526f, #2e4860); /* Gradasi warna */
+  border-color: #e74c3c; /* Ganti border menjadi merah */
+  color: #e74c3c; /* Teks menjadi merah */
+  transform: translateY(-2px); /* Sedikit mengangkat tombol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+button.click-di-sini:active {
+  background: #2e4860; /* Warna lebih gelap untuk efek klik */
+  transform: translateY(0); /* Kembalikan ke posisi awal */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduksi bayangan */
+}
+
+button.click-di-sini p {
+  width: 121px;
+  flex-shrink: 0;
+
+  color: var(--Third, #ecf0f1);
+  text-align: center;
+
+  /* Body/Large */
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+}
+
+.streamline-5 {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+  position: absolute;
+  right: 12px;
+
+  transition: transform 0.2s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.streamline-5:hover {
+  background: #c0392b; /* Warna merah yang lebih gelap */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Lebih tegas saat hover */
+  transform: translateY(-2px) scale(1.1); /* Kombinasi hover */
+}
+
+.streamline-5:active {
+  transform: translateY(0) scale(0.95); /* Efek klik */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kurangi bayangan */
+}
+
+.streamline-5 svg {
+  width: 26px;
+  height: 26px;
+
+  fill: var(--Third, #ecf0f1);
+}
+
+.recommend h4 {
+  align-self: stretch;
+
+  color: #d9d9d9;
+
+  /* label/Large */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 120% */
+  letter-spacing: 0.3px;
+
+  position: absolute;
+  bottom: 80px;
+  right: px;
+}
+
+.show-all {
+  display: flex;
+  width: 126px;
+  padding: 24px 4px 4px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: -47px;
+  align-self: stretch;
+
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-2, #416788);
+
+  position: relative;
+}
+
+.show-all h4 {
+  flex: 1 0 0;
+
+  color: var(--Third, #ecf0f1);
+  text-align: center;
+
+  /* label/medium */
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
+}
+
+.click-di-sini-small-container {
+  display: flex;
+  padding: 8px 8px 0px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  position: absolute;
+  bottom: 114px;
+}
+
+button.click-di-sini-small {
+  display: flex;
+  width: 111px;
+  padding: 2px 2px 2px 8px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #416788;
+
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-1, #5480a3);
+
+  cursor: pointer; /* Tampilkan pointer */
+  transition: all 0.3s ease; /* Tambahkan transisi */
+}
+
+button.click-di-sini-small:hover {
+  background: linear-gradient(135deg, #35526f, #2e4860); /* Gradasi warna */
+  border-color: #e74c3c; /* Ganti border menjadi merah */
+  color: #e74c3c; /* Teks menjadi merah */
+  transform: translateY(-2px); /* Sedikit mengangkat tombol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+button.click-di-sini-small:active {
+  background: #2e4860; /* Warna lebih gelap untuk efek klik */
+  transform: translateY(0); /* Kembalikan ke posisi awal */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduksi bayangan */
+}
+
+button.click-di-sini-small p {
+  color: var(--Third, #ecf0f1);
+  text-align: center;
+
+  /* Body/Medium */
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+}
+
+.streamline-6 {
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.streamline-6:hover {
+  background: #c0392b; /* Warna merah yang lebih gelap */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Efek zoom */
+}
+
+.streamline-6:active {
+  transform: scale(0.95); /* Efek klik */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.streamline-6 svg {
+  width: 16px;
+  height: 16px;
+
+  fill: var(--Third, #ecf0f1);
+}

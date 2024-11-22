@@ -1,0 +1,227 @@
+/* Find Your Style Section STYLE */
+
+section.find-your-style-container {
+  display: flex;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 44px 0;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  background: linear-gradient(to right, #5480a3, #55707466);
+}
+
+aside.find-your-style-from-here {
+  max-width: 500px;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+aside.find-your-style-from-here h2 {
+  align-self: stretch;
+
+  color: var(--Primary, #2c3e50);
+
+  /* Logo/Large */
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90px; /* 140.625% */
+}
+
+aside.find-your-style-from-here p {
+  align-self: stretch;
+
+  color: #000;
+
+  /* Title/small */
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+section.top-options-container {
+  display: inline-block;
+}
+
+aside.options-container {
+  display: flex;
+  box-sizing: border-box;
+  margin-right: 20px;
+
+  height: 205px;
+  flex-shrink: 0;
+
+  gap: 20px; /* Tambahkan jarak antar .option */
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Menjaga tombol di bagian bawah */
+  gap: 10px;
+  flex-shrink: 0;
+  width: 274px;
+  height: 168px;
+  padding: 16px;
+  margin-bottom: 20px; /* Jarak antar .option */
+
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-3, #35526f);
+
+  position: relative; /* Untuk memudahkan posisi child elements */
+}
+
+.substract-001 {
+  width: 274px;
+  height: 168px;
+
+  position: absolute;
+
+  fill: var(--Primary-Colors-Layer-3, #35526f);
+}
+
+.lihat-koleksi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 2px 8px 8px 8px;
+
+  /* Atur agar tidak menutupi header */
+  position: absolute;
+  bottom: 1px; /* Beri jarak dari bawah */
+  right: 1px; /* Beri jarak dari kanan */
+
+  position: absolute;
+}
+
+button.lihat-koleksi-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 179px;
+  padding: 2px 2px 2px 12px;
+
+  border: 1px solid #416788;
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-2, #416788);
+
+  bottom: 0; /* Tetap di bagian bawah .option */
+  margin-top: auto; /* Mendorong ke bawah */
+
+  cursor: pointer; /* Tampilkan pointer */
+  transition: all 0.3s ease; /* Tambahkan transisi */
+}
+
+button.lihat-koleksi-button:hover {
+  background: linear-gradient(135deg, #35526f, #2e4860); /* Gradasi warna */
+  border-color: #e74c3c; /* Ganti border menjadi merah */
+  color: #e74c3c; /* Teks menjadi merah */
+  transform: translateY(-2px); /* Sedikit mengangkat tombol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+button.lihat-koleksi-button:active {
+  background: #2e4860; /* Warna lebih gelap untuk efek klik */
+  transform: translateY(0); /* Kembalikan ke posisi awal */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduksi bayangan */
+}
+
+button.lihat-koleksi-button p {
+  flex: 1 0 0;
+
+  color: var(--Third, #ecf0f1);
+  text-align: center;
+
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+
+  line-height: 20px; /* 166.667% */
+}
+
+.pesawat-kertas {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+
+  position: relative;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.pesawat-kertas:hover {
+  background: #c0392b; /* Warna merah yang lebih gelap */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Efek zoom */
+}
+
+.pesawat-kertas:active {
+  transform: scale(0.95); /* Efek klik */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pesawat-kertas svg {
+  flex: 1 0 0;
+  align-self: stretch;
+
+  fill: var(--Third, #ecf0f1);
+
+  position: absolute;
+
+  right: 1pc;
+  bottom: 1pc;
+}
+
+.option-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+
+  gap: 0px; /* Kurangi jarak antar elemen dalam .option-header */
+}
+
+.option-header h3 {
+  align-self: stretch;
+
+  color: var(--Third, #ecf0f1);
+
+  font-family: Poppins;
+  font-size: 18px; /* Sedikit lebih kecil untuk proporsi */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 120% */
+  letter-spacing: 0.3px;
+}
+
+.option-header p {
+  align-self: stretch;
+
+  color: var(--Third, #ecf0f1);
+
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* Sesuaikan dengan jarak lebih rapat */
+}

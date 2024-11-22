@@ -9,13 +9,14 @@
 
   border-radius: 32px;
   background: var(--Primary-Layer-Layer-3, #a6bfd3);
+
+  position: relative;
 }
 
 .rating-and-sales-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 309px;
   align-self: stretch;
 }
 
@@ -28,41 +29,32 @@
 
 .rating-container {
   display: flex;
-  padding: 6px;
+  padding: 0px 0px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
 }
 
 .rating-and-sales-text {
   display: flex;
-  padding: 2px 8px;
+  padding: 0px 8px;
   align-items: center;
   gap: 8px;
   align-self: stretch;
 
   border-radius: 8px;
   background: var(--Third, #ecf0f1);
+
+  height: 23px; /* Sesuaikan dengan kebutuhan */
+  overflow: hidden; /* Jika ada konten lebih, tersembunyi */
 }
 
 .rating {
   display: flex;
   padding-right: 12px;
   align-items: center;
-  gap: 4px;
 
   border-right: 1px solid var(--Ternary, #95a5a6);
-}
-
-p.sales-count {
-  color: var(--Text, #1e1e1e);
-
-  /* Body/Medium */
-  font-family: Quicksand;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 166.667% */
 }
 
 .rating svg {
@@ -75,7 +67,18 @@ p.sales-count {
   color: var(--Text, #1e1e1e);
 
   /* Body/Medium */
-  font-family: Quicksand;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+}
+
+p.sales-count {
+  color: var(--Text, #1e1e1e);
+
+  /* Body/Medium */
+  font-family: Poppins;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -97,6 +100,23 @@ p.sales-count {
 
   border-radius: 24px;
   background: var(--Secondary, #e74c3c);
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.solar-bag-2:hover {
+  background: var(
+    --Secondary-Hover,
+    #d63b32
+  ); /* Ganti sesuai warna hover yang diinginkan */
+  transform: scale(1.05);
+}
+
+.solar-bag-2 svg {
+  width: 16px;
+  height: 16px;
+
+  fill: var(--Third, #ecf0f1);
 }
 
 .solar-bag-3 {
@@ -108,13 +128,18 @@ p.sales-count {
   border-radius: 24px;
   border: 0.5px solid var(--Secondary, #e74c3c);
   background: var(--Secondary-Colors-Layer-4, #fcd0cc);
+
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.solar-bag-2 svg {
-  width: 16px;
-  height: 16px;
-
-  fill: var(--Third, #ecf0f1);
+.solar-bag-3:hover {
+  background: var(
+    --Secondary-Layer-4-Hover,
+    #f8b8b3
+  ); /* Ganti sesuai warna hover yang diinginkan */
+  border-color: var(--Secondary-Hover, #d63b32);
+  transform: scale(1.05);
 }
 
 .solar-bag-3 svg {
@@ -138,13 +163,8 @@ p.sales-count {
     33px 102px 43px 0px rgba(0, 0, 0, 0.04),
     18px 57px 36px 0px rgba(0, 0, 0, 0.15),
     8px 25px 27px 0px rgba(0, 0, 0, 0.26), 2px 6px 15px 0px rgba(0, 0, 0, 0.29);
-}
 
-.substract {
-  width: 250px;
-  height: 95px;
-
-  position: absolute;
+  position: relative;
 }
 
 .promo-icon-container {
@@ -157,14 +177,72 @@ p.sales-count {
   right: 0px;
 }
 
+.solar-bag-4 {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+
+  position: absolute;
+  right: 5px;
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.solar-bag-4:hover {
+  background: var(
+    --Secondary-Hover,
+    #d63b32
+  ); /* Ganti dengan warna hover yang diinginkan */
+  transform: scale(1.1); /* Sedikit perbesar elemen */
+}
+
+.solar-bag-4 svg {
+  flex: 1 0 0;
+  align-self: stretch;
+
+  margin-left: 3px;
+}
+
 .promo-text-container {
   display: flex;
   padding: 6px 0px 0px 8px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+}
+
+.promo-text-background {
+  display: flex;
+  padding: 0px 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  border-radius: 8px;
+  background: var(--Secondary, #e74c3c);
 
   position: absolute;
+  top: 6px;
+  left: 12px;
+}
+
+.promo-text-background p {
+  align-self: stretch;
+
+  color: #fff;
+
+  /* Body/Medium */
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2px; /* 166.667% */
 }
 
 h4.product-title {
@@ -173,7 +251,7 @@ h4.product-title {
   color: var(--Text, #1e1e1e);
 
   /* Body/Small */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -187,52 +265,11 @@ h4.product-title {
   align-self: stretch;
 }
 
-.solar-bag-4 {
-  display: flex;
-  width: 26px;
-  height: 26px;
-  padding: 4px;
-  flex-direction: column;
-  align-items: center;
-
-  border-radius: 24px;
-  background: var(--Secondary, #e74c3c);
-}
-
-.solar-bag-4 svg {
-  flex: 1 0 0;
-  align-self: stretch;
-}
-
-.promo-text-background {
-  display: flex;
-  padding: 0px 8px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-
-  border-radius: 8px;
-  background: var(--Secondary, #e74c3c);
-}
-
-.promo-text-background p {
-  align-self: stretch;
-
-  color: #fff;
-
-  /* Body/Medium */
-  font-family: Quicksand;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 166.667% */
-}
-
 p.price {
   color: var(--Text, #1e1e1e);
 
   /* Body/Medium */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -241,7 +278,7 @@ p.price {
 
 .stock-container {
   display: flex;
-  padding: 0px 2px;
+  padding: 0px 4px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -254,9 +291,9 @@ p.price {
   color: var(--Third, #ecf0f1);
 
   /* Body/Small */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16px; /* 160% */
+  line-height: 3px; /* 160% */
 }
