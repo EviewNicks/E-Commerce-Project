@@ -9,6 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        playfair: ["Playfair", "serif"],
+        poppins: ["Poppins", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+      },
       colors: {
         // Warna utama
         Primary: "#2c3e50",
@@ -89,6 +94,87 @@ module.exports = {
       },
       boxShadow: {
         custom: "0px 4px 24px 0px rgba(0, 0, 0, 0.32)",
+      },
+      fontSize: {
+        // Logo Styles
+        "logo-large": [
+          "64px",
+          { lineHeight: "90px", fontWeight: "700", fontFamily: "Playfair" },
+        ],
+        "logo-medium": [
+          "48px",
+          { lineHeight: "68px", fontWeight: "600", fontFamily: "Playfair" },
+        ],
+        "logo-small": [
+          "32px",
+          { lineHeight: "44px", fontWeight: "500", fontFamily: "Playfair" },
+        ],
+
+        // Headline Styles
+        "headline-large": [
+          "48px",
+          { lineHeight: "68px", fontWeight: "600", fontFamily: "Poppins" },
+        ],
+        "headline-medium": [
+          "32px",
+          { lineHeight: "44px", fontWeight: "600", fontFamily: "Poppins" },
+        ],
+        "headline-small": [
+          "20px",
+          { lineHeight: "28px", fontWeight: "600", fontFamily: "Poppins" },
+        ],
+
+        // Title Styles
+        "title-large": [
+          "24px",
+          { lineHeight: "34px", fontWeight: "400", fontFamily: "Quicksand" },
+        ],
+        "title-medium": [
+          "20px",
+          {
+            lineHeight: "28px",
+            fontWeight: "500",
+            fontFamily: "Quicksand",
+            letterSpacing: "0.15px",
+          },
+        ],
+        "title-small": [
+          "16px",
+          { lineHeight: "24px", fontWeight: "500", fontFamily: "Quicksand" },
+        ],
+
+        // Label Styles
+        "label-large": [
+          "20px",
+          { lineHeight: "24px", fontWeight: "700", fontFamily: "Quicksand" },
+        ],
+        "label-medium": [
+          "16px",
+          {
+            lineHeight: "20px",
+            fontWeight: "700",
+            fontFamily: "Quicksand",
+            letterSpacing: "0.1px",
+          },
+        ],
+        "label-small": [
+          "14px",
+          { lineHeight: "20px", fontWeight: "600", fontFamily: "Quicksand" },
+        ],
+
+        // Body Styles
+        "body-large": [
+          "14px",
+          { lineHeight: "20px", fontWeight: "500", fontFamily: "Quicksand" },
+        ],
+        "body-medium": [
+          "12px",
+          { lineHeight: "16px", fontWeight: "500", fontFamily: "Quicksand" },
+        ],
+        "body-small": [
+          "10px",
+          { lineHeight: "14px", fontWeight: "500", fontFamily: "Quicksand" },
+        ],
       },
     },
   },

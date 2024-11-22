@@ -1,9 +1,7 @@
-@font-face {
-  font-family: "MadeSaonara";
-  src: url("./fonts/MADE SAONARA PERSONAL USE.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Quicksand:wght@300..700&display=swap');
 
 :root {
   --Primary: #2c3e50;
@@ -235,4 +233,140 @@
   color: #000;
 }
 
+
+
+.logo-large {
+  font-family: Playfair;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90px; 
+}
+
+.logo-medium {
+  font-family: Playfair;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: 68px; /* 141.667% */
+}
+
+.log-small {
+  /* Logo/Small */
+font-family: Playfair;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: 44px; /* 137.5% */
+}
+
+.headline-large {
+  color: var(--Text, #1E1E1E);
+
+/* Headline/Large */
+font-family: Poppins;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: 68px; /* 141.667% */
+}
+
+.headline-medium {
+  font-family: Poppins;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 44px; /* 137.5% */
+}
+
+.headline-small {
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.title-large {
+  font-family: Quicksand;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px; /* 141.667% */
+}
+
+
+.title-medium {
+
+/* Title/Medium */
+font-family: Quicksand;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 140% */
+letter-spacing: 0.15px;
+}
+
+.title-small {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.label-large {
+  /* label/Large */
+font-family: Quicksand;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 120% */
+}
+
+.label-medium {
+  /* label/medium */
+font-family: Quicksand;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px; /* 125% */
+letter-spacing: 0.1px;
+}
+
+.label-small {
+  /* label/small */
+font-family: Quicksand;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 142.857% */
+}
+
+.body-large {
+  /* Body/Large */
+font-family: Quicksand;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 142.857% */
+}
+
+.body-medium {
+  /* Body/Medium */
+font-family: Quicksand;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 133.333% */
+}
+
+.body-small {
+  /* Body/Small */
+font-family: Quicksand;
+font-size: 10px;
+font-style: normal;
+font-weight: 500;
+line-height: 14px; /* 140% */
+}
 
