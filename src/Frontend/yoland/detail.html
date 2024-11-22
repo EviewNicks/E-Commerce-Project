@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
-        * {
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+       
+            * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        body {
-            font-family: var(--default-font-family);
-            background-color: var(--white-layer-layer-2);
-        }
+            .container {
+                display: flex;
+                width: 556px;
+                flex-direction: column;
+                align-items: flex-start;
+
+                border-radius: 24px;
+                border: 1px solid #000;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(227, 231, 231, 0.00) 70%, #ACB9BA 100%);
+            }
 
             .container-a {
                 display: flex;
@@ -42,19 +47,132 @@
                 gap: 8px;
                 align-self: stretch;
             }
+
+            .title-container {
+                display: flex;
+                padding: 10px 55px 10px 56px;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                align-self: stretch;
+            }
+
+            .teks-a {
+                color: var(--Text, #1E1E1E);
+                text-align: center;
+
+                /* Title/Large */
+                font-family: Quicksand;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 32px; /* 133.333% */
+            }
+
+            .desc-container {
+                display: flex;
+                padding: 0px 24px;
+                align-items: flex-start;
+                gap: 10px;
+                flex: 1 0 0;
+                align-self: stretch;
+            }
+
+            .teks-b {
+                flex: 1 0 0;
+                align-self: stretch;
+                color: #000;
+
+                /* Body/Medium */
+                font-family: Quicksand;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px; /* 166.667% */
+            }
+
+            .footer-container {
+                display: flex;
+                padding: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                align-self: stretch;   
+            }
+
+            .button-container {
+                display: flex;
+                padding: 4px 4px 4px 12px;
+                align-items: center;
+                gap: 16px;   
+                border-radius: 24px;
+                background: var(--Primary-Colors-Layer-2, #416788);
+            }
+
+            .teks-c {
+                color: var(--Third, #ECF0F1);
+
+                /* Body/Medium */
+                font-family: Quicksand;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 20px; /* 166.667% */
+            }
+
+            .solid {
+                display: flex;
+                width: 26px;
+                height: 25px;
+                padding: 9px 7px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                border-radius: 24px;
+                background: var(--Secondary, #E74C3C);
+            }
+
+            .solid svg {
+                flex: 1 0 0;
+                align-self: stretch;
+                fill: var(--Third, #ECF0F1);
+            }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="container-a">
-            <div class="header-container">
-                
+            <div class="container-b">
+                <div class="header-container">
+                    <div class="title-container">
+                        <p class="teks-a">Detail</p>
+                    </div>
+                </div>
+                <div class="desc-container">
+                    <p class="teks-b">Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi ProdukA  Deksripsi ProdukA  Deksripsi ProdukA  Deksripsi ProdukA  Deksripsi ProdukA
+
+                        Deksripsi Produk :
+                        Deksripsi ProdukA  Deksripsi ProdukA  Deksripsi ProdukA  Deksripsi ProdukA 
+                         <br><br>
+                        Deksripsi ProdukA 
+                        Deksripsi ProdukA 
+                        Deksripsi ProdukA  
+                        </p>
+                </div>
             </div>
-
         </div>
-
+        <div class="footer-container">
+            <div class="button-container">
+                <p class="teks-c">Lihat Selengkapnya</p>
+                <div class="solid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+                        <path d="M5.39485 6.7437C5.72955 7.08543 6.27312 7.08543 6.60783 6.7437L11.749 1.49473C12.0837 1.153 12.0837 0.598028 11.749 0.256298C11.4143 -0.0854325 10.8707 -0.0854325 10.536 0.256298L6 4.88742L1.46402 0.259031C1.12931 -0.0826989 0.585741 -0.0826989 0.251032 0.259031C-0.0836773 0.600761 -0.0836773 1.15573 0.251032 1.49746L5.39217 6.74644L5.39485 6.7437Z" fill="#ECF0F1"/>
+                      </svg>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
 </body>
-
 </html>
