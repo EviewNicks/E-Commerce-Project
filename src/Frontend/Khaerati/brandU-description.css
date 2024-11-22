@@ -1,0 +1,98 @@
+.BrandU-desc-container {
+  display: flex;
+  width: 360px;
+  height: 255px;
+  padding: 0px 24px 24px 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+
+  border-radius: 48px;
+  background: var(
+    --Grad-GradPrimary1,
+    linear-gradient(225deg, #416788 0%, #2c3e50 100%)
+  );
+  position: relative;
+}
+
+.substract-002 {
+  width: 360px;
+  height: 255px;
+
+  position: absolute;
+
+  fill: var(
+    --Grad-GradPrimary1,
+    linear-gradient(225deg, #416788 0%, #2c3e50 100%)
+  );
+}
+
+.date-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.date-container p {
+  width: 131px;
+
+  color: var(--Third, #ecf0f1);
+
+  /* label/Large */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 120% */
+  letter-spacing: 0.3px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1 0 0;
+  align-self: stretch;
+
+  position: absolute;
+}
+
+.content-container h2 {
+  align-self: stretch;
+
+  color: var(--Third, #ecf0f1);
+
+  /* Logo/Large */
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90px; /* 140.625% */
+}
+
+.description-container {
+  display: flex;
+  width: 252px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-container p {
+  flex: 1 0 0;
+
+  color: #fff;
+
+  /* Body/Medium */
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+
+  position: absolute;
+}

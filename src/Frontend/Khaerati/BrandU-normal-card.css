@@ -1,0 +1,213 @@
+/* BrandU Normal Card STYLE */
+
+.BrandU-card-container {
+  display: flex;
+  width: 296px;
+  height: 176px;
+  padding: 30px 60px 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+
+  border-radius: 48px;
+  background: var(
+    --Grad-GradPrimary1,
+    linear-gradient(225deg, #416788 0%, #2c3e50 100%)
+  );
+
+  position: relative;
+}
+
+.substract-003 {
+  width: 296px;
+  height: 176px;
+
+  position: absolute;
+
+  fill: var(
+    --Grad-GradPrimary1,
+    linear-gradient(225deg, #416788 0%, #2c3e50 100%)
+  );
+}
+
+.BrandU-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.BrandU-card-header h2 {
+  align-self: stretch;
+
+  color: var(--Third, #ecf0f1);
+
+  /* Logo/Medium */
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 68px; /* 141.667% */
+
+  position: absolute;
+
+  top: 0px;
+}
+
+.this-for-you {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  align-self: stretch;
+
+  position: absolute;
+
+  bottom: 30px;
+}
+
+.this-for-you p {
+  color: var(--Gold-Ligth, #ffe31a);
+
+  /* Headline/small */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 160% */
+}
+
+.BrandU-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+
+  position: absolute;
+
+  bottom: 20px;
+}
+
+.fashion-container {
+  display: flex;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+
+  border-radius: 48px;
+  border: 1px solid var(--Secondary, #e74c3c);
+
+  transition: all 0.3s ease; /* Efek animasi */
+  color: var(--Secondary, #e74c3c);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.fashion-container:hover {
+  background-color: var(
+    --Secondary,
+    #e74c3c
+  ); /* Background berubah menjadi merah */
+  color: white; /* Teks berubah menjadi putih */
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4); /* Tambahkan bayangan */
+  transform: translateY(-2px); /* Sedikit melayang */
+}
+
+.fashion-container:active {
+  transform: translateY(0); /* Kembali ke posisi awal saat diklik */
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2); /* Reduksi bayangan */
+}
+
+.fashion-container span {
+  color: var(--Third, #ecf0f1);
+
+  /* Body/Medium */
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+}
+
+.outfit-container {
+  display: flex;
+  padding: 0px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+
+  border-radius: 48px;
+  border: 1px solid var(--Secondary, #e74c3c);
+
+  transition: all 0.3s ease; /* Efek animasi */
+  color: var(--Secondary, #e74c3c);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.outfit-container:hover {
+  background-color: var(
+    --Secondary,
+    #e74c3c
+  ); /* Background berubah menjadi merah */
+  color: white; /* Teks berubah menjadi putih */
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4); /* Tambahkan bayangan */
+  transform: translateY(-2px); /* Sedikit melayang */
+}
+
+.outfit-container:active {
+  transform: translateY(0); /* Kembali ke posisi awal saat diklik */
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2); /* Reduksi bayangan */
+}
+
+.outfit-container span {
+  color: var(--Third, #ecf0f1);
+
+  /* Body/Medium */
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+}
+
+.send-email {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  gap: 10px;
+
+  position: absolute;
+  right: 15px;
+  top: 20px;
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.send-email:hover {
+  background: #c0392b; /* Warna merah yang lebih gelap */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Efek zoom */
+}
+
+.send-email:active {
+  transform: scale(0.95); /* Efek klik */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.send-email svg {
+  width: 30px;
+  height: 30px;
+
+  fill: var(--Third, #ecf0f1);
+}
