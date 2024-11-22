@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+nav.navbar {
+  display: flex;
+  width: 930px;
+  padding: 8px 48px;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 48px;
+  background: var(--Primary, #2c3e50);
+}
+
+h2.logo {
+  align-self: stretch;
+  color: #fff;
+
+  /* Headline/small */
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+}
+
+.search-container {
+  display: flex;
+  width: 334px;
+  height: 36px;
+  padding: 2px 4px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: white;
+
+  border-radius: 24px;
+  background: var(--Primary-Colors-Layer-2, #416788);
+
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.search-container:hover {
+  background: linear-gradient(135deg, #35526f, #2e4860); /* Gradasi warna */
+  border: 1px solid #e74c3c; /* Border merah saat hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow lebih halus */
+  transform: translateY(-2px); /* Sedikit mengangkat elemen */
+  cursor: pointer; /* Tampilkan pointer */
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Tambah ruang untuk ikon */
+  border: 1px solid transparent; /* Awalnya tanpa border */
+  border-radius: 24px;
+  outline: none;
+  font-size: 16px;
+  background: var(--Primary-Colors-Layer-2, #416788);
+  color: #fff; /* Teks putih */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.search-container input:hover {
+  background: #2e4860; /* Warna lebih gelap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.mingcute-001 {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 24px;
+}
+.mingcute-001 svg {
+  width: 20.998px;
+  height: 22.814px;
+}
+
+.action-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.solar-bag {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 24px;
+  background: var(--Secondary, #e74c3c);
+
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer; /* Menunjukkan elemen bisa diklik */
+}
+
+.solar-bag:hover {
+  background: #c0392b; /* Warna latar lebih gelap */
+  transform: scale(1.1); /* Efek zoom saat dihover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+}
+
+.solar-bag:active {
+  background: #a93226; /* Warna lebih gelap saat ditekan */
+  transform: scale(0.95); /* Efek mengecil saat ditekan */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Mengurangi bayangan */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-button-container {
+  display: flex;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 8px;
+  border: 1px solid var(--Secondary, #e74c3c);
+
+  transition: all 0.3s ease; /* Efek animasi */
+  color: var(--Secondary, #e74c3c);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.login-button-container:hover {
+  background-color: var(
+    --Secondary,
+    #e74c3c
+  ); /* Background berubah menjadi merah */
+  color: white; /* Teks berubah menjadi putih */
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4); /* Tambahkan bayangan */
+  transform: translateY(-2px); /* Sedikit melayang */
+}
+
+.login-button-container:active {
+  transform: translateY(0); /* Kembali ke posisi awal saat diklik */
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2); /* Reduksi bayangan */
+}
+
+.login-button-container span {
+  color: var(--Third, #ecf0f1);
+
+  /* label/medium */
+  font-family: Quicksand;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
+}
+
+.register-button-container {
+  display: flex;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 8px;
+  background: var(--Secondary, #e74c3c);
+
+  transition: all 0.3s ease; /* Efek animasi */
+  cursor: pointer;
+}
+
+.register-button-container:hover {
+  background-color: var(
+    --Secondary,
+    #e74c3c
+  ); /* Background berubah menjadi merah */
+  color: white; /* Teks berubah menjadi putih */
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4); /* Tambahkan bayangan */
+  transform: translateY(-2px); /* Sedikit melayang */
+}
+
+.register-button-container:active {
+  transform: translateY(0); /* Kembali ke posisi awal saat diklik */
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2); /* Reduksi bayangan */
+}
+
+.register-button-container span {
+  color: var(--Lofi-Colors-Layer-1, #fff);
+
+  /* label/medium */
+  font-family: Quicksand;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
+}

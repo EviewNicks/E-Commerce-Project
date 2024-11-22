@@ -40,8 +40,8 @@ footer {
 }
 
 .footer-brandU svg {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
 }
 
 .footer-brandU h2 {
@@ -49,8 +49,8 @@ footer {
   text-align: center;
 
   /* Bento/48 */
-  font-family: Bento;
-  font-size: 48px;
+  font-family: "Playfair display";
+  font-size: 56px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px; /* 33.333% */
@@ -65,18 +65,41 @@ footer {
 .social-media {
   display: flex;
   width: 46px;
-  height: 48px;
+  height: 46px;
   padding: 8px;
   align-items: center;
   gap: 10px;
 
   border-radius: 88px;
   background: var(--Secondary, #e74c3c);
+
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer; /* Menunjukkan elemen bisa diklik */
 }
 
-.icon {
+.social-media:hover {
+  background: #c0392b; /* Warna latar lebih gelap */
+  transform: scale(1.1); /* Efek zoom saat dihover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+}
+
+.social-media:active {
+  background: #a93226; /* Warna lebih gelap saat ditekan */
+  transform: scale(0.95); /* Efek mengecil saat ditekan */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Mengurangi bayangan */
+}
+
+.social-media svg {
   flex: 1 0 0;
   align-self: stretch;
+
+  width: 38px;
+  height: 38px;
+}
+
+.social-media:hover svg {
+  fill: #ecf0f1; /* Ikon sedikit lebih terang saat dihover */
 }
 
 .footer-content {
@@ -84,6 +107,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
+
+  position: relative;
 }
 
 .footer-contacts {
@@ -92,15 +117,36 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+
+  position: absolute;
+
+  bottom: 60px;
 }
 
 .contact-us {
   display: flex;
   width: 180px;
+  height: 25px;
   padding: 4px 10px;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  border-radius: 16px;
+  background: var(--Secondary, #e74c3c);
+
+  cursor: pointer; /* Menambahkan pointer untuk interaksi */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-us:hover {
+  background: #c0392b; /* Warna latar lebih gelap saat dihover */
+  transform: scale(1.05); /* Efek zoom kecil */
+}
+
+.contact-us:active {
+  transform: scale(0.95); /* Efek klik */
+  background: #a93226; /* Warna lebih gelap saat diklik */
 }
 
 .contact-us p {
@@ -108,7 +154,7 @@ footer {
   text-align: center;
 
   /* label/medium */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -121,7 +167,7 @@ footer {
   color: var(--Third, #ecf0f1);
 
   /* Body/Medium */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -131,7 +177,7 @@ footer {
 .footer-email-container {
   display: flex;
   width: 458px;
-  height: 154px;
+  height: 78px;
   padding: 62px 22px;
   flex-direction: column;
   justify-content: space-between;
@@ -139,6 +185,11 @@ footer {
 
   border-radius: 32px;
   background: var(--Primary-Colors-Layer-3, #35526f);
+
+  position: absolute;
+
+  left: 516px;
+  bottom: 30px;
 }
 
 .email {
@@ -149,7 +200,7 @@ footer {
 
 .email-text {
   display: flex;
-  width: 253px;
+  max-width: 453px;
   height: 44px;
   padding: 12px 14px;
   align-items: center;
@@ -157,37 +208,59 @@ footer {
 }
 
 .email-text input {
-  color: var(--Lofi-Colors-Layer-4, #c2c2c2);
   text-align: center;
 
   /* label/medium */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 20px; /* 125% */
   letter-spacing: 0.1px;
+  width: 300px;
+  height: 42px;
+
+  border-radius: 8px;
+  background: var(--Primary-Colors-Layer-3, #35526f);
+  border: 1px solid var(--Primary-Colors-Layer-1, #5480a3);
 }
 
-.email-button {
+.email-text input::placeholder {
+  color: var(--Lofi-Colors-Layer-4, #c2c2c2);
+}
+
+.email-text input:focus {
+  border-color: var(--Secondary, #e74c3c); /* Warna border saat fokus */
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.5); /* Tambahkan efek glow */
+  outline: none; /* Hilangkan outline default browser */
+}
+
+.email-button button {
   display: flex;
   padding: 10px 40px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  font-family: Poppins;
   align-self: stretch;
+  border: none;
+  color: white;
+  font-weight: 700;
+
+  border-radius: 8px;
+  background: var(--Secondary, #e74c3c);
+
+  cursor: pointer; /* Tambahkan pointer untuk interaksi */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi */
 }
 
-.email-button button {
-  color: var(--Lofi-Colors-Layer-1, #fff);
-  text-align: center;
+.email-button button:hover {
+  background: #c0392b; /* Warna latar lebih gelap saat dihover */
+  transform: scale(1.05); /* Efek zoom kecil */
+}
 
-  /* label/small */
-  font-family: Quicksand;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 16px; /* 114.286% */
+.email-button button:active {
+  transform: scale(0.95); /* Efek klik */
+  background: #a93226; /* Warna lebih gelap saat diklik */
 }
 
 .footer-footer {
@@ -203,7 +276,7 @@ footer {
   text-align: center;
 
   /* label/small */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -215,7 +288,7 @@ footer {
   text-align: center;
 
   /* label/small */
-  font-family: Quicksand;
+  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
