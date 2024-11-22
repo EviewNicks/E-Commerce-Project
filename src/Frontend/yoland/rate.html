@@ -6,184 +6,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rate</title>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: var(--default-font-family);
+        background-color: var(--white-layer-layer-2);
+    }
+
+    .container {
+        display: flex;
+        width: 554px;
+        height: 168px;
+        padding: 0px 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+        flex-shrink: 0;
+
+        border-radius: 32px;
+        background: var(--White-Colors-Layer-2, #E3E7E7);
+    }
+
+    .title {
+        align-self: stretch;
+
+        color: var(--Text, #1E1E1E);
+
+        /* Title/small */
+        font-family: Quicksand;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
+    }
+
+    .rating-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .star-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .star-container svg {
+        width: 32px;
+        height: 32px
+    }
+
+    .rating {
+        color: var(--Text, #1E1E1E);
+        text-align: center;
+
+        /* label/small */
+        font-family: Quicksand;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px;
+        /* 114.286% */
+    }
+
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .input {
+        display: flex;
+        padding: 0px 0px 2px 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .input-label {
+        display: flex;
+        width: 297px;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .review-label {
+        flex: 1 0 0;
+
+        color: var(--Text, #1E1E1E);
+
+        /* label/small */
+        font-family: Quicksand;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px;
+        /* 114.286% */
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+    }
+
+    .form-input {
+        display: flex;
+        width: 453px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .form {
+        display: flex;
+        height: 40px;
+        padding: 6px 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+
+        border-radius: 8px;
+        border: 1px solid var(--Grey-Color-layer-2, #828282);
+        background: var(--Black-Color-White, #FFF);
+    }
+
+    .input-field {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+    }
+
+    .teks {
+        flex: 1 0 0;
+
+        color: var(--Grey-Color-layer-1, #BDBDBD);
+
+        /* Body/Medium */
+        font-family: Quicksand;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        /* 166.667% */
+    }
+
+    .streamline {
+        display: flex;
+        padding: 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        border-radius: 24px;
+        background: var(--Secondary, #E74C3C);
+    }
+
+    .streamline svg {
+        width: 24px;
+        height: 24px;
+    }
+</style>
 
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--default-font-family);
-            background-color: var(--white-layer-layer-2);
-        }
-
-        .container {
-            display: flex;
-            width: 554px;
-            height: 168px;
-            padding: 0px 24px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 8px;
-            flex-shrink: 0;
-
-            border-radius: 32px;
-            background: var(--White-Colors-Layer-2, #E3E7E7);
-        }
-
-        .title {
-            align-self: stretch;
-
-            color: var(--Text, #1E1E1E);
-
-            /* Title/small */
-            font-family: Quicksand;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 24px;
-            /* 150% */
-        }
-
-        .rating-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            align-self: stretch;
-        }
-
-        .star-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .star-container svg {
-            width: 32px;
-            height: 32px
-        }
-
-        .rating {
-            color: var(--Text, #1E1E1E);
-            text-align: center;
-
-            /* label/small */
-            font-family: Quicksand;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 16px;
-            /* 114.286% */
-        }
-
-        .review-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 2px;
-        }
-
-        .input {
-            display: flex;
-            padding: 0px 0px 2px 8px;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
-        }
-
-        .input-label {
-            display: flex;
-            width: 297px;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .review-label {
-            flex: 1 0 0;
-
-            color: var(--Text, #1E1E1E);
-
-            /* label/small */
-            font-family: Quicksand;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 16px;
-            /* 114.286% */
-        }
-
-        .input-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            align-self: stretch;
-        }
-
-        .form-input {
-            display: flex;
-            width: 453px;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .form {
-            display: flex;
-            height: 40px;
-            padding: 6px 16px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 10px;
-            align-self: stretch;
-
-            border-radius: 8px;
-            border: 1px solid var(--Grey-Color-layer-2, #828282);
-            background: var(--Black-Color-White, #FFF);
-        }
-
-        .input-field {
-            display: flex;
-            align-items: center;
-            align-self: stretch;
-        }
-
-        .teks {
-            flex: 1 0 0;
-
-            color: var(--Grey-Color-layer-1, #BDBDBD);
-
-            /* Body/Medium */
-            font-family: Quicksand;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 20px;
-            /* 166.667% */
-        }
-
-        .streamline {
-            display: flex;
-            padding: 8px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-
-            border-radius: 24px;
-            background: var(--Secondary, #E74C3C);
-        }
-
-        .streamline svg {
-            width: 24px;
-            height: 24px;
-        }
-    </style>
 </body>
 
 <div class="container">
