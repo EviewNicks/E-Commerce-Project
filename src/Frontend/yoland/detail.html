@@ -6,96 +6,52 @@
     <title>Detail</title>
     <style>
             @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-        body {
-            font-family: Quicksand, sans-serif;
-            background-color: #F2F4F6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+       
+            .container {
+                display: flex;
+                width: 556px;
+                flex-direction: column;
+                align-items: flex-start;
 
-        .frame {
-            width: 556px;
-            padding: 20px;
-            border-radius: 24px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(227, 231, 231, 0.7) 70%, #ACB9BA 100%);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border: 1px dashed #8FA3A7;
-        }
+                border-radius: 24px;
+                border: 1px solid #000;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(227, 231, 231, 0.00) 70%, #ACB9BA 100%);
+            }
 
-        .deskripsi {
-            color: #2C3E50;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+            .container-a {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 130px;
+                align-self: stretch;
+            }
 
-        .deskripsi ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
+            .container-b {
+                display: flex;
+                height: 283px;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                align-self: stretch;
+            }
 
-        .deskripsi li {
-            margin-bottom: 5px;
-        }
-
-        .bar {
-            display: flex;
-            justify-content: flex-start; /* Mengubah posisi ke kiri */
-            align-items: center;
-            padding: 10px 20px;
-            border-radius: 24px;
-            background: #416788;
-            color: #ECF0F1;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-            width: fit-content;
-        }
-
-        .bar span {
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .solid {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #E74C3C;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            margin-left: 10px;
-        }
-
-        .solid svg {
-            fill: #ECF0F1;
-        }
+            .header-container {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                align-self: stretch;
+            }
     </style>
 </head>
 <body>
-    <div class="frame">
-        <h3 style="text-align: left; color: #2C3E50; margin-bottom: 10px;">Detail</h3>
-        <div class="deskripsi">
-            Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi Produk Deksripsi ProdukA Deksripsi ProdukA Deksripsi ProdukA Deksripsi ProdukA Deksripsi ProdukA
-            <br><br>
-            Deksripsi Produk:
-            <ul>
-                <li>Deksripsi ProdukA</li>
-                <li>Deksripsi ProdukA</li>
-                <li>Deksripsi ProdukA</li>
-            </ul>
-        </div>
-        <div class="bar">
-            <span>Lihat Selengkapnya</span>
-            <div class="solid">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7">
-                    <path d="M5.39485 6.7437C5.72955 7.08543 6.27312 7.08543 6.60783 6.7437L11.749 1.49473C12.0837 1.153 12.0837 0.598028 11.749 0.256298C11.4143 -0.0854325 10.8707 -0.0854325 10.536 0.256298L6 4.88742L1.46402 0.259031C1.12931 -0.0826989 0.585741 -0.0826989 0.251032 0.259031C-0.0836773 0.600761 -0.0836773 1.15573 0.251032 1.49746L5.39217 6.74644L5.39485 6.7437Z"/>
-                </svg>
+    <div class="container">
+        <div class="container-a">
+            <div class="header-container">
+                
             </div>
+
         </div>
+
     </div>
 </body>
 </html>
