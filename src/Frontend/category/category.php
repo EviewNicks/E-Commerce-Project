@@ -9,14 +9,14 @@ if ($success) {
     $messages = [
         1 => 'Kategori berhasil ditambahkan.',
         2 => 'Kategori berhasil diperbarui.',
-        3 => 'Kategori berhasil dihapus.',
+        3 => 'Kategori berhasil dihapus.', // Notifikasi hapus
     ];
     echo "<p class='bg-green-100 text-green-600 p-2 rounded-md'>{$messages[$success]}</p>";
 }
 
 if ($error) {
     $errors = [
-        1 => 'Kategori tidak dapat dihapus karena masih digunakan.',
+        1 => 'Kategori tidak dapat dihapus karena masih digunakan.', // Notifikasi gagal hapus
     ];
     echo "<p class='bg-red-100 text-red-600 p-2 rounded-md'>{$errors[$error]}</p>";
 }
@@ -33,10 +33,10 @@ if (!$result) {
 // Menampilkan data kategori
 if ($result->num_rows > 0) {
     echo "
-    <div class='flex justify-between items-center mb-4'>
+<div class='flex justify-between items-center mb-4'>
         <h2 class='text-xl font-semibold'>Daftar Kategori</h2>
-        <a href='index.php?page=addCategory' class='bg-blue-600 text-white px-4 py-2 rounded-md'>Tambah Kategori</a>
-    </div>
+        <a href='?page=formCategory&action=add' class='bg-blue-600 text-white px-4 py-2 rounded-md'>Tambah Kategori</a>
+      </div>
     
     <div class='overflow-x-auto'>
         <table class='min-w-full border-collapse border border-gray-300 shadow-md rounded-lg text-sm'>
@@ -65,7 +65,9 @@ if ($result->num_rows > 0) {
                 <td class='px-4 py-2 text-center'>{$status}</td>
                 <td class='px-4 py-2 text-center'>
                     <a href='index.php?page=editCategory&id={$row['category_id']}' class='text-blue-600'>Edit</a>
-                    <a href='" . BASE_PATH . "backend/category/deleteCategory.php?id={$row['category_id']}' class='text-red-600' onclick='return confirm(\"Apakah Anda yakin ingin menghapus kategori ini?\")'>Hapus</a>
+                    <a href='index.php?page=deleteCategoryAction&id={$row['category_id']}' 
+                    class='text-red-600' 
+                     onclick='return confirm('Apakah Anda yakin ingin menghapus kategori ini?')'>Hapus</a>
                 </td>
             </tr>";
     }

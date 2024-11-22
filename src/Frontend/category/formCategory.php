@@ -1,72 +1,126 @@
 <?php
-include BASE_PATH . 'backend/connection.php';
+include BASE_PATH . '/backend/connection.php';
 
-$isEdit = isset($_GET['id']);
-if ($isEdit) {
-    $id = isset($_GET['id']) && is_numeric($_GET['id']) ? $_GET['id'] : null;
-    if (!$id) {
-        die("ID kategori tidak valid.");
-    }
-    $sql = "SELECT * FROM categories WHERE category_id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $id);
+$action = $_GET['action'] ?? 'add'; // Default adalah 'add'
+$category_id = $_GET['id'] ?? null;
+
+$category = [
+    'name' => '',
+    'description' => '',
+    'parent_category_id' => '',
+    'is_active' => 1, // Default aktif
+    'image_url' => ''
+];
+
+// Jika edit, ambil data kategori dari database
+if ($action === 'edit' && $category_id) {
+    $stmt = $conn->prepare("SELECT * FROM categories WHERE category_id = ?");
+    $stmt->bind_param("i", $category_id);
     $stmt->execute();
     $result = $stmt->get_result();
-    $category = $result->fetch_assoc();
-} else {
-    $category = [
-        'name' => '',
-        'description' => '',
-        'parent_category_id' => '',
-        'is_active' => 1,
-        'image_url' => '',
-    ];
+    if ($result->num_rows > 0) {
+        $category = $result->fetch_assoc();
+    }
+    $stmt->close();
 }
 
-$parentCategories = $conn->query("SELECT category_id, name FROM categories WHERE is_active = 1");
-if (!$parentCategories) {
-    echo "Error: " . $conn->error;
+if ($action === 'add') {
+    $category_id = 0; // Pastikan selalu ada nilai
 }
+
+
+
+// Ambil kategori induk
+$sql = "SELECT category_id, name FROM categories WHERE is_active = 1 AND category_id != ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $category_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$parent_categories = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $parent_categories[] = $row;
+    }
+}
+
+// Tutup koneksi
+$conn->close();
 ?>
 
-<form method="POST" action="<?= $isEdit ? BASE_PATH . 'backend/category/editCategory.php?id=' . $id : BASE_PATH . 'backend/category/addCategory.php' ?>" class="space-y-4 bg-white p-6 rounded-lg shadow-md" enctype="multipart/form-data">
-    <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
-        <input type="text" name="name" id="name" value="<?= htmlspecialchars($category['name'], ENT_QUOTES, 'UTF-8') ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Nama kategori..." maxlength="255" required>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Kategori</title>
+    <link href="./../../output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4"><?= $action === 'edit' ? 'Edit' : 'Tambah' ?> Kategori</h2>
+
+        <form action="?page=<?= $action === 'edit' ? 'editCategoryAction' : 'addCategoryAction' ?>" method="POST" enctype="multipart/form-data">
+            <? error_log("Debug: Form submitted to addCategoryAction"); ?>
+
+            <input type="hidden" name="category_id" value="<?= $category_id ?>"> <!-- Untuk Edit -->
+
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium">Nama Kategori</label>
+                <input type="text" id="name" name="name" value="<?= $category['name'] ?>" required class="w-full p-2 border border-gray-300 rounded">
+            </div>
+
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium">Deskripsi</label>
+                <textarea id="description" name="description" rows="4" class="w-full p-2 border border-gray-300 rounded"><?= $category['description'] ?></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="parent_category_id" class="block text-sm font-medium">Kategori Induk (Opsional)</label>
+                <select id="parent_category_id" name="parent_category_id" class="w-full p-2 border border-gray-300 rounded">
+                    <option value="">Pilih Kategori Induk</option>
+                    <?php foreach ($parent_categories as $cat) : ?>
+                        <option value="<?= $cat['category_id'] ?>" <?= $cat['category_id'] == $category['parent_category_id'] ? 'selected' : '' ?>>
+                            <?= $cat['name'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium">Gambar (Opsional)</label>
+                <input type="file" id="image" name="image" class="w-full p-2 border border-gray-300 rounded">
+                <?php if (!empty($category['image_url'])) : ?>
+                    <img src="<?= $category['image_url'] ?>" alt="Category Image" class="h-16 w-16 mt-2">
+                <?php endif; ?>
+            </div>
+
+            <div class="mb-4">
+                <label for="is_active" class="inline-flex items-center">
+                    <input type="checkbox" id="is_active" name="is_active" value="1" <?= $category['is_active'] ? 'checked' : '' ?> class="form-checkbox h-5 w-5 text-blue-600">
+                    <span class="ml-2 text-sm">Aktifkan Kategori</span>
+                </label>
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                <?= $action === 'edit' ? 'Update' : 'Tambah' ?>
+            </button>
+        </form>
     </div>
-    <div>
-        <label for="description" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-        <textarea name="description" id="description" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" maxlength="500"><?= htmlspecialchars($category['description'], ENT_QUOTES, 'UTF-8') ?></textarea>
-    </div>
-    <div>
-        <label for="parent_category_id" class="block text-sm font-medium text-gray-700">Parent Category</label>
-        <select name="parent_category_id" id="parent_category_id" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-            <option value="">-- None --</option>
-            <?php
-            while ($parentRow = $parentCategories->fetch_assoc()) {
-                // Pastikan kategori induk tidak dapat memilih dirinya sendiri
-                if ($isEdit && $parentRow['category_id'] == $id) {
-                    continue;
-                }
-                $selected = $parentRow['category_id'] == $category['parent_category_id'] ? 'selected' : '';
-                echo "<option value='{$parentRow['category_id']}' {$selected}>{$parentRow['name']}</option>";
-            }
-            ?>
-        </select>
-    </div>
-    <div>
-        <label for="image_url" class="block text-sm font-medium text-gray-700">Gambar (Opsional)</label>
-        <input type="file" name="image_url" id="image_url" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-        <?php if ($category['image_url']): ?>
-            <p class="text-sm text-gray-500 mt-1">Gambar saat ini: <a href="<?= htmlspecialchars($category['image_url'], ENT_QUOTES, 'UTF-8') ?>" target="_blank" class="text-blue-600 underline">Lihat Gambar</a></p>
-        <?php endif; ?>
-    </div>
-    <div>
-        <label for="is_active" class="block text-sm font-medium text-gray-700">Status</label>
-        <select name="is_active" id="is_active" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-            <option value="1" <?= $category['is_active'] ? 'selected' : '' ?>>Active</option>
-            <option value="0" <?= !$category['is_active'] ? 'selected' : '' ?>>Inactive</option>
-        </select>
-    </div>
-    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Simpan</button>
-</form>
+
+    <script>
+        document.querySelector('#form-category').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const response = await fetch('?page=editCategoryAction', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await response.json();
+            console.log('Server Response:', data);
+        });
+    </script>
+</body>
+
+</html>

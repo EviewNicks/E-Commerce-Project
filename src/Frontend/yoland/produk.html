@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk Card</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-        body {
-            font-family: Quicksand, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background: #F5F6F8;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--default-font-family);
+            background-color: var(--white-layer-layer-2);
         }
 
         .container {
             display: flex;
-            flex-direction: column;
             width: 652px;
-            padding: 16px;
-            border-radius: 12px;
-            background: #EAEFF4;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            height: 168px;
+            padding: 8px 24px 8px 24px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+
+            border-radius: 24px;
+            background: var(--Primary-Layer-Layer-1, #EAEFF4);
         }
 
         .produk-name {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 12px;
+            align-self: stretch;
+
             color: #000;
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0.1px;
         }
 
         .container-a {
             display: flex;
-            gap: 16px;
+            align-items: center;
+            gap: 24px;
+            align-self: stretch;
         }
 
         .produk-img {
@@ -50,28 +64,46 @@
         .container-b {
             display: flex;
             flex-direction: column;
-            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1 0 0;
+            align-self: stretch;
+
+            border-radius: 8px;
+            background: var(--Primary-Layer-Layer-1, #EAEFF4);
         }
 
         .container-c {
-            padding: 8px 16px;
-            border-radius: 8px;
-            background: #FFFFFF;
-            margin-bottom: 12px;
             display: flex;
+            padding: 4px 24px;
+            justify-content: space-between;
             align-items: center;
+            align-self: stretch;
+
+            border-radius: 8px 8px 0px 0px;
+            border: 1px solid var(--Primary-Layer-Layer-3, #A6BFD3);
         }
 
         .delivery-teks {
-            font-size: 16px;
-            font-weight: 700;
             color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+            /* 125% */
+            letter-spacing: 0.1px;
         }
 
         .container-d {
             display: flex;
+            padding: 0px 24px;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
+            flex: 1 0 0;
+            align-self: stretch;
         }
 
         .container-e {
@@ -81,32 +113,53 @@
         }
 
         .rekomendation {
-            font-size: 14px;
-            font-weight: 600;
             color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            /* 125% */
+            letter-spacing: 0.1px;
         }
 
         .arrival-teks {
+            align-self: stretch;
+            color: #000;
+
+            /* Body/Medium */
+            font-family: Quicksand;
             font-size: 12px;
+            font-style: normal;
             font-weight: 500;
-            color: #555;
+            line-height: 20px;
+            /* 166.667% */
         }
 
         .price-teks {
-            font-size: 16px;
-            font-weight: 700;
             color: #000;
+
+            /* label/medium */
+            font-family: Quicksand;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+            /* 125% */
+            letter-spacing: 0.1px;
         }
 
         .container-f {
-            margin-top: 16px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            background: #FFFFFF;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid #A6BFD3;
+            padding: 4px 24px;
+            align-items: flex-start;
+            gap: 16px;
+            align-self: stretch;
+
+            border-radius: 0px 0px 8px 8px;
+            border: 1px solid var(--Primary-Layer-Layer-3, #A6BFD3);
         }
 
         .checkbox {
@@ -126,12 +179,20 @@
         }
 
         .teks-option {
-            font-size: 12px;
-            font-weight: 500;
+            flex: 1 0 0;
             color: #000;
+
+            /* Body/Medium */
+            font-family: Quicksand;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            /* 166.667% */
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <p class="produk-name">Produk Name Produk Name Produk Name Produk Name A</p>
@@ -148,21 +209,29 @@
                     </div>
                     <p class="price-teks">Rp.950.000</p>
                 </div>
-            </div>
-        </div>
-        <div class="container-f">
-            <div class="checkbox">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-                    <path d="M11.0528 0.732472C10.8412 0.614682 10.6086 0.539796 10.3682 0.512091C10.1277 0.484386 9.8842 0.504404 9.65149 0.571003C9.41877 0.637603 9.20144 0.749477 9.01189 0.900238C8.82234 1.051 8.66429 1.23769 8.54677 1.44966L5.12588 7.61725L3.16806 5.65584C2.99808 5.47952 2.79475 5.33889 2.56994 5.24214C2.34513 5.14539 2.10333 5.09447 1.85867 5.09234C1.614 5.09021 1.37136 5.13691 1.14491 5.22973C0.91845 5.32255 0.712714 5.45963 0.539702 5.63296C0.36669 5.80629 0.229867 6.0124 0.137216 6.23927C0.0445659 6.46614 -0.00205651 6.70922 6.95726e-05 6.95434C0.00219566 7.19945 0.0530277 7.44169 0.149599 7.66691C0.246171 7.89214 0.386549 8.09584 0.562541 8.26613L4.24785 11.9582C4.59612 12.308 5.06599 12.5 5.55061 12.5L5.80582 12.4815C6.08825 12.442 6.35766 12.3372 6.59284 12.1756C6.82801 12.014 7.02253 11.7999 7.16109 11.5502L11.7677 3.24307C11.8853 3.0312 11.9601 2.79819 11.9879 2.55735C12.0156 2.31651 11.9957 2.07256 11.9293 1.83942C11.8629 1.60629 11.7513 1.38854 11.6009 1.19861C11.4505 1.00868 11.2643 0.850284 11.0528 0.732472Z" fill="black"/>
-                </svg>
-            </div>
-            <div class="container-g">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                    <path opacity="0.5" d="M3.378 5.582C3 6.12 3 7.72 3 10.917V12.491C3 18.129 7.239 20.866 9.899 22.027C10.62 22.342 10.981 22.5 12 22.5C13.02 22.5 13.38 22.342 14.101 22.027C16.761 20.865 21 18.13 21 12.491V10.917C21 7.719 21 6.12 20.622 5.582C20.245 5.045 18.742 4.53 15.735 3.501L15.162 3.305C13.595 2.768 12.812 2.5 12 2.5C11.188 2.5 10.405 2.768 8.838 3.305L8.265 3.5C5.258 4.53 3.755 5.045 3.378 5.582Z" fill="#E74C3C"/>
-                </svg>
-                <p class="teks-option">Pakai asuransi pengiriman (Rp.800)</p>
+                <div class="container-f">
+                    <div class="checkbox">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                            <path
+                                d="M11.0528 0.732472C10.8412 0.614682 10.6086 0.539796 10.3682 0.512091C10.1277 0.484386 9.8842 0.504404 9.65149 0.571003C9.41877 0.637603 9.20144 0.749477 9.01189 0.900238C8.82234 1.051 8.66429 1.23769 8.54677 1.44966L5.12588 7.61725L3.16806 5.65584C2.99808 5.47952 2.79475 5.33889 2.56994 5.24214C2.34513 5.14539 2.10333 5.09447 1.85867 5.09234C1.614 5.09021 1.37136 5.13691 1.14491 5.22973C0.91845 5.32255 0.712714 5.45963 0.539702 5.63296C0.36669 5.80629 0.229867 6.0124 0.137216 6.23927C0.0445659 6.46614 -0.00205651 6.70922 6.95726e-05 6.95434C0.00219566 7.19945 0.0530277 7.44169 0.149599 7.66691C0.246171 7.89214 0.386549 8.09584 0.562541 8.26613L4.24785 11.9582C4.59612 12.308 5.06599 12.5 5.55061 12.5L5.80582 12.4815C6.08825 12.442 6.35766 12.3372 6.59284 12.1756C6.82801 12.014 7.02253 11.7999 7.16109 11.5502L11.7677 3.24307C11.8853 3.0312 11.9601 2.79819 11.9879 2.55735C12.0156 2.31651 11.9957 2.07256 11.9293 1.83942C11.8629 1.60629 11.7513 1.38854 11.6009 1.19861C11.4505 1.00868 11.2643 0.850284 11.0528 0.732472Z"
+                                fill="black" />
+                        </svg>
+                    </div>
+                    <div class="container-g">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.5"
+                                d="M3.378 5.082C3 5.62 3 7.22 3 10.417V11.991C3 17.629 7.239 20.366 9.899 21.527C10.62 21.842 10.981 22 12 22C13.02 22 13.38 21.842 14.101 21.527C16.761 20.365 21 17.63 21 11.991V10.417C21 7.219 21 5.62 20.622 5.082C20.245 4.545 18.742 4.03 15.735 3.001L15.162 2.805C13.595 2.268 12.812 2 12 2C11.188 2 10.405 2.268 8.838 2.805L8.265 3C5.258 4.03 3.755 4.545 3.378 5.082Z"
+                                fill="#E74C3C" />
+                            <path
+                                d="M10.861 8.363L10.731 8.598C10.586 8.857 10.514 8.986 10.402 9.071C10.29 9.156 10.15 9.188 9.86997 9.251L9.61597 9.309C8.63197 9.531 8.13997 9.643 8.02297 10.019C7.90597 10.396 8.24097 10.788 8.91197 11.572L9.08597 11.775C9.27597 11.998 9.37097 12.109 9.41397 12.247C9.45697 12.385 9.44297 12.534 9.41397 12.831L9.38797 13.101C9.28597 14.148 9.23597 14.671 9.54197 14.904C9.84797 15.137 10.309 14.924 11.23 14.501L11.469 14.391C11.73 14.271 11.861 14.21 12 14.21C12.139 14.21 12.27 14.27 12.531 14.39L12.77 14.5C13.69 14.925 14.152 15.137 14.458 14.904C14.764 14.671 14.714 14.148 14.612 13.102L14.586 12.831C14.557 12.534 14.543 12.385 14.586 12.247C14.629 12.109 14.724 11.997 14.914 11.775L15.088 11.572C15.758 10.788 16.094 10.396 15.977 10.019C15.86 9.643 15.368 9.531 14.384 9.309L14.13 9.251C13.85 9.188 13.71 9.156 13.598 9.071C13.486 8.986 13.414 8.857 13.27 8.599L13.139 8.363C12.632 7.454 12.379 7 12 7C11.621 7 11.368 7.454 10.861 8.363Z"
+                                fill="#E74C3C" />
+                        </svg>
+                        <p class="teks-option">Pakai asuransi pengiriman (Rp.800)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
