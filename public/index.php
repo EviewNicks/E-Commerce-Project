@@ -19,10 +19,25 @@ $category_pages = [
     'deleteCategoryAction'
 ];
 
+$promotion_pages = [
+    'addPromotionAction',
+    'editPromotionAction',
+    'deletePromotionAction'
+];
+
+$order_pages = [
+    'updateOrderStatusAction',
+    'deleteOrderAction'
+];
+
 if (in_array($page, $product_pages)) {
     $file_path = BASE_PATH . "backend/product/$page.php";
 } elseif (in_array($page, $category_pages)) {
     $file_path = BASE_PATH . "backend/category/$page.php";
+} elseif (in_array($page, $promotion_pages)) {
+    $file_path = BASE_PATH . "backend/promotions/$page.php";
+} elseif (in_array($page, $order_pages)) {
+    $file_path = BASE_PATH . "backend/orders/$page.php";
 } else {
     $file_path = null;
 }
@@ -62,25 +77,31 @@ error_log("Debug: File path for process is $file_path"); // Log jalur file
         <?php
         switch ($page) {
             case 'products':
-                include BASE_PATH . 'Frontend/product/product.php';
+                include BASE_PATH . 'Frontend/product.php';
                 break;
             case 'formProduct':
-                include BASE_PATH . 'Frontend/product/formProduct.php';
+                include BASE_PATH . 'Frontend/formProduct.php';
                 break;
             case 'categories':
-                include BASE_PATH . 'Frontend/category/category.php';
+                include BASE_PATH . 'Frontend/category.php';
                 break;
             case 'formCategory':
-                include BASE_PATH . 'Frontend/category/formCategory.php';
+                include BASE_PATH . 'Frontend/formCategory.php';
                 break;
             case 'orders':
                 include BASE_PATH . 'Frontend/orders.php';
                 break;
-            case 'orderItems':
-                include BASE_PATH . 'Frontend/orderItems.php';
+            case 'ordersDetails':
+                include BASE_PATH . 'Frontend/orderDetails.php';
                 break;
             case 'promotions':
                 include BASE_PATH . 'Frontend/promotions.php';
+                break;
+            case 'formPromotion':
+                include BASE_PATH . 'Frontend/formPromotions.php';
+                break;
+            case 'reviews':
+                include BASE_PATH . 'Frontend/adminReviews.php';
                 break;
             default:
                 http_response_code(404);

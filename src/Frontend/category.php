@@ -64,7 +64,7 @@ if ($result->num_rows > 0) {
                 <td class='px-4 py-2'>{$parent}</td>
                 <td class='px-4 py-2 text-center'>{$status}</td>
                 <td class='px-4 py-2 text-center'>
-                    <a href='index.php?page=editCategory&id={$row['category_id']}' class='text-blue-600'>Edit</a>
+                    <a href='index.php?page=formCategory&action=edit&id={$row['category_id']}' class='text-blue-600'>Edit</a>
                     <a href='index.php?page=deleteCategoryAction&id={$row['category_id']}' 
                     class='text-red-600' 
                      onclick='return confirm('Apakah Anda yakin ingin menghapus kategori ini?')'>Hapus</a>

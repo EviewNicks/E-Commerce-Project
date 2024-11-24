@@ -10,9 +10,6 @@
             <a href="?page=orders" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Orders</a>
         </li>
         <li>
-            <a href="?page=orderItems" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Order Items</a>
-        </li>
-        <li>
             <a href="?page=promotions" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Promotions</a>
         </li>
     </ul>
