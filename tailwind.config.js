@@ -2,10 +2,11 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  mode: "jit", // Aktifkan JIT mode
   content: [
-    "./src/**/*.{html,js}",
-    "./public/**/*.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,php}", // Semua file di src
+    "./public/**/*.{html,php,js}", // Semua file di public
+    "./index.php", // File index.php di root
   ],
   theme: {
     extend: {
