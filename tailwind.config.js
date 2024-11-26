@@ -79,8 +79,7 @@ module.exports = {
           "linear-gradient(225deg, rgba(87, 176, 120, 0.4) 0%, #c9e9d2 100%)",
         "grad-bluegrid":
           "linear-gradient(225deg, rgba(85, 112, 116, 0.4) 0%, #5480a3 100%)",
-        "grad-primarygrid":
-          'url("texture.jpg") 0px -11.254px / 100% 122.507% no-repeat, linear-gradient(225deg, #5480a3 0%, rgba(85, 112, 116, 0.4) 100%)',
+        "grad-primarygrid": 'url("./assets/Texture/texture.jpg")',
         "grad-thirdgrid":
           "linear-gradient(225deg, #95a5a6 0%, rgba(149, 165, 166, 0.4) 100%)",
         "grad-pastel-blue":
