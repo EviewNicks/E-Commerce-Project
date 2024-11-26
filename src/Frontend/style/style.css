@@ -1,9 +1,7 @@
-@font-face {
-  font-family: "MadeSaonara";
-  src: url("./fonts/MADE SAONARA PERSONAL USE.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Quicksand:wght@300..700&display=swap');
 
 :root {
   --Primary: #2c3e50;
@@ -46,87 +44,65 @@
   --White-Colors-Layer-4: #acb9ba;
   --White-Colors-Layer-5: #95a5a6;
 
-  --Grad-Glass: linear-gradient(
-    225deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  --Grad-Dark-Glass: linear-gradient(
-    225deg,
-    rgba(9, 44, 76, 0.4) 0%,
-    rgba(9, 44, 76, 0.05) 100%
-  );
-  --Grad-Green: linear-gradient(
-    225deg,
-    rgba(87, 176, 120, 0.4) 0%,
-    #c9e9d2 100%
-  );
-  --Grad-Bluegrid: linear-gradient(
-    225deg,
-    rgba(85, 112, 116, 0.4) 0%,
-    #5480a3 100%
-  );
+  --Grad-Glass: linear-gradient(225deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.05) 100%);
+  --Grad-Dark-Glass: linear-gradient(225deg,
+      rgba(9, 44, 76, 0.4) 0%,
+      rgba(9, 44, 76, 0.05) 100%);
+  --Grad-Green: linear-gradient(225deg,
+      rgba(87, 176, 120, 0.4) 0%,
+      #c9e9d2 100%);
+  --Grad-Bluegrid: linear-gradient(225deg,
+      rgba(85, 112, 116, 0.4) 0%,
+      #5480a3 100%);
 
   --Grad-PrimaryGrid: url("texture.jpg") 0px -11.254px / 100% 122.507% no-repeat,
     linear-gradient(225deg, #5480a3 0%, rgba(85, 112, 116, 0.4) 100%);
 
-  --Grad-ThirdGrid: linear-gradient(
-    225deg,
-    #95a5a6 0%,
-    rgba(149, 165, 166, 0.4) 100%
-  );
-  --Grad-PastelBlue: linear-gradient(
-    225deg,
-    #d1e9f6 0%,
-    rgba(209, 233, 246, 0.4) 100%
-  );
-  --Grad-PastelPinky: linear-gradient(
-    225deg,
-    #f1d3ce 0%,
-    rgba(241, 211, 206, 0.4) 100%
-  );
-  --Grad-PastelYellow: linear-gradient(
-    225deg,
-    #f6eacb 0%,
-    rgba(246, 234, 203, 0.4) 100%
-  );
-  --Grad-Deksripsi: linear-gradient(
-    180deg,
-    #e3e7e7 0%,
-    #e3e7e7 77.67%,
-    #acb9ba 100%
-  );
+  --Grad-ThirdGrid: linear-gradient(225deg,
+      #95a5a6 0%,
+      rgba(149, 165, 166, 0.4) 100%);
+  --Grad-PastelBlue: linear-gradient(225deg,
+      #d1e9f6 0%,
+      rgba(209, 233, 246, 0.4) 100%);
+  --Grad-PastelPinky: linear-gradient(225deg,
+      #f1d3ce 0%,
+      rgba(241, 211, 206, 0.4) 100%);
+  --Grad-PastelYellow: linear-gradient(225deg,
+      #f6eacb 0%,
+      rgba(246, 234, 203, 0.4) 100%);
+  --Grad-Deksripsi: linear-gradient(180deg,
+      #e3e7e7 0%,
+      #e3e7e7 77.67%,
+      #acb9ba 100%);
   --Grad-GradPrimary: linear-gradient(225deg, #416788 0%, #2c3e50 100%);
 
   --box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.32);
   --backdrop-filter: blur(2px);
 }
 
-/* body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #1cca19;
-} */
 
 .primary {
   background-color: var(--Primary);
 }
+
 .secondary {
   background-color: var(--Secondary);
 }
+
 .state-info {
   background-color: var(--State-Info);
 }
+
 .state-success {
   background-color: var(--State-Success);
 }
+
 .state-warning {
   background-color: var(--State-Warning);
 }
+
 .state-error {
   background-color: var(--State-Error);
 }
@@ -135,18 +111,22 @@
   background-color: var(--Lofi-Colors-Layer-5);
   color: #000;
 }
+
 .lofi-4 {
   background-color: var(--Lofi-Colors-Layer-4);
   color: #000;
 }
+
 .lofi-3 {
   background-color: var(--Lofi-Colors-Layer-3);
   color: #000;
 }
+
 .lofi-2 {
   background-color: var(--Lofi-Colors-Layer-2);
   color: #000;
 }
+
 .lofi-1 {
   background-color: var(--Lofi-Colors-Layer-1);
   color: #000;
@@ -156,6 +136,7 @@
   background-color: var(--Third);
   color: #000;
 }
+
 .ternary {
   background-color: var(--Ternary);
   color: #000;
@@ -164,15 +145,19 @@
 .primary-layer-1 {
   background-color: var(--Primary-Layer-Layer-1);
 }
+
 .primary-layer-2 {
   background-color: var(--Primary-Layer-Layer-2);
 }
+
 .primary-layer-3 {
   background-color: var(--Primary-Layer-Layer-3);
 }
+
 .primary-layer-4 {
   background-color: var(--Primary-Layer-Layer-4);
 }
+
 .primary-layer-5 {
   background-color: var(--Primary-Layer-Layer-5);
 }
@@ -180,15 +165,19 @@
 .secondary-layer-1 {
   background-color: var(--Secondary-Colors-Layer-1);
 }
+
 .secondary-layer-2 {
   background-color: var(--Secondary-Colors-Layer-2);
 }
+
 .secondary-layer-3 {
   background-color: var(--Secondary-Colors-Layer-3);
 }
+
 .secondary-layer-4 {
   background-color: var(--Secondary-Colors-Layer-4);
 }
+
 .secondary-layer-5 {
   background-color: var(--Secondary-Colors-Layer-5);
 }
@@ -197,39 +186,187 @@
   background: var(--Grad-Glass);
   color: #000;
 }
+
 .grad-dark-glass {
   background: var(--Grad-Dark-Glass);
 }
+
 .grad-green {
   background: var(--Grad-Green);
   color: #000;
 }
+
 .grad-bluegrid {
   background: var(--Grad-Bluegrid);
 }
+
 .grad-primarygrid {
   background: var(--Grad-PrimaryGrid);
   color: #000;
 }
+
 .grad-thirdgrid {
   background: var(--Grad-ThirdGrid);
   color: #000;
 }
+
 .grad-pastelblue {
   background: var(--Grad-PastelBlue);
 }
+
 .grad-pastelyellow {
   background: var(--Grad-PastelYellow);
   color: #000;
 }
+
 .grad-pastelpinky {
   background: var(--Grad-PastelPinky);
 }
+
 .grad-deksripsi {
   background: var(--Grad-Deksripsi);
   color: #000;
 }
+
 .grad-gradprimary {
   background: var(--Grad-GradPrimary);
   color: #000;
 }
+
+
+
+.logo-large {
+  font-family: Playfair;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90px; 
+}
+
+.logo-medium {
+  font-family: Playfair;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: 68px; /* 141.667% */
+}
+
+.log-small {
+  /* Logo/Small */
+font-family: Playfair;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: 44px; /* 137.5% */
+}
+
+.headline-large {
+  color: var(--Text, #1E1E1E);
+
+/* Headline/Large */
+font-family: Poppins;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: 68px; /* 141.667% */
+}
+
+.headline-medium {
+  font-family: Poppins;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 44px; /* 137.5% */
+}
+
+.headline-small {
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.title-large {
+  font-family: Quicksand;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px; /* 141.667% */
+}
+
+
+.title-medium {
+
+/* Title/Medium */
+font-family: Quicksand;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 140% */
+letter-spacing: 0.15px;
+}
+
+.title-small {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.label-large {
+  /* label/Large */
+font-family: Quicksand;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 120% */
+}
+
+.label-medium {
+  /* label/medium */
+font-family: Quicksand;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px; /* 125% */
+letter-spacing: 0.1px;
+}
+
+.label-small {
+  /* label/small */
+font-family: Quicksand;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 142.857% */
+}
+
+.body-large {
+  /* Body/Large */
+font-family: Quicksand;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 142.857% */
+}
+
+.body-medium {
+  /* Body/Medium */
+font-family: Quicksand;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 133.333% */
+}
+
+.body-small {
+  /* Body/Small */
+font-family: Quicksand;
+font-size: 10px;
+font-style: normal;
+font-weight: 500;
+line-height: 14px; /* 140% */
+}
+
