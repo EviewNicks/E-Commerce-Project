@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Pembayaran</title>
+    <link href="../output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <!-- Container Utama -->
+    <section class="flex flex-col w-[274px] h-[343px] items-center gap-1 bg-primary-dark rounded-2xl">
+        <!-- Header -->
+        <header class="flex items-center justify-center h-[77px] px-6 bg-transparent border border-ternary rounded-t-2xl w-full">
+            <h2 class="text-center text-lg font-bold text-third tracking-wide">Atur Jumlah dan Catatan</h2>
+        </header>
+
+        <!-- Konten -->
+        <div class="flex flex-col items-center gap-6 py-6 flex-1 w-full">
+            <!-- Quantity Stock -->
+            <div class="flex flex-col gap-2 w-full px-4">
+                <!-- Quantity Selector -->
+                <div class="flex justify-between items-center w-full">
+                    <!-- Button Decrease -->
+                    <button class="flex items-center justify-center p-1 bg-Primary-Colors-1 rounded-full">
+                        <!-- SVG Minus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4" fill="none">
+                            <path
+                                d="M14 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585787C0.210714 0.96086 0 1.46957 0 2C0 2.53043 0.210714 3.03914 0.585786 3.41421C0.960859 3.78929 1.46957 4 2 4H14C14.5304 4 15.0391 3.78929 15.4142 3.41421C15.7893 3.03914 16 2.53043 16 2C16 1.46957 15.7893 0.96086 15.4142 0.585787C15.0391 0.210714 14.5304 0 14 0Z"
+                                fill="#ECF0F1" />
+                        </svg>
+                    </button>
+                    <!-- Quantity -->
+                    <span class="text-lg font-bold text-third tracking-wide">122</span>
+                    <!-- Button Increase -->
+                    <button class="flex items-center justify-center p-1 bg-primary-light rounded-full">
+                        <!-- SVG Plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6 2C6 1.46957 6.21071 0.960859 6.58579 0.585786C6.96086 0.210714 7.46957 0 8 0H10C10.5304 0 11.0391 0.210714 11.4142 0.585786C11.7893 0.960859 12 1.46957 12 2V6H16C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8V10C18 10.5304 17.7893 11.0391 17.4142 11.4142C17.0391 11.7893 16.5304 12 16 12H12V16C12 16.5304 11.7893 17.0391 11.4142 17.4142C11.0391 17.7893 10.5304 18 10 18H8C7.46957 18 6.96086 17.7893 6.58579 17.4142C6.21071 17.0391 6 16.5304 6 16V12H2C1.46957 12 0.960859 11.7893 0.585786 11.4142C0.210714 11.0391 0 10.5304 0 10V8C0 7.46957 0.210714 6.96086 0.585786 6.58579C0.960859 6.21071 1.46957 6 2 6H6V2Z"
+                                fill="#ECF0F1" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Stock Information -->
+                <p class="text-sm font-normal text-third">Stok Total 420</p>
+            </div>
+
+            <!-- Subtotal -->
+            <div class="flex justify-between items-center px-3 w-full">
+                <p class="text-sm font-medium text-third">SubTotal</p>
+                <p class="text-lg font-normal text-third tracking-wide">Rp165.000</p>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col items-center gap-3 w-full px-8">
+            <!-- Add to Cart -->
+            <button class="w-full py-2 text-center font-bold text-base bg-secondary-light text-black border border-secondary rounded-lg">
+                + Keranjang
+            </button>
+            <!-- Buy Button -->
+            <button class="w-full py-2 text-center font-bold text-base bg-secondary text-third rounded-lg">
+                Beli
+            </button>
+        </div>
+    </section>
+</body>
+</html>
