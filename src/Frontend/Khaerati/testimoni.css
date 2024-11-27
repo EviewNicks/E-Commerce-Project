@@ -55,7 +55,7 @@ aside.testimoni-cards-container {
 
 .testimoni-card {
   display: flex;
-  padding: 0 16px;
+  padding: 10px 16px;
   flex-direction: column;
   align-items: center;
 
@@ -69,7 +69,7 @@ aside.testimoni-cards-container {
       rgba(255, 255, 255, 0.05) 100%
     )
   );
-  backdrop-filter: blur(6px);
+  /* backdrop-filter: blur(6px); */
   width: 245px;
 }
 
@@ -155,4 +155,10 @@ aside.testimoni-cards-container {
   font-style: normal;
   font-weight: 600;
   line-height: 16px; /* 114.286% */
+}
+
+.image-testimony {
+  width: 50px;
+  height: 50px;
+  border-radius: 24px;
 }
