@@ -68,6 +68,14 @@ module.exports = {
           4: "#acb9ba",
           5: "#95a5a6",
         },
+
+        grey: {
+          0: "#E0E0E0",
+          1: "#BDBDBD",
+          2: "#828282",
+          3: "#4F4F4F",
+          4: "#333333",
+        },
       },
       backgroundImage: {
         // Gradien
@@ -91,6 +99,9 @@ module.exports = {
         "grad-description":
           "linear-gradient(180deg, #e3e7e7 0%, #e3e7e7 77.67%, #acb9ba 100%)",
         "grad-primary": "linear-gradient(225deg, #416788 0%, #2c3e50 100%)",
+
+        "img-login": "url('/public/Outfit/login-image.jpg')",
+        "img-register": "url('/public/Outfit/outfit-4.jpg')",
       },
       boxShadow: {
         custom: "0px 4px 24px 0px rgba(0, 0, 0, 0.32)",
