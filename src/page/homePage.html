@@ -6,93 +6,577 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link href="./../output.css" rel="stylesheet">
+    <style>
+    </style>
 
 </head>
 
 <body class="grid  grid-cols-12 gap-2 lg:grid-cols-12">
-    <div class="col-span-12 inline-flex flex-col items-center px-20 pt-3">
+    <nav
+        class="fixed mt-4 px-4 inset-x-0 z-50 flex max-w-[926px] mx-auto justify-between items-center p-2 rounded-full bg-primary text-white bg-Primary-Colors-4">
+        <!-- Logo -->
+        <h2 class="text-logo-small">
+            <a href="/homepage" class="no-underline text-white">BrandU</a>
+        </h2>
+
+        <!-- Search Container -->
+        <form class="flex items-center max-w-sm mx-auto">
+            <label for="simple-search" class="sr-only">Search</label>
+            <div class="relative w-full">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24" fill="none">
+                        <path
+                            d="M8.99974 1.59302C10.2507 1.59302 11.4397 1.86302 12.5087 2.34902C11.9929 2.80647 11.6503 3.42764 11.5387 4.10802C10.2529 3.5624 8.82551 3.44551 7.46804 3.77467C6.11056 4.10382 4.89523 4.86151 4.0021 5.93547C3.10897 7.00943 2.58556 8.34253 2.50941 9.73726C2.43326 11.132 2.80843 12.5142 3.57932 13.679C4.35022 14.8438 5.47584 15.7293 6.78941 16.2043C8.10298 16.6793 9.53461 16.7185 10.8722 16.3161C12.2098 15.9137 13.3822 15.0911 14.2157 13.9703C15.0492 12.8494 15.4994 11.4898 15.4997 10.093L15.4947 9.82402C16.0307 10.304 16.7337 10.589 17.4857 10.593C17.3863 12.3285 16.7547 13.9912 15.6767 15.355L19.3287 19.007C19.5109 19.1956 19.6117 19.4482 19.6094 19.7104C19.6071 19.9726 19.502 20.2234 19.3166 20.4088C19.1312 20.5942 18.8803 20.6994 18.6181 20.7017C18.3559 20.704 18.1033 20.6032 17.9147 20.421L14.2627 16.769C13.1982 17.608 11.9485 18.1802 10.6179 18.4379C9.28725 18.6957 7.91427 18.6315 6.6135 18.2507C5.31272 17.8699 4.12185 17.1836 3.14025 16.249C2.15865 15.3144 1.41477 14.1586 0.970684 12.8781C0.526594 11.5975 0.395165 10.2293 0.587361 8.88768C0.779558 7.54601 1.28981 6.26975 2.07554 5.16538C2.86128 4.06101 3.89971 3.16055 5.10422 2.53911C6.30873 1.91768 7.64438 1.59329 8.99974 1.59302ZM8.99974 4.59302C9.92674 4.59302 10.8007 4.82302 11.5677 5.22802C11.6772 5.73342 11.9155 6.20194 12.2595 6.58811C12.6034 6.97428 13.0413 7.26499 13.5307 7.43202L13.8787 7.55102C14.4336 8.61561 14.6249 9.83251 14.4234 11.016C14.222 12.1995 13.6388 13.2846 12.763 14.1056C11.8871 14.9267 10.7667 15.4386 9.57266 15.5633C8.37864 15.688 7.17662 15.4186 6.15004 14.7962C5.12346 14.1738 4.32871 13.2326 3.88709 12.1163C3.44546 10.9999 3.38122 9.76977 3.70415 8.61351C4.02709 7.45725 4.71948 6.4384 5.67564 5.71247C6.63181 4.98654 7.79923 4.59338 8.99974 4.59302ZM17.4997 0.593018C17.6868 0.593017 17.8702 0.645496 18.0289 0.744489C18.1876 0.843482 18.3154 0.98502 18.3977 1.15302L18.4457 1.27002L18.5757 1.64802C18.7129 2.0502 18.934 2.41865 19.2243 2.72896C19.5147 3.03927 19.8676 3.28437 20.2597 3.44802L20.4447 3.51802L20.8227 3.64702C21.0099 3.71088 21.174 3.82882 21.2941 3.98591C21.4143 4.14301 21.4852 4.33221 21.4978 4.52959C21.5104 4.72697 21.4643 4.92367 21.3651 5.0948C21.2659 5.26593 21.1183 5.40382 20.9407 5.49102L20.8227 5.53902L20.4447 5.66902C20.0426 5.80622 19.6741 6.0273 19.3638 6.31761C19.0535 6.60792 18.8084 6.96085 18.6447 7.35302L18.5747 7.53802L18.4457 7.91602C18.3818 8.10315 18.2637 8.26712 18.1066 8.38718C17.9494 8.50724 17.7602 8.57801 17.5628 8.59053C17.3655 8.60306 17.1688 8.55677 16.9977 8.45754C16.8267 8.3583 16.6889 8.21057 16.6017 8.03302L16.5537 7.91602L16.4237 7.53802C16.2865 7.13583 16.0655 6.76739 15.7751 6.45707C15.4848 6.14676 15.1319 5.90167 14.7397 5.73802L14.5547 5.66802L14.1767 5.53902C13.9896 5.47516 13.8255 5.35722 13.7053 5.20012C13.5852 5.04302 13.5143 4.85382 13.5017 4.65644C13.489 4.45906 13.5352 4.26237 13.6344 4.09124C13.7335 3.9201 13.8812 3.78222 14.0587 3.69502L14.1767 3.64702L14.5547 3.51702C14.9569 3.37982 15.3254 3.15874 15.6357 2.86842C15.946 2.57811 16.1911 2.22518 16.3547 1.83302L16.4247 1.64802L16.5537 1.27002C16.6211 1.0726 16.7485 0.901202 16.9182 0.779807C17.0878 0.658412 17.2911 0.593101 17.4997 0.593018Z"
+                            fill="#ECF0F1" />
+                    </svg>
+                </div>
+                <input type="text" id="simple-search"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search branch name..." required />
+            </div>
+        </form>
+
+        <!-- Action Container -->
+        <div class="flex justify-center items-center gap-8">
+            <!-- Cart Button -->
+            <a aria-label="keranjang-button" href="./keranjang">
+                <div
+                    class="flex p-2 flex-col items-center rounded-full bg-red-500 transition-all duration-300 ease-in-out cursor-pointer hover:bg-red-600 hover:scale-110 hover:shadow-lg active:bg-red-700 active:scale-95">
+                    <!-- Add SVG/Content here -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M23.936 10.7293C23.8256 10.2531 23.6127 9.80681 23.312 9.42143C23.0069 9.03896 22.622 8.72774 22.1841 8.50952C21.8387 8.33965 21.4639 8.23781 21.0801 8.20955C20.8845 6.1099 19.9539 4.14671 18.4522 2.66611C16.7424 0.958891 14.4248 0 12.0085 0C9.59221 0 7.27466 0.958891 5.5648 2.66611C4.06317 4.14671 3.13251 6.1099 2.93691 8.20955C2.55309 8.23781 2.17829 8.33965 1.83296 8.50952C1.39288 8.72434 1.00724 9.03613 0.705006 9.42143C0.402101 9.80597 0.188891 10.2533 0.0809399 10.7307C-0.0270114 11.2082 -0.0269796 11.7037 0.0810332 12.1812L1.96495 19.8964C2.28921 21.0785 2.99376 22.121 3.96976 22.8627C4.94575 23.6044 6.13885 24.0041 7.36472 24H16.6163C17.8464 24.0013 19.0427 23.5978 20.0207 22.8519C20.9987 22.1059 21.7041 21.0589 22.0281 19.8724L23.9 12.1812C24.02 11.706 24.032 11.2093 23.936 10.7293ZM8.21668 18.4325C8.21668 18.6712 8.12186 18.9001 7.95309 19.0689C7.78431 19.2376 7.55541 19.3324 7.31672 19.3324C7.07804 19.3324 6.84913 19.2376 6.68035 19.0689C6.51158 18.9001 6.41676 18.6712 6.41676 18.4325V13.705C6.41676 13.4663 6.51158 13.2374 6.68035 13.0687C6.84913 12.8999 7.07804 12.8051 7.31672 12.8051C7.55541 12.8051 7.78431 12.8999 7.95309 13.0687C8.12186 13.2374 8.21668 13.4663 8.21668 13.705V18.4325ZM12.9085 18.4325C12.9085 18.5507 12.8852 18.6677 12.84 18.7769C12.7947 18.8861 12.7285 18.9853 12.6449 19.0689C12.5613 19.1524 12.4621 19.2187 12.3529 19.2639C12.2437 19.3092 12.1267 19.3324 12.0085 19.3324C11.8903 19.3324 11.7733 19.3092 11.6641 19.2639C11.5549 19.2187 11.4557 19.1524 11.3721 19.0689C11.2886 18.9853 11.2223 18.8861 11.1771 18.7769C11.1318 18.6677 11.1086 18.5507 11.1086 18.4325V13.705C11.1086 13.4663 11.2034 13.2374 11.3721 13.0687C11.5409 12.8999 11.7698 12.8051 12.0085 12.8051C12.2472 12.8051 12.4761 12.8999 12.6449 13.0687C12.8137 13.2374 12.9085 13.4663 12.9085 13.705V18.4325ZM17.6003 18.4325C17.6003 18.6712 17.5055 18.9001 17.3367 19.0689C17.1679 19.2376 16.939 19.3324 16.7003 19.3324C16.4616 19.3324 16.2327 19.2376 16.0639 19.0689C15.8952 18.9001 15.8004 18.6712 15.8004 18.4325V13.705C15.8004 13.4663 15.8952 13.2374 16.0639 13.0687C16.2327 12.8999 16.4616 12.8051 16.7003 12.8051C16.939 12.8051 17.1679 12.8999 17.3367 13.0687C17.5055 13.2374 17.6003 13.4663 17.6003 13.705V18.4325ZM4.74883 8.18555C4.94618 6.57486 5.68193 5.07808 6.83674 3.93798C8.21067 2.57074 10.0702 1.80318 12.0085 1.80318C13.9469 1.80318 15.8064 2.57074 17.1803 3.93798C18.3351 5.07808 19.0709 6.57486 19.2682 8.18555H4.74883Z"
+                            fill="#ECF0F1" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Login & Register Buttons -->
+            <div class="flex justify-center items-center gap-2">
+                <!-- Login Button -->
+                <button type="button"
+                    class="flex px-3 py-1 justify-center items-center gap-2 border border-red-500 rounded-lg text-white bg-transparent transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
+                    <span class="font-bold text-sm">Masuk</span>
+                </button>
+                <!-- Register Button -->
+                <button type="button"
+                    class="flex px-3 py-1 justify-center items-center gap-2 rounded-lg text-white bg-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
+                    <span class="font-bold text-sm">Daftar</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Headline 1 Brand U -->
+    <div class="col-span-12 flex flex-col items-center justify-center px-20 pt-3">
         <div
-            class="flex h-[64px] min-h-[64px] px-[10px] flex-col justify-center items-center gap-[10px] flex-shrink-0 self-stretch rounded-t-[80px] bg-Primary-Colors-4">
-            <!-- Isi Navbar (Tambahkan Elemen di sini) -->
-            <p class="text-white">Navbar Content</p>
+            class=" flex h-[64px] min-h-[64px] px-[10px] flex-col justify-between w-full max-w-screen-xl items-center gap-[10px] self-stretch rounded-t-[80px] bg-Primary-Colors-4 mx-auto">
+
         </div>
 
         <div
-            class="flex-1 self-stretch rounded-b-[80px] bg-Primary grid grid-cols-12 grid-rows-[repeat(8,_80px)] gap-2">
+            class="flex-1 self-center max-w-screen-xl rounded-b-[80px] bg-Primary grid grid-cols-12 grid-rows-[repeat(8,_80px)] gap-2">
             <!-- Container 1 -->
-            <div class="col-span-4 row-span-3 bg-gray-400 flex flex-col items-start pl-2 rounded-[24px]">
-                Container 1
+            <div class=" relative col-span-4 row-span-3 flex flex-col items-start pl-2 rounded-[24px]">
+                <div class=" relative flex flex-col items-center gap-4 px-6 pb-6  self-stretch">
+                    <div class="absolute w-full h-auto max-w-[360px] max-h-[265px]">
+                        <object data="/src/assets/svg/container-headline.svg" type="image/svg+xml"
+                            class="w-full h-auto">
+                        </object>
+                    </div>
+                    <div class="icon-container absolute flex mb-10 left-0 bottom-0">
+                        <!-- style svg -->
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+                    <!-- Tanggal -->
+                    <div class="date-container flex justify-end items-start gap-2 w-full">
+                        <p class="w-[131px] text-Third font-poppins font-bold text-label-large tracking-[0.3px]">
+                            14 / 11 / 2024
+                        </p>
+                    </div>
+                    <!-- Konten -->
+                    <div class="content-container flex flex-col justify-between items-end flex-1 w-full z-10">
+                        <h2 class="w-full text-Third font-playfair text-logo-large font-bold">
+                            BrandU
+                        </h2>
+                        <div class="description-container flex w-[252px] p-2 justify-center items-center z-10">
+                            <p class="text-white font-quicksand font-medium text-body-medium">
+                                BrandU berfokus pada fashion yang relevan dengan anak muda,
+                                khususnya mahasiswa yang mencari produk terkini dan trendi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!-- Container 2 -->
-            <div class="col-span-4 row-span-3 row-start-4 bg-gray-400 flex flex-col items-start pl-2 rounded-[24px]">
-                Container 2
+            <div
+                class="col-span-4 row-span-3 row-start-4 flex flex-row items-start px-3 py-2 justify-center gap-2 flex-shrink-0 ">
+                <div class="flex-1 self-stretch rounded-[48px] border-image-headline overflow-hidden">
+                    <img class="w-full h-full object-cover" src="/public/Outfit/outfit-11.jpg" alt="image-outfit">
+                </div>
+                <div class="flex-1 self-stretch rounded-[48px] border-image-headline overflow-hidden">
+                    <img class="w-full h-full object-cover" src="/public/Outfit/outfit-11.jpg" alt="image-outfit">
+                </div>
             </div>
-            <!-- Container 3 -->
-            <div class="col-span-5 col-start-5 row-span-6 bg-gray-400 flex flex-col items-start pl-2 rounded-[24px]">
-                Container 3
+
+
+            <!-- Container 3 photo BrandU di Tengah-->
+            <div
+                class="col-span-5 col-start-5 row-span-6 flex flex-col px-3 py-2 justify-end items-start flex-shrink-0 rounded-[48px] bg-img-headline bg-cover bg-center">
+
+                <div
+                    class="flex flex-col w-[296px] h-[176px] p-[30px_60px_16px_24px] items-start gap-2 flex-shrink-0 relative rounded-[48px]">
+                    <div class="icon-container absolute flex left-0 top-0">
+                        <object data="/src/assets/svg/BrandU-Headline.svg" type="image/svg+xml"></object>
+                    </div>
+                    <div class="icon-container absolute flex right-0 bottom-0">
+                        <object data="/src/assets/svg/ligth-B.svg" type="image/svg+xml"></object>
+                    </div>
+                    <!-- Header -->
+                    <div class="flex flex-col justify-between items-center flex-[1_0_0] w-full z-10">
+                        <h2 class="w-full text-[#ecf0f1] font-playfair text-[52px] leading-[68px] font-normal">
+                            BrandU
+                        </h2>
+                        <div class="flex items-center w-full">
+                            <p class="text-[#ffe31a] font-poppins text-[20px] leading-[32px] font-semibold">
+                                This For You
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="flex items-center gap-2 w-full z-10">
+                        <!-- Fashion Container -->
+                        <div
+                            class="flex justify-center items-center px-2 py-0 gap-2 flex-[1_0_0] rounded-[48px] border border-[#e74c3c] text-[#e74c3c] transition-all duration-300 bg-transparent hover:bg-[#e74c3c] hover:text-white hover:shadow-[0_6px_12px_rgba(231,76,60,0.4)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_3px_6px_rgba(231,76,60,0.2)] cursor-pointer">
+                            <span class="text-Third text-body-medium font-poppins ">Fashion</span>
+                        </div>
+                        <!-- Outfit Container -->
+                        <div
+                            class="flex justify-center items-center px-5 py-0 gap-2 flex-[1_0_0] rounded-[48px] border border-[#e74c3c] text-[#e74c3c] transition-all duration-300 bg-transparent hover:bg-[#e74c3c] hover:text-white hover:shadow-[0_6px_12px_rgba(231,76,60,0.4)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[0_3px_6px_rgba(231,76,60,0.2)] cursor-pointer">
+                            <span class="text-Third text-body-medium font-poppins">Outfit</span>
+                        </div>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute right-[15px] top-[20px] flex items-center gap-2 p-4 rounded-full bg-[#e74c3c] shadow-[0_4px_8px_rgba(0,0,0,0.2)] cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 30 30" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M25.3371 0.20979C25.9584 -0.0164708 26.6315 -0.0607846 27.2772 0.0820568C27.9228 0.224898 28.5143 0.548959 28.982 1.01615C29.4497 1.48335 29.7743 2.07426 29.9175 2.71944C30.0608 3.36462 30.0168 4.03725 29.7906 4.6583L22.1272 27.6122C21.9408 28.1763 21.6126 28.6831 21.1741 29.0842C20.7356 29.4852 20.2015 29.7672 19.6228 29.9029C19.0454 30.0432 18.4415 30.0313 17.8702 29.8682C17.2989 29.7052 16.7797 29.3967 16.3635 28.9729L12.2509 24.8823L7.93248 27.1151C7.76694 27.2009 7.58187 27.242 7.39555 27.2345C7.20924 27.227 7.02811 27.171 6.87005 27.0721C6.712 26.9732 6.58248 26.8349 6.4943 26.6707C6.40611 26.5065 6.3623 26.3221 6.3672 26.1358L6.54517 19.3131L21.6512 8.34824C21.7937 8.24483 21.9144 8.11438 22.0064 7.96435C22.0984 7.81431 22.16 7.64764 22.1876 7.47383C22.2152 7.30002 22.2082 7.12248 22.1671 6.95136C22.1261 6.78023 22.0516 6.61887 21.9482 6.47648C21.8447 6.33409 21.7142 6.21347 21.564 6.12149C21.4139 6.02952 21.2471 5.968 21.0732 5.94044C20.8993 5.91288 20.7216 5.91982 20.5504 5.96088C20.3791 6.00193 20.2177 6.07629 20.0752 6.1797L4.71401 17.331L1.00451 13.6239C0.604724 13.2242 0.309983 12.7321 0.146505 12.1911C-0.0169731 11.6501 -0.0441185 11.0772 0.0674837 10.5232C0.179695 9.91756 0.451134 9.35266 0.853947 8.88647C1.25676 8.42028 1.77644 8.06959 2.35965 7.87039H2.36609L25.335 0.207647L25.3371 0.20979Z"
+                                fill="#ECF0F1" />
+                        </svg>
+                    </div>
+                </div>
+
             </div>
             <!-- Container 4 -->
-            <div class="col-span-3 col-start-10 row-span-3 bg-gray-400 flex flex-col items-start pl-2 rounded-[24px]">
-                Container 4
-            </div>
-            <!-- Container 5 -->
             <div
-                class="col-span-3 col-start-10 row-span-3 row-start-4 bg-gray-400 flex flex-col items-start pl-2 rounded-[24px]">
-                Container 5
+                class="col-span-3 col-start-10 row-span-3 inline-flex py-2 px-4 flex-col justify-between items-center flex-shrink-0">
+                <div class="flex items-center gap-5 self-stretch">
+                    <h2 class="text-white font-poppins text-headline-large">Best Value</h2>
+                    <h3
+                        class="text-Secondary text-headline-large font-poppins flex flex-col justify-center flex-1 self-stretch ">
+                        #1
+                    </h3>
+                </div>
+                <div class="flex flex-col items-start self-stretch">
+                    <span class="self-stretch text-white font-quicksand text-title-medium">Trendy, Fresh, & You </span>
+                    <span class="self-stretch text-white font-quicksand text-title-medium">BrandU untuk Gaya
+                        Kuliahanmu!</span>
+                </div>
+            </div>
+
+            <!-- Container 5 New Brand-->
+            <div
+                class="relative col-span-3 col-start-10 row-span-3 row-start-4 flex pr-2 pb-6 flex-col items-center flex-shrink-0 ">
+                <img class="flex-1 rounded-[48px] bg-no-repeat bg-grey-2 w-full h-full"
+                    src="/public/Outfit/img-new-brand.png" alt="new Brand">
+                <div class="flex pl-8 items-center absolute bottom-0">
+                    <button type="button"
+                        class="flex p-3 items-center rounded-2xl bg-Secondary transition-all duration-300 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
+                        <span class="text-Third text-label-small font-quicksand">New brand</span>
+                    </button>
+                </div>
+
             </div>
             <!-- Container 6 -->
-            <div class="col-span-12 row-span-8 bg-gray-400 flex flex-col items-start pl-2 rounded-[24px]">
-                Container 6
+            <div
+                class="col-span-12 row-span-2 row-start-7 pb-2 flex flex-col gap-[10px] justify-center items-center flex-shrink-0">
+                <aside
+                    class="flex py-2 px-12 justify-between items-center flex-[1_0_0] gap-8 rounded-[48px] bg-Primary-Colors-3 ">
+                    <div
+                        class="flex px-3.5 py-5 justify-center items-center gap-2.5 rounded-[48px] border-2 border-Primary-Layer-5 bg-grad-glass">
+                        <p class="text-Third text-headline-small">Category</p>
+                    </div>
+                    <div
+                        class=" relative flex w-[208px]  px-4 pb-[55px] pt-4 flex-col justify-center items-start gap-4 self-stretch rounded-3xl ">
+                        <div class="icon-container absolute flex left-0 top-0">
+                            <object data="/src/assets/svg/category.svg" type="image/svg+xml"></object>
+                        </div>
+                        <div
+                            class="click-di-sini-container absolute flex pr-[2px] pl-2 py-2 flex-col items-start gap-[10px] right-0 bottom-0">
+                            <button type="button"
+                                class="btn flex py-[2px] pr-[2px] pl-6 justify-center gap-6 self-stretch rounded-3xl bg-Primary-Colors-1 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                                <p
+                                    class="text-Third flex flex-col justify-center self-stretch text-label-small font-quicksand">
+                                    Click Di sini</p>
+                                <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                            fill="#ECF0F1" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <h4 class="self-stretch text-Third text-label-large font-quicksand z-10">Recommendation</h4>
+                    </div>
+
+                    <div
+                        class=" relative flex w-[208px] px-4 pb-[55px] pt-4 flex-col justify-center items-start gap-4 self-stretch rounded-3xl">
+                        <div class="icon-container absolute flex left-0 bottom-0">
+                            <!-- style svg -->
+                            <object data="/src/assets/svg/category.svg" type="image/svg+xml"></object>
+                        </div>
+                        <div
+                            class="click-di-sini-container absolute flex pr-[2px] pl-2 py-2 flex-col items-start gap-[10px] right-0 bottom-0">
+                            <button type="button"
+                                class="btn flex py-[2px] pr-[2px] pl-6 justify-center gap-6 self-stretch rounded-3xl bg-Primary-Colors-1 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                                <p
+                                    class="text-Third flex flex-col justify-center self-stretch text-label-small font-quicksand">
+                                    Click Di sini</p>
+                                <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                            fill="#ECF0F1" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <h4 class="self-stretch text-Third text-label-large font-quicksand z-10">Recommendation</h4>
+                    </div>
+
+                    <div
+                        class="flex w-[126px] px-1 pt-6 pb-1 justify-center items-center self-stretch rounded-[24px] relative">
+                        <div class="icon-container absolute flex left-0 bottom-0">
+                            <!-- style svg -->
+                            <object data="/src/assets/svg/mini-category.svg" type="image/svg+xml"></object>
+                        </div>
+                        <div class="absolute flex flex-col items-start pr-1 pt-2 pb-0 right-0 top-0 ">
+                            <button type="button"
+                                class="flex pr-[2px] py-[2px] pl-2 justify-center items-center gap-2 self-stretch border-Primary-Colors-1 bg-Primary-Colors-1 rounded-[24px] cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                                <p class="text-Third text-center font-poppins text-[12px] font-medium leading-[20px]">
+                                    Click di sini
+                                </p>
+                                <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 29 28"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                            fill="#ECF0F1" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <h4 class="flex-1 text-Third text-center font-poppins text-label-medium z-10">
+                            Show All
+                        </h4>
+
+                    </div>
+
+                </aside>
+
             </div>
         </div>
 
     </div>
 
+    <!-- END Headline 1 -->
 
+
+
+
+    <!-- Start Headkine 2 -->
     <div class="col-span-12  flex flex-col items-center justify-end gap-[10px] flex-shrink-0 pt-[88px]">
         <!-- Background Gradient Container -->
-        <div class="bg-grad-primarygrid bg-cover bg-center flex items-start justify-between p-[44px_80px] self-stretch">
+        <div
+            class="max-w-screen-xl bg-grad-primarygrid bg-cover bg-center flex items-start justify-between p-[44px_80px]">
 
             <!-- Content Container -->
-            <div
-                class="flex flex-col items-center justify-center flex-[1_0_0] p-6 min-h-[520px] rounded-[24px] bg-Primary-Colors-1 self-stretch">
-                <!-- Content goes here -->
+            <div class="flex p-6 flex-col justify-center items-center flex-1 self-stretch min-h-[520px]">
+                <h2 class="self-stretch text-Primary font-playfair text-logo-large"> Find Your Style From Here</h2>
+                <span class="self-stretch text-black font-quicksand text-title-small">Temukan koleksi yang sesuai dengan
+                    gayamu setiap hari</span>
             </div>
 
             <!-- Category Container -->
-            <div class="grid grid-cols-6 grid-rows-6 gap-2 flex-[1_0_0] self-stretch">
+            <div class="grid grid-cols-6 grid-rows-6 min-w-[560px] gap-2 flex-[1_0_0] self-stretch">
                 <!-- Container 1 -->
-                <div class="col-span-3 row-span-2 bg-Primary-Colors-3 flex flex-col items-start pl-2 rounded-3xl">
-                    Container 1
+                <div
+                    class="relative flex col-span-3 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex left-0 bottom-0">
+                        <object data="/src/assets/svg/category-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <div class="flex pt-[2px] pb-2 px-2 flex-col items-start absolute left-0 bottom-0">
+                        <button type="button"
+                            class="all-unset flex w-[179px] py-[2px] pr-[2px] pl-3 justify-between items-center rounded-[24px] bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                            <p class=" flex-1 text-center text-Third font-quicksand text-[12px] font-medium
+                            leading-[20px]">
+                                Lihat koleksi
+                            </p>
+                            <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 29 28"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                        fill="#ECF0F1" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Header Container -->
+                    <div class="flex flex-col items-start gap-2.5 w-full z-10">
+                        <h2
+                            class="w-full text-Third font-quicksand text-[20px] font-bold leading-[24px] tracking-[0.3px]">
+                            Tren Terbaru
+                        </h2>
+                        <span class="w-full text-Third font-quicksand text-[12px] font-medium leading-[20px]">
+                            Update Gayamu dengan Koleksi Terkini!
+                        </span>
+                    </div>
                 </div>
+
                 <!-- Container 2 -->
                 <div
-                    class="col-start-4 col-span-3 row-span-2 bg-Primary-Colors-3 flex flex-col items-start pl-2 rounded-3xl">
-                    Container 2
+                    class="relative flex col-start-4 col-span-3 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex left-0 bottom-0">
+                        <object data="/src/assets/svg/category-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <div class="flex pt-[2px] pb-2 px-2 flex-col items-start absolute left-0 bottom-0">
+                        <button type="button"
+                            class="all-unset flex w-[179px] py-[2px] pr-[2px] pl-3 justify-between items-center rounded-[24px] bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                            <p class=" flex-1 text-center text-Third font-quicksand text-[12px] font-medium
+                        leading-[20px]">
+                                Lihat koleksi
+                            </p>
+                            <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 29 28"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                        fill="#ECF0F1" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Header Container -->
+                    <div class="flex flex-col items-start gap-2.5 w-full z-10">
+                        <h2
+                            class="w-full text-Third font-quicksand text-[20px] font-bold leading-[24px] tracking-[0.3px]">
+                            Tren Terbaru
+                        </h2>
+                        <span class="w-full text-Third font-quicksand text-[12px] font-medium leading-[20px]">
+                            Update Gayamu dengan Koleksi Terkini!
+                        </span>
+                    </div>
                 </div>
+
+
                 <!-- Container 3 -->
                 <div
-                    class="col-span-3 row-start-3 row-span-2 bg-Primary-Colors-3 flex flex-col items-start pl-2 rounded-3xl">
-                    Container 3
+                    class="relative flex col-span-3 row-start-3 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex left-0 bottom-0">
+                        <object data="/src/assets/svg/category-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <div class="flex pt-[2px] pb-2 px-2 flex-col items-start absolute left-0 bottom-0">
+                        <button type="button"
+                            class="all-unset flex w-[179px] py-[2px] pr-[2px] pl-3 justify-between items-center rounded-[24px] bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                            <p class=" flex-1 text-center text-Third font-quicksand text-[12px] font-medium
+                            leading-[20px]">
+                                Lihat koleksi
+                            </p>
+                            <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 29 28"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                        fill="#ECF0F1" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Header Container -->
+                    <div class="flex flex-col items-start gap-2.5 w-full z-10">
+                        <h2
+                            class="w-full text-Third font-quicksand text-[20px] font-bold leading-[24px] tracking-[0.3px]">
+                            Tren Terbaru
+                        </h2>
+                        <span class="w-full text-Third font-quicksand text-[12px] font-medium leading-[20px]">
+                            Update Gayamu dengan Koleksi Terkini!
+                        </span>
+                    </div>
                 </div>
+
+
                 <!-- Container 4 -->
+
                 <div
-                    class="col-start-4 col-span-3 row-start-3 row-span-2 bg-Primary-Colors-3 flex flex-col items-start pl-2 rounded-3xl">
-                    Container 4
+                    class="relative flex col-start-4 col-span-3 row-start-3 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex left-0 bottom-0">
+                        <object data="/src/assets/svg/category-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <div class="flex pt-[2px] pb-2 px-2 flex-col items-start absolute left-0 bottom-0">
+                        <button type="button"
+                            class="all-unset flex w-[179px] py-[2px] pr-[2px] pl-3 justify-between items-center rounded-[24px] bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                            <p class=" flex-1 text-center text-Third font-quicksand text-[12px] font-medium
+                            leading-[20px]">
+                                Lihat koleksi
+                            </p>
+                            <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 29 28"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                        fill="#ECF0F1" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Header Container -->
+                    <div class="flex flex-col items-start gap-2.5 w-full z-10">
+                        <h2
+                            class="w-full text-Third font-quicksand text-[20px] font-bold leading-[24px] tracking-[0.3px]">
+                            Tren Terbaru
+                        </h2>
+                        <span class="w-full text-Third font-quicksand text-[12px] font-medium leading-[20px]">
+                            Update Gayamu dengan Koleksi Terkini!
+                        </span>
+                    </div>
                 </div>
                 <!-- Container 5 -->
+
                 <div
-                    class="col-span-3 row-start-5 row-span-2 bg-Primary-Colors-3 flex flex-col items-start pl-2 rounded-3xl">
-                    Container 5
+                    class="relative flex col-span-3 row-start-5 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex left-0 bottom-0">
+                        <object data="/src/assets/svg/category-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <div class="flex pt-[2px] pb-2 px-2 flex-col items-start absolute left-0 bottom-0">
+                        <button type="button"
+                            class="all-unset flex w-[179px] py-[2px] pr-[2px] pl-3 justify-between items-center rounded-[24px] bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                            <p class=" flex-1 text-center text-Third font-quicksand text-[12px] font-medium
+                            leading-[20px]">
+                                Lihat koleksi
+                            </p>
+                            <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 29 28"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                        fill="#ECF0F1" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Header Container -->
+                    <div class="flex flex-col items-start gap-2.5 w-full z-10">
+                        <h2
+                            class="w-full text-Third font-quicksand text-[20px] font-bold leading-[24px] tracking-[0.3px]">
+                            Tren Terbaru
+                        </h2>
+                        <span class="w-full text-Third font-quicksand text-[12px] font-medium leading-[20px]">
+                            Update Gayamu dengan Koleksi Terkini!
+                        </span>
+                    </div>
                 </div>
+
+
                 <!-- Container 6 -->
                 <div
-                    class="col-start-4 col-span-3 row-start-5 row-span-2 bg-Primary-Colors-3 flex flex-col items-start pl-2 rounded-3xl">
-                    Container 6
+                    class="relative flex col-start-4 col-span-3 row-start-5 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex left-0 bottom-0">
+                        <object data="/src/assets/svg/category-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/Ligth.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <div class="flex pt-[2px] pb-2 px-2 flex-col items-start absolute left-0 bottom-0">
+                        <button type="button"
+                            class="all-unset flex w-[179px] py-[2px] pr-[2px] pl-3 justify-between items-center rounded-[24px] bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                            <p class=" flex-1 text-center text-Third font-quicksand text-[12px] font-medium
+                            leading-[20px]">
+                                Lihat koleksi
+                            </p>
+                            <div class="flex p-2 items-center rounded-3xl bg-Secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 29 28"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.7603 0.195804C24.3402 -0.0153727 24.9684 -0.0567323 25.571 0.0765863C26.1736 0.209905 26.7256 0.512362 27.1622 0.948409C27.5987 1.38446 27.9016 1.93597 28.0353 2.53814C28.169 3.14031 28.1279 3.7681 27.9169 4.34774L20.7644 25.7714C20.5903 26.2979 20.2841 26.7709 19.8748 27.1452C19.4655 27.5196 18.967 27.7827 18.4269 27.9094C17.888 28.0403 17.3244 28.0292 16.7912 27.877C16.2579 27.7249 15.7734 27.4369 15.3849 27.0414L11.5465 23.2235L7.51595 25.3074C7.36145 25.3875 7.18872 25.4259 7.01482 25.4189C6.84092 25.4118 6.67187 25.3596 6.52435 25.2673C6.37683 25.175 6.25595 25.0459 6.17365 24.8926C6.09134 24.7394 6.05045 24.5673 6.05502 24.3934L6.22113 18.0255L20.3201 7.79169C20.4531 7.69517 20.5657 7.57342 20.6516 7.43339C20.7375 7.29336 20.795 7.13779 20.8207 6.97557C20.8465 6.81335 20.84 6.64765 20.8016 6.48793C20.7633 6.32822 20.6938 6.17761 20.5973 6.04472C20.5007 5.91182 20.3788 5.79924 20.2387 5.71339C20.0986 5.62755 19.9429 5.57013 19.7806 5.54441C19.6183 5.51869 19.4525 5.52517 19.2927 5.56349C19.1328 5.6018 18.9821 5.6712 18.8491 5.76772L4.51204 16.1756L1.04984 12.7156C0.676714 12.3426 0.401622 11.8832 0.249043 11.3784C0.0964631 10.8735 0.0711274 10.3387 0.175289 9.82166C0.28002 9.25639 0.533363 8.72915 0.909321 8.29404C1.28528 7.85893 1.77031 7.53162 2.31465 7.3457H2.32065L23.7583 0.193804L23.7603 0.195804Z"
+                                        fill="#ECF0F1" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Header Container -->
+                    <div class="flex flex-col items-start gap-2.5 w-full z-10">
+                        <h2
+                            class="w-full text-Third font-quicksand text-[20px] font-bold leading-[24px] tracking-[0.3px]">
+                            Tren Terbaru
+                        </h2>
+                        <span class="w-full text-Third font-quicksand text-[12px] font-medium leading-[20px]">
+                            Update Gayamu dengan Koleksi Terkini!
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End Headline 2 -->
+
+
 
     <div class="col-span-12 flex flex-col items-center justify-end flex-shrink-0 pt-[88px]">
         <!-- Main Image -->

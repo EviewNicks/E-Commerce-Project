@@ -102,6 +102,7 @@ module.exports = {
 
         "img-login": "url('/public/Outfit/login-image.jpg')",
         "img-register": "url('/public/Outfit/outfit-4.jpg')",
+        "img-headline": "url('/public/Outfit/Headline-Photos.png')",
       },
       boxShadow: {
         custom: "0px 4px 24px 0px rgba(0, 0, 0, 0.32)",
@@ -109,82 +110,90 @@ module.exports = {
       fontSize: {
         // Logo Styles
         "logo-large": [
-          "64px",
-          { lineHeight: "90px", fontWeight: "700", fontFamily: "Playfair" },
+          "4rem", // 64px
+          { lineHeight: "5.625rem", fontWeight: "700", fontFamily: "Playfair" }, // 90px
         ],
         "logo-medium": [
-          "48px",
-          { lineHeight: "68px", fontWeight: "600", fontFamily: "Playfair" },
+          "3rem", // 48px
+          { lineHeight: "4.25rem", fontWeight: "600", fontFamily: "Playfair" }, // 68px
         ],
         "logo-small": [
-          "32px",
-          { lineHeight: "44px", fontWeight: "500", fontFamily: "Playfair" },
+          "2rem", // 32px
+          { lineHeight: "2.75rem", fontWeight: "500", fontFamily: "Playfair" }, // 44px
         ],
 
         // Headline Styles
         "headline-large": [
-          "48px",
-          { lineHeight: "68px", fontWeight: "600", fontFamily: "Poppins" },
+          "3rem", // 48px
+          { lineHeight: "4.25rem", fontWeight: "600", fontFamily: "Poppins" }, // 68px
         ],
         "headline-medium": [
-          "32px",
-          { lineHeight: "44px", fontWeight: "600", fontFamily: "Poppins" },
+          "2rem", // 32px
+          { lineHeight: "2.75rem", fontWeight: "600", fontFamily: "Poppins" }, // 44px
         ],
         "headline-small": [
-          "20px",
-          { lineHeight: "28px", fontWeight: "600", fontFamily: "Poppins" },
+          "1.25rem", // 20px
+          { lineHeight: "1.75rem", fontWeight: "600", fontFamily: "Poppins" }, // 28px
         ],
 
         // Title Styles
         "title-large": [
-          "24px",
-          { lineHeight: "34px", fontWeight: "400", fontFamily: "Quicksand" },
+          "1.5rem", // 24px
+          {
+            lineHeight: "2.125rem",
+            fontWeight: "400",
+            fontFamily: "Quicksand",
+          }, // 34px
         ],
         "title-medium": [
-          "20px",
+          "1.25rem", // 20px
           {
-            lineHeight: "28px",
+            lineHeight: "1.75rem",
             fontWeight: "500",
             fontFamily: "Quicksand",
-            letterSpacing: "0.15px",
+            letterSpacing: "0.009375rem", // 0.15px
           },
         ],
         "title-small": [
-          "16px",
-          { lineHeight: "24px", fontWeight: "500", fontFamily: "Quicksand" },
+          "1rem", // 16px
+          { lineHeight: "1.5rem", fontWeight: "500", fontFamily: "Quicksand" }, // 24px
         ],
 
         // Label Styles
         "label-large": [
-          "20px",
-          { lineHeight: "24px", fontWeight: "700", fontFamily: "Quicksand" },
+          "1.25rem", // 20px
+          { lineHeight: "1.5rem", fontWeight: "700", fontFamily: "Quicksand" }, // 24px
         ],
         "label-medium": [
-          "16px",
+          "1rem", // 16px
           {
-            lineHeight: "20px",
+            lineHeight: "1.25rem",
             fontWeight: "700",
             fontFamily: "Quicksand",
-            letterSpacing: "0.1px",
+            letterSpacing: "0.00625rem", // 0.1px
           },
         ],
         "label-small": [
-          "14px",
-          { lineHeight: "20px", fontWeight: "600", fontFamily: "Quicksand" },
+          "0.875rem", // 14px
+          { lineHeight: "1.25rem", fontWeight: "600", fontFamily: "Quicksand" }, // 20px
         ],
 
         // Body Styles
         "body-large": [
-          "14px",
-          { lineHeight: "20px", fontWeight: "500", fontFamily: "Quicksand" },
+          "0.875rem", // 14px
+          { lineHeight: "1.25rem", fontWeight: "500", fontFamily: "Quicksand" }, // 20px
         ],
         "body-medium": [
-          "12px",
-          { lineHeight: "16px", fontWeight: "500", fontFamily: "Quicksand" },
+          "0.75rem", // 12px
+          { lineHeight: "1rem", fontWeight: "500", fontFamily: "Quicksand" }, // 16px
         ],
         "body-small": [
-          "10px",
-          { lineHeight: "14px", fontWeight: "500", fontFamily: "Quicksand" },
+          "0.625rem", // 10px
+          {
+            lineHeight: "0.875rem",
+            fontWeight: "500",
+            fontFamily: "Quicksand",
+          }, // 14px
         ],
       },
     },

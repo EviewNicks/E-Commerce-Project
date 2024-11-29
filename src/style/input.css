@@ -6,6 +6,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .border-image-headline {
+    border: 4px solid var(--Primary-Colors-Layer-3, #35526F);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
