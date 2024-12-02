@@ -92,6 +92,8 @@ module.exports = {
           "linear-gradient(225deg, #95a5a6 0%, rgba(149, 165, 166, 0.4) 100%)",
         "grad-pastel-blue":
           "linear-gradient(225deg, #d1e9f6 0%, rgba(209, 233, 246, 0.4) 100%)",
+        "grad-pastel-glass":
+          "linear-gradient(225deg, rgba(209, 233, 246, 0.80) 0%, rgba(209, 233, 246, 0.20) 100%))",
         "grad-pastel-pinky":
           "linear-gradient(225deg, #f1d3ce 0%, rgba(241, 211, 206, 0.4) 100%)",
         "grad-pastel-yellow":
@@ -105,7 +107,14 @@ module.exports = {
         "img-headline": "url('/public/Outfit/Headline-Photos.png')",
       },
       boxShadow: {
+        "shadow-product":
+          "51px 159px 47px 0px rgba(0,0,0,0.01), 33px 102px 43px 0px rgba(0,0,0,0.04), 18px 57px 36px 0px rgba(0,0,0,0.15), 8px 25px 27px 0px rgba(0,0,0,0.26), 2px 6px 15px 0px rgba(0,0,0,0.29)",
         custom: "0px 4px 24px 0px rgba(0, 0, 0, 0.32)",
+      },
+      dropShadow: {
+        "shadow-product":
+          "51px 159px 47px rgba(0,0,0,0.01), 33px 102px 43px rgba(0,0,0,0.04), 18px 57px 36px rgba(0,0,0,0.15), 8px 25px 27px rgba(0,0,0,0.26), 2px 6px 15px rgba(0,0,0,0.29)",
+        custom: "4px 4px 24px rgba(0, 0, 0, 0.32)",
       },
       fontSize: {
         // Logo Styles

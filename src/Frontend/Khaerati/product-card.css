@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .product-card {
   display: flex;
   width: 274px;
@@ -45,8 +51,10 @@
   border-radius: 8px;
   background: var(--Third, #ecf0f1);
 
-  height: 23px; /* Sesuaikan dengan kebutuhan */
-  overflow: hidden; /* Jika ada konten lebih, tersembunyi */
+  height: 23px;
+  /* Sesuaikan dengan kebutuhan */
+  overflow: hidden;
+  /* Jika ada konten lebih, tersembunyi */
 }
 
 .rating {
@@ -71,7 +79,8 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 166.667% */
+  line-height: 20px;
+  /* 166.667% */
 }
 
 p.sales-count {
@@ -82,7 +91,8 @@ p.sales-count {
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 166.667% */
+  line-height: 20px;
+  /* 166.667% */
 }
 
 .icons-container {
@@ -105,10 +115,9 @@ p.sales-count {
 }
 
 .solar-bag-2:hover {
-  background: var(
-    --Secondary-Hover,
-    #d63b32
-  ); /* Ganti sesuai warna hover yang diinginkan */
+  background: var(--Secondary-Hover,
+      #d63b32);
+  /* Ganti sesuai warna hover yang diinginkan */
   transform: scale(1.05);
 }
 
@@ -134,10 +143,9 @@ p.sales-count {
 }
 
 .solar-bag-3:hover {
-  background: var(
-    --Secondary-Layer-4-Hover,
-    #f8b8b3
-  ); /* Ganti sesuai warna hover yang diinginkan */
+  background: var(--Secondary-Layer-4-Hover,
+      #f8b8b3);
+  /* Ganti sesuai warna hover yang diinginkan */
   border-color: var(--Secondary-Hover, #d63b32);
   transform: scale(1.05);
 }
@@ -195,11 +203,11 @@ p.sales-count {
 }
 
 .solar-bag-4:hover {
-  background: var(
-    --Secondary-Hover,
-    #d63b32
-  ); /* Ganti dengan warna hover yang diinginkan */
-  transform: scale(1.1); /* Sedikit perbesar elemen */
+  background: var(--Secondary-Hover,
+      #d63b32);
+  /* Ganti dengan warna hover yang diinginkan */
+  transform: scale(1.1);
+  /* Sedikit perbesar elemen */
 }
 
 .solar-bag-4 svg {
@@ -242,7 +250,8 @@ p.sales-count {
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 2px; /* 166.667% */
+  line-height: 2px;
+  /* 166.667% */
 }
 
 h4.product-title {
@@ -255,7 +264,8 @@ h4.product-title {
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16px; /* 160% */
+  line-height: 16px;
+  /* 160% */
 }
 
 .price-and-stock-container {
@@ -273,7 +283,8 @@ p.price {
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 166.667% */
+  line-height: 20px;
+  /* 166.667% */
 }
 
 .stock-container {
@@ -295,5 +306,6 @@ p.price {
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
-  line-height: 3px; /* 160% */
+  line-height: 3px;
+  /* 160% */
 }
