@@ -1,5 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
+include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
 
 // Notifikasi sukses atau error
 $success = isset($_GET['success']) ? intval($_GET['success']) : null;

@@ -1,7 +1,7 @@
 <?php
 define('BASE_PATH', __DIR__ . '/../src/');
 // Routing sederhana
-$page = $_GET['page'] ?? 'products';
+$page = $_GET['page'] ?? 'register';
 
 // File khusus proses (tanpa HTML)
 $product_pages = [
@@ -76,8 +76,6 @@ if ($file_path && file_exists($file_path)) {
 </head>
 
 <body class="bg-gray-100 text-gray-800">
-    <!-- Include Navbar -->
-    <?php include __DIR__ . '/../src/Frontend/assets/navbar.php'; ?>
 
     <!-- Main Content -->
     <div class="container mx-auto p-4">
@@ -112,6 +110,9 @@ if ($file_path && file_exists($file_path)) {
                 break;
             case 'adminManagement':
                 include BASE_PATH . 'Frontend/adminManagement.php';
+                break;
+            case 'register':
+                include BASE_PATH . 'Frontend/user/register.php';
                 break;
             default:
                 http_response_code(404);

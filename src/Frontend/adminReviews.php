@@ -1,5 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
+include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
 
 // Ambil daftar produk untuk filter
 $sql_products = "SELECT product_id, name FROM products";

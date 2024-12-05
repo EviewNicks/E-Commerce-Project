@@ -1,5 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
+include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
 
 // Ambil data pesanan dari database
 $sql = "
