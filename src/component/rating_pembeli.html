@@ -10,26 +10,32 @@
 
 <body class="bg-white font-quicksand">
 
-    <section class="inline-flex flex-col items-start gap-4 p-6 rounded-2xl bg-Primary-Colors 1">
+    <section class="inline-flex flex-col items-start gap-4 p-[24px_16px] rounded-2xl bg-Primary-Colors-2">
         <!-- Judul -->
-        <h1 class="w-full text-lg font-medium leading-8 tracking-wide text-third">
+        <h1 class="self-stretch text-Third font-quicksand text-title-medium ">
             Ulasan Pembeli
         </h1>
 
         <!-- Kontainer Rating -->
-        <div class="flex flex-col items-center gap-2 w-full">
-            <div class="flex items-center gap-4 w-full">
-                <!-- Placeholder SVG -->
-                <!-- Tambahkan SVG di sini -->
-                <div class="flex items-end gap-1">
-                    <p class="text-6xl font-bold leading-tight text-third">4.9</p>
-                    <p class="text-lg font-bold leading-6 tracking-wider text-third">/5.0</p>
+        <div class="flex flex-col items-center justify-center gap-2 w-full">
+            <div class="flex items-center justify-center gap-3 self-stretch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 49 48" fill="none">
+                    <path
+                        d="M37.466 33.534C34.7323 34.1904 31.8785 34.1586 29.1602 33.4414C26.4418 32.7243 23.9437 31.3441 21.8897 29.4246C19.8356 27.5051 18.2896 25.1061 17.3902 22.4425C16.4908 19.7789 16.266 16.9338 16.736 14.162C16.6656 14.2322 16.59 14.297 16.51 14.356C15.95 14.782 15.25 14.94 13.85 15.256L12.58 15.544C7.65998 16.658 5.19998 17.214 4.61398 19.096C4.02998 20.976 5.70598 22.938 9.05998 26.86L9.92798 27.874C10.88 28.988 11.358 29.546 11.572 30.234C11.786 30.924 11.714 31.668 11.57 33.154L11.438 34.508C10.932 39.742 10.678 42.358 12.21 43.52C13.742 44.682 16.046 43.624 20.65 41.502L21.844 40.954C23.152 40.35 23.806 40.05 24.5 40.05C25.194 40.05 25.848 40.35 27.158 40.954L28.348 41.502C32.954 43.622 35.258 44.682 36.788 43.522C38.322 42.358 38.068 39.742 37.562 34.508L37.466 33.534Z"
+                        fill="#FFE31A" />
+                    <path opacity="0.5"
+                        d="M18.8059 10.816L18.1499 11.992C17.4299 13.284 17.0699 13.93 16.5099 14.356C16.5899 14.296 16.6652 14.2313 16.7359 14.162C16.2658 16.934 16.4906 19.7793 17.3901 22.4432C18.2896 25.107 19.8358 27.5061 21.8901 29.4257C23.9444 31.3453 26.4428 32.7253 29.1614 33.4423C31.8801 34.1593 34.7341 34.1908 37.4679 33.534L37.4279 33.154C37.2859 31.668 37.2139 30.924 37.4279 30.234C37.6419 29.546 38.1179 28.988 39.0719 27.874L39.9399 26.86C43.2939 22.94 44.9699 20.978 44.3839 19.096C43.7999 17.214 41.3399 16.656 36.4199 15.544L35.1479 15.256C33.7499 14.94 33.0499 14.782 32.4879 14.356C31.9279 13.93 31.5679 13.284 30.8479 11.992L30.1939 10.816C27.6599 6.272 26.3939 4 24.4999 4C22.6059 4 21.3399 6.272 18.8059 10.816Z"
+                        fill="#FFE31A" />
+                </svg>
+                <div class="flex items-end">
+                    <p class="text-Third text-center font-quicksand text-headline-large">4.9</p>
+                    <p class="text-Third text-center font-quicksand text-label-large">/5.0</p>
                 </div>
             </div>
-            <div class="flex items-center gap-2">
-                <p class="text-sm font-semibold leading-4 text-third">486 rating</p>
-                <span class="text-sm font-semibold leading-4 text-third">.</span>
-                <p class="text-sm font-semibold leading-4 text-third">273 ulasan</p>
+            <div class="flex justify-center items-center gap-2">
+                <p class="text-Third text-center font-quicksand text-label-small">486 rating</p>
+                <span class="text-Third text-center font-quicksand text-label-small">.</span>
+                <p class="text-Third text-center font-quicksand text-label-small">273 ulasan</p>
             </div>
         </div>
 
@@ -43,12 +49,12 @@
                             d="M6.10183 3.60534C6.9465 2.09068 7.3685 1.33334 7.99983 1.33334C8.63116 1.33334 9.05316 2.09068 9.89783 3.60534L10.1165 3.99734C10.3565 4.42801 10.4765 4.64334 10.6632 4.78534C10.8498 4.92734 11.0832 4.98001 11.5498 5.08534L11.9738 5.18134C13.6138 5.55268 14.4332 5.73801 14.6285 6.36534C14.8232 6.99201 14.2645 7.64601 13.1465 8.95334L12.8572 9.29134C12.5398 9.66268 12.3805 9.84868 12.3092 10.078C12.2378 10.308 12.2618 10.556 12.3098 11.0513L12.3538 11.5027C12.5225 13.2473 12.6072 14.1193 12.0965 14.5067C11.5858 14.894 10.8178 14.5407 9.28316 13.834L8.88516 13.6513C8.44916 13.45 8.23116 13.35 7.99983 13.35C7.7685 13.35 7.5505 13.45 7.1145 13.6513L6.71716 13.834C5.18183 14.5407 4.41383 14.894 3.90383 14.5073C3.3925 14.1193 3.47716 13.2473 3.64583 11.5027L3.68983 11.052C3.73783 10.556 3.76183 10.308 3.68983 10.0787C3.61916 9.84868 3.45983 9.66268 3.1425 9.29201L2.85316 8.95334C1.73516 7.64668 1.1765 6.99268 1.37116 6.36534C1.56583 5.73801 2.3865 5.55201 4.0265 5.18134L4.4505 5.08534C4.9165 4.98001 5.14916 4.92734 5.3365 4.78534C5.52383 4.64334 5.64316 4.42801 5.88316 3.99734L6.10183 3.60534Z"
                             fill="#FFE31A" />
                     </svg>
-                    <p class="text-base font-bold leading-5 tracking-wide text-third">5</p>
+                    <p class="text-Third text-center font-quicksand text-label-small">5</p>
                 </div>
                 <div class="flex flex-1 flex-col items-center gap-2">
-                    <div class="h-1 w-full rounded bg-ternary"></div>
+                    <div class="h-1 w-full rounded bg-Ternary"></div>
                 </div>
-                <p class="w-12 text-base font-bold leading-5 tracking-wide text-third">201</p>
+                <p class="w-12 text-Third text-center font-quicksand text-label-small">201</p>
             </div>
 
             <!-- Breakdown Rating 4 -->
@@ -59,15 +65,15 @@
                             d="M6.10183 3.60534C6.9465 2.09068 7.3685 1.33334 7.99983 1.33334C8.63116 1.33334 9.05316 2.09068 9.89783 3.60534L10.1165 3.99734C10.3565 4.42801 10.4765 4.64334 10.6632 4.78534C10.8498 4.92734 11.0832 4.98001 11.5498 5.08534L11.9738 5.18134C13.6138 5.55268 14.4332 5.73801 14.6285 6.36534C14.8232 6.99201 14.2645 7.64601 13.1465 8.95334L12.8572 9.29134C12.5398 9.66268 12.3805 9.84868 12.3092 10.078C12.2378 10.308 12.2618 10.556 12.3098 11.0513L12.3538 11.5027C12.5225 13.2473 12.6072 14.1193 12.0965 14.5067C11.5858 14.894 10.8178 14.5407 9.28316 13.834L8.88516 13.6513C8.44916 13.45 8.23116 13.35 7.99983 13.35C7.7685 13.35 7.5505 13.45 7.1145 13.6513L6.71716 13.834C5.18183 14.5407 4.41383 14.894 3.90383 14.5073C3.3925 14.1193 3.47716 13.2473 3.64583 11.5027L3.68983 11.052C3.73783 10.556 3.76183 10.308 3.68983 10.0787C3.61916 9.84868 3.45983 9.66268 3.1425 9.29201L2.85316 8.95334C1.73516 7.64668 1.1765 6.99268 1.37116 6.36534C1.56583 5.73801 2.3865 5.55201 4.0265 5.18134L4.4505 5.08534C4.9165 4.98001 5.14916 4.92734 5.3365 4.78534C5.52383 4.64334 5.64316 4.42801 5.88316 3.99734L6.10183 3.60534Z"
                             fill="#FFE31A" />
                     </svg>
-                    <p class="text-base font-bold leading-5 tracking-wide text-third">4</p>
+                    <p class="text-Third text-center font-quicksand text-label-small">4</p>
                 </div>
                 <div class="flex flex-1 flex-col items-center gap-2">
-                    <div class="h-1 w-full rounded bg-ternary"></div>
+                    <div class="h-1 w-full rounded bg-Ternary"></div>
                 </div>
-                <p class="w-12 text-base font-bold leading-5 tracking-wide text-third">150</p>
+                <p class="w-12 text-Third text-center font-quicksand text-label-small">150</p>
             </div>
 
-            <!-- Breakdown Rating 3 -->
+            <!-- Braekdown rating 3 -->
             <div class="flex items-center gap-4 w-60">
                 <div class="flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -75,15 +81,15 @@
                             d="M6.10183 3.60534C6.9465 2.09068 7.3685 1.33334 7.99983 1.33334C8.63116 1.33334 9.05316 2.09068 9.89783 3.60534L10.1165 3.99734C10.3565 4.42801 10.4765 4.64334 10.6632 4.78534C10.8498 4.92734 11.0832 4.98001 11.5498 5.08534L11.9738 5.18134C13.6138 5.55268 14.4332 5.73801 14.6285 6.36534C14.8232 6.99201 14.2645 7.64601 13.1465 8.95334L12.8572 9.29134C12.5398 9.66268 12.3805 9.84868 12.3092 10.078C12.2378 10.308 12.2618 10.556 12.3098 11.0513L12.3538 11.5027C12.5225 13.2473 12.6072 14.1193 12.0965 14.5067C11.5858 14.894 10.8178 14.5407 9.28316 13.834L8.88516 13.6513C8.44916 13.45 8.23116 13.35 7.99983 13.35C7.7685 13.35 7.5505 13.45 7.1145 13.6513L6.71716 13.834C5.18183 14.5407 4.41383 14.894 3.90383 14.5073C3.3925 14.1193 3.47716 13.2473 3.64583 11.5027L3.68983 11.052C3.73783 10.556 3.76183 10.308 3.68983 10.0787C3.61916 9.84868 3.45983 9.66268 3.1425 9.29201L2.85316 8.95334C1.73516 7.64668 1.1765 6.99268 1.37116 6.36534C1.56583 5.73801 2.3865 5.55201 4.0265 5.18134L4.4505 5.08534C4.9165 4.98001 5.14916 4.92734 5.3365 4.78534C5.52383 4.64334 5.64316 4.42801 5.88316 3.99734L6.10183 3.60534Z"
                             fill="#FFE31A" />
                     </svg>
-                    <p class="text-base font-bold leading-5 tracking-wide text-third">3</p>
+                    <p class="text-Third text-center font-quicksand text-label-small">3</p>
                 </div>
                 <div class="flex flex-1 flex-col items-center gap-2">
-                    <div class="h-1 w-full rounded bg-ternary"></div>
+                    <div class="h-1 w-full rounded bg-Ternary"></div>
                 </div>
-                <p class="w-12 text-base font-bold leading-5 tracking-wide text-third">100</p>
+                <p class="w-12 text-Third text-center font-quicksand text-label-small">56</p>
             </div>
 
-            <!-- Breakdown Rating 2 -->
+            <!-- Braekdown rating 3 -->
             <div class="flex items-center gap-4 w-60">
                 <div class="flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -91,15 +97,15 @@
                             d="M6.10183 3.60534C6.9465 2.09068 7.3685 1.33334 7.99983 1.33334C8.63116 1.33334 9.05316 2.09068 9.89783 3.60534L10.1165 3.99734C10.3565 4.42801 10.4765 4.64334 10.6632 4.78534C10.8498 4.92734 11.0832 4.98001 11.5498 5.08534L11.9738 5.18134C13.6138 5.55268 14.4332 5.73801 14.6285 6.36534C14.8232 6.99201 14.2645 7.64601 13.1465 8.95334L12.8572 9.29134C12.5398 9.66268 12.3805 9.84868 12.3092 10.078C12.2378 10.308 12.2618 10.556 12.3098 11.0513L12.3538 11.5027C12.5225 13.2473 12.6072 14.1193 12.0965 14.5067C11.5858 14.894 10.8178 14.5407 9.28316 13.834L8.88516 13.6513C8.44916 13.45 8.23116 13.35 7.99983 13.35C7.7685 13.35 7.5505 13.45 7.1145 13.6513L6.71716 13.834C5.18183 14.5407 4.41383 14.894 3.90383 14.5073C3.3925 14.1193 3.47716 13.2473 3.64583 11.5027L3.68983 11.052C3.73783 10.556 3.76183 10.308 3.68983 10.0787C3.61916 9.84868 3.45983 9.66268 3.1425 9.29201L2.85316 8.95334C1.73516 7.64668 1.1765 6.99268 1.37116 6.36534C1.56583 5.73801 2.3865 5.55201 4.0265 5.18134L4.4505 5.08534C4.9165 4.98001 5.14916 4.92734 5.3365 4.78534C5.52383 4.64334 5.64316 4.42801 5.88316 3.99734L6.10183 3.60534Z"
                             fill="#FFE31A" />
                     </svg>
-                    <p class="text-base font-bold leading-5 tracking-wide text-third">2</p>
+                    <p class="text-Third text-center font-quicksand text-label-small">2</p>
                 </div>
                 <div class="flex flex-1 flex-col items-center gap-2">
-                    <div class="h-1 w-full rounded bg-ternary"></div>
+                    <div class="h-1 w-full rounded bg-Ternary"></div>
                 </div>
-                <p class="w-12 text-base font-bold leading-5 tracking-wide text-third">50</p>
+                <p class="w-12 text-Third text-center font-quicksand text-label-small">32</p>
             </div>
 
-            <!-- Breakdown Rating 1 -->
+            <!-- Braekdown rating 3 -->
             <div class="flex items-center gap-4 w-60">
                 <div class="flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -107,13 +113,14 @@
                             d="M6.10183 3.60534C6.9465 2.09068 7.3685 1.33334 7.99983 1.33334C8.63116 1.33334 9.05316 2.09068 9.89783 3.60534L10.1165 3.99734C10.3565 4.42801 10.4765 4.64334 10.6632 4.78534C10.8498 4.92734 11.0832 4.98001 11.5498 5.08534L11.9738 5.18134C13.6138 5.55268 14.4332 5.73801 14.6285 6.36534C14.8232 6.99201 14.2645 7.64601 13.1465 8.95334L12.8572 9.29134C12.5398 9.66268 12.3805 9.84868 12.3092 10.078C12.2378 10.308 12.2618 10.556 12.3098 11.0513L12.3538 11.5027C12.5225 13.2473 12.6072 14.1193 12.0965 14.5067C11.5858 14.894 10.8178 14.5407 9.28316 13.834L8.88516 13.6513C8.44916 13.45 8.23116 13.35 7.99983 13.35C7.7685 13.35 7.5505 13.45 7.1145 13.6513L6.71716 13.834C5.18183 14.5407 4.41383 14.894 3.90383 14.5073C3.3925 14.1193 3.47716 13.2473 3.64583 11.5027L3.68983 11.052C3.73783 10.556 3.76183 10.308 3.68983 10.0787C3.61916 9.84868 3.45983 9.66268 3.1425 9.29201L2.85316 8.95334C1.73516 7.64668 1.1765 6.99268 1.37116 6.36534C1.56583 5.73801 2.3865 5.55201 4.0265 5.18134L4.4505 5.08534C4.9165 4.98001 5.14916 4.92734 5.3365 4.78534C5.52383 4.64334 5.64316 4.42801 5.88316 3.99734L6.10183 3.60534Z"
                             fill="#FFE31A" />
                     </svg>
-                    <p class="text-base font-bold leading-5 tracking-wide text-third">1</p>
+                    <p class="text-Third text-center font-quicksand text-label-small">1</p>
                 </div>
                 <div class="flex flex-1 flex-col items-center gap-2">
-                    <div class="h-1 w-full rounded bg-ternary"></div>
+                    <div class="h-1 w-full rounded bg-Ternary"></div>
                 </div>
-                <p class="w-12 text-base font-bold leading-5 tracking-wide text-third">25</p>
+                <p class="w-12 text-Third text-center font-quicksand text-label-small">1</p>
             </div>
+
         </div>
     </section>
 

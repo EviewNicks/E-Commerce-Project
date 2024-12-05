@@ -1,0 +1,942 @@
+<!-- Product List, Hasil pencarian, Wishlist -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prudct List</title>
+    <link href="./../output.css" rel="stylesheet">
+</head>
+
+<body class="grid  grid-cols-12 gap-2 lg:grid-cols-12">
+    <!-- Navbar Brand U -->
+    <nav
+        class="fixed mt-4 px-4 inset-x-0 z-50 flex max-w-[926px] mx-auto justify-between items-center p-2 rounded-full bg-primary text-white bg-Primary-Colors-4">
+        <!-- Logo -->
+        <!-- <h2 class="text-logo-small">
+            <a href="/homepage" class="no-underline text-white">BrandU</a>
+        </h2> -->
+
+        <div class="flex items-center gap-[31px]">
+            <div class="flex">
+                <img src="/src/assets/tshirt-Logo.png" alt="brandU-logo" class="w-[36px] h-[36px] mt-1" />
+                <h1 class="px-2 text-Third text-center font-playfair text-logo-small">
+                    Brand<span class="text-Secondary">U</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- Search Container -->
+        <form class="flex items-center max-w-sm mx-auto">
+            <label for="simple-search" class="sr-only">Search</label>
+            <div class="relative w-full">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24" fill="none">
+                        <path
+                            d="M8.99974 1.59302C10.2507 1.59302 11.4397 1.86302 12.5087 2.34902C11.9929 2.80647 11.6503 3.42764 11.5387 4.10802C10.2529 3.5624 8.82551 3.44551 7.46804 3.77467C6.11056 4.10382 4.89523 4.86151 4.0021 5.93547C3.10897 7.00943 2.58556 8.34253 2.50941 9.73726C2.43326 11.132 2.80843 12.5142 3.57932 13.679C4.35022 14.8438 5.47584 15.7293 6.78941 16.2043C8.10298 16.6793 9.53461 16.7185 10.8722 16.3161C12.2098 15.9137 13.3822 15.0911 14.2157 13.9703C15.0492 12.8494 15.4994 11.4898 15.4997 10.093L15.4947 9.82402C16.0307 10.304 16.7337 10.589 17.4857 10.593C17.3863 12.3285 16.7547 13.9912 15.6767 15.355L19.3287 19.007C19.5109 19.1956 19.6117 19.4482 19.6094 19.7104C19.6071 19.9726 19.502 20.2234 19.3166 20.4088C19.1312 20.5942 18.8803 20.6994 18.6181 20.7017C18.3559 20.704 18.1033 20.6032 17.9147 20.421L14.2627 16.769C13.1982 17.608 11.9485 18.1802 10.6179 18.4379C9.28725 18.6957 7.91427 18.6315 6.6135 18.2507C5.31272 17.8699 4.12185 17.1836 3.14025 16.249C2.15865 15.3144 1.41477 14.1586 0.970684 12.8781C0.526594 11.5975 0.395165 10.2293 0.587361 8.88768C0.779558 7.54601 1.28981 6.26975 2.07554 5.16538C2.86128 4.06101 3.89971 3.16055 5.10422 2.53911C6.30873 1.91768 7.64438 1.59329 8.99974 1.59302ZM8.99974 4.59302C9.92674 4.59302 10.8007 4.82302 11.5677 5.22802C11.6772 5.73342 11.9155 6.20194 12.2595 6.58811C12.6034 6.97428 13.0413 7.26499 13.5307 7.43202L13.8787 7.55102C14.4336 8.61561 14.6249 9.83251 14.4234 11.016C14.222 12.1995 13.6388 13.2846 12.763 14.1056C11.8871 14.9267 10.7667 15.4386 9.57266 15.5633C8.37864 15.688 7.17662 15.4186 6.15004 14.7962C5.12346 14.1738 4.32871 13.2326 3.88709 12.1163C3.44546 10.9999 3.38122 9.76977 3.70415 8.61351C4.02709 7.45725 4.71948 6.4384 5.67564 5.71247C6.63181 4.98654 7.79923 4.59338 8.99974 4.59302ZM17.4997 0.593018C17.6868 0.593017 17.8702 0.645496 18.0289 0.744489C18.1876 0.843482 18.3154 0.98502 18.3977 1.15302L18.4457 1.27002L18.5757 1.64802C18.7129 2.0502 18.934 2.41865 19.2243 2.72896C19.5147 3.03927 19.8676 3.28437 20.2597 3.44802L20.4447 3.51802L20.8227 3.64702C21.0099 3.71088 21.174 3.82882 21.2941 3.98591C21.4143 4.14301 21.4852 4.33221 21.4978 4.52959C21.5104 4.72697 21.4643 4.92367 21.3651 5.0948C21.2659 5.26593 21.1183 5.40382 20.9407 5.49102L20.8227 5.53902L20.4447 5.66902C20.0426 5.80622 19.6741 6.0273 19.3638 6.31761C19.0535 6.60792 18.8084 6.96085 18.6447 7.35302L18.5747 7.53802L18.4457 7.91602C18.3818 8.10315 18.2637 8.26712 18.1066 8.38718C17.9494 8.50724 17.7602 8.57801 17.5628 8.59053C17.3655 8.60306 17.1688 8.55677 16.9977 8.45754C16.8267 8.3583 16.6889 8.21057 16.6017 8.03302L16.5537 7.91602L16.4237 7.53802C16.2865 7.13583 16.0655 6.76739 15.7751 6.45707C15.4848 6.14676 15.1319 5.90167 14.7397 5.73802L14.5547 5.66802L14.1767 5.53902C13.9896 5.47516 13.8255 5.35722 13.7053 5.20012C13.5852 5.04302 13.5143 4.85382 13.5017 4.65644C13.489 4.45906 13.5352 4.26237 13.6344 4.09124C13.7335 3.9201 13.8812 3.78222 14.0587 3.69502L14.1767 3.64702L14.5547 3.51702C14.9569 3.37982 15.3254 3.15874 15.6357 2.86842C15.946 2.57811 16.1911 2.22518 16.3547 1.83302L16.4247 1.64802L16.5537 1.27002C16.6211 1.0726 16.7485 0.901202 16.9182 0.779807C17.0878 0.658412 17.2911 0.593101 17.4997 0.593018Z"
+                            fill="#ECF0F1" />
+                    </svg>
+                </div>
+                <input type="text" id="simple-search"
+                    class="bg-Primary-Colors-3 border  text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Search branch name..." required />
+            </div>
+        </form>
+
+        <!-- Action Container -->
+        <div class="flex justify-center items-center gap-8">
+            <!-- Cart Button -->
+            <a aria-label="keranjang-button" href="./keranjang">
+                <div
+                    class="flex p-2 flex-col items-center rounded-full bg-red-500 transition-all duration-300 ease-in-out cursor-pointer hover:bg-red-600 hover:scale-110 hover:shadow-lg active:bg-red-700 active:scale-95">
+                    <!-- Add SVG/Content here -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M23.936 10.7293C23.8256 10.2531 23.6127 9.80681 23.312 9.42143C23.0069 9.03896 22.622 8.72774 22.1841 8.50952C21.8387 8.33965 21.4639 8.23781 21.0801 8.20955C20.8845 6.1099 19.9539 4.14671 18.4522 2.66611C16.7424 0.958891 14.4248 0 12.0085 0C9.59221 0 7.27466 0.958891 5.5648 2.66611C4.06317 4.14671 3.13251 6.1099 2.93691 8.20955C2.55309 8.23781 2.17829 8.33965 1.83296 8.50952C1.39288 8.72434 1.00724 9.03613 0.705006 9.42143C0.402101 9.80597 0.188891 10.2533 0.0809399 10.7307C-0.0270114 11.2082 -0.0269796 11.7037 0.0810332 12.1812L1.96495 19.8964C2.28921 21.0785 2.99376 22.121 3.96976 22.8627C4.94575 23.6044 6.13885 24.0041 7.36472 24H16.6163C17.8464 24.0013 19.0427 23.5978 20.0207 22.8519C20.9987 22.1059 21.7041 21.0589 22.0281 19.8724L23.9 12.1812C24.02 11.706 24.032 11.2093 23.936 10.7293ZM8.21668 18.4325C8.21668 18.6712 8.12186 18.9001 7.95309 19.0689C7.78431 19.2376 7.55541 19.3324 7.31672 19.3324C7.07804 19.3324 6.84913 19.2376 6.68035 19.0689C6.51158 18.9001 6.41676 18.6712 6.41676 18.4325V13.705C6.41676 13.4663 6.51158 13.2374 6.68035 13.0687C6.84913 12.8999 7.07804 12.8051 7.31672 12.8051C7.55541 12.8051 7.78431 12.8999 7.95309 13.0687C8.12186 13.2374 8.21668 13.4663 8.21668 13.705V18.4325ZM12.9085 18.4325C12.9085 18.5507 12.8852 18.6677 12.84 18.7769C12.7947 18.8861 12.7285 18.9853 12.6449 19.0689C12.5613 19.1524 12.4621 19.2187 12.3529 19.2639C12.2437 19.3092 12.1267 19.3324 12.0085 19.3324C11.8903 19.3324 11.7733 19.3092 11.6641 19.2639C11.5549 19.2187 11.4557 19.1524 11.3721 19.0689C11.2886 18.9853 11.2223 18.8861 11.1771 18.7769C11.1318 18.6677 11.1086 18.5507 11.1086 18.4325V13.705C11.1086 13.4663 11.2034 13.2374 11.3721 13.0687C11.5409 12.8999 11.7698 12.8051 12.0085 12.8051C12.2472 12.8051 12.4761 12.8999 12.6449 13.0687C12.8137 13.2374 12.9085 13.4663 12.9085 13.705V18.4325ZM17.6003 18.4325C17.6003 18.6712 17.5055 18.9001 17.3367 19.0689C17.1679 19.2376 16.939 19.3324 16.7003 19.3324C16.4616 19.3324 16.2327 19.2376 16.0639 19.0689C15.8952 18.9001 15.8004 18.6712 15.8004 18.4325V13.705C15.8004 13.4663 15.8952 13.2374 16.0639 13.0687C16.2327 12.8999 16.4616 12.8051 16.7003 12.8051C16.939 12.8051 17.1679 12.8999 17.3367 13.0687C17.5055 13.2374 17.6003 13.4663 17.6003 13.705V18.4325ZM4.74883 8.18555C4.94618 6.57486 5.68193 5.07808 6.83674 3.93798C8.21067 2.57074 10.0702 1.80318 12.0085 1.80318C13.9469 1.80318 15.8064 2.57074 17.1803 3.93798C18.3351 5.07808 19.0709 6.57486 19.2682 8.18555H4.74883Z"
+                            fill="#ECF0F1" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Login & Register Buttons -->
+            <div class="flex justify-center items-center gap-2">
+                <!-- Login Button -->
+                <button type="button"
+                    class="flex px-3 py-1 justify-center items-center gap-2 border border-red-500 rounded-lg text-white bg-transparent transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
+                    <span class="font-bold text-sm">Masuk</span>
+                </button>
+                <!-- Register Button -->
+                <button type="button"
+                    class="flex px-3 py-1 justify-center items-center gap-2 rounded-lg text-white bg-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
+                    <span class="font-bold text-sm">Daftar</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container  -->
+
+    <div class="col-span-12 flex flex-col items-start gap-9 content-start gap pt-[88px] px-10 max-w-[1120px] mx-auto">
+        <h1 class="self-stretch text-Primary font-poppins text-headline-large"> Formal Stylish</h1>
+
+        <div class="flex justify-center items-start content-start gap-[12px_8px] self-stretch flex-wrap">
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+
+
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+
+            <!-- Card Pertama -->
+            <div
+                class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
+
+                <!-- object Container -->
+                <div class="icon-container absolute flex left-0 top-0 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+                        height="256" viewBox="0 0 200 256" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
+                            fill="url(#pattern0_83_1388)" stroke="#95A5A6" stroke-width="2" />
+                        <defs>
+                            <pattern id="pattern0_83_1388" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_83_1388"
+                                    transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                            </pattern>
+                            <image id="image0_83_1388" width="676" height="1201"
+                                xlink:href="/public/Outfit/outfit-3.jpg" />
+                        </defs>
+                    </svg>
+
+                    <!-- xlink:href="/public/Outfit/outfit-7.jpg" /> -->
+                </div>
+
+                <!-- rating and Sale -->
+                <div
+                    class="rating-and-sales hidden group-hover:flex justify-between items-start self-stretch z-10 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <!-- Rating Container -->
+                    <div class="flex p-[0_4px] flex-col items-start gap-[6px]">
+                        <div class="flex p-[2px_4px] items-center gap-1 self-stretch rounded-[8px] bg-white">
+                            <div class="rating flex pr-1 items-center border-r-[2px] border-[#95A5A6]">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-[12px] h-[12px] fill-[#FFE31A]"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="M4.29184 2.04481C5.05202 0.681604 5.43181 0 6 0C6.56819 0 6.94798 0.681604 7.70816 2.04481L7.90495 2.39762C8.12095 2.78522 8.22895 2.97902 8.39694 3.10682C8.56494 3.23462 8.77493 3.28202 9.19492 3.37682L9.57652 3.46322C11.0525 3.79742 11.7899 3.96423 11.9657 4.52883C12.1409 5.09283 11.6381 5.68144 10.6319 6.85804L10.3715 7.16225C10.0859 7.49645 9.94251 7.66385 9.87831 7.87025C9.81411 8.07725 9.83571 8.30045 9.87891 8.74626L9.91851 9.15246C10.0703 10.7227 10.1465 11.5075 9.68691 11.8561C9.22732 12.2047 8.53614 11.8867 7.15497 11.2507L6.79678 11.0863C6.40439 10.9051 6.20819 10.8151 6 10.8151C5.7918 10.8151 5.59561 10.9051 5.20322 11.0863L4.84563 11.2507C3.46386 11.8867 2.77268 12.2047 2.31369 11.8567C1.8535 11.5075 1.9297 10.7227 2.08149 9.15246L2.12109 8.74686C2.16429 8.30045 2.18589 8.07725 2.12109 7.87085C2.05749 7.66385 1.9141 7.49645 1.6285 7.16285L1.36811 6.85804C0.361933 5.68204 -0.140856 5.09343 0.0343402 4.52883C0.209536 3.96423 0.948119 3.79682 2.42408 3.46322L2.80567 3.37682C3.22506 3.28202 3.43446 3.23462 3.60306 3.10682C3.77165 2.97902 3.87905 2.78522 4.09504 2.39762L4.29184 2.04481Z"
+                                        fill="#FFE31A" />
+                                </svg>
+                                <p class="text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                    4.9/5</p>
+                            </div>
+                            <p class="sales-count text-[#1E1E1E] font-poppins text-[12px] font-medium leading-[20px]">
+                                Terjual 25+</p>
+                        </div>
+                    </div>
+
+                    <!-- Icons Container -->
+                    <div class="icons-container flex flex-col items-start gap-[12px]">
+                        <!-- Icon 1 -->
+                        <div
+                            class="solar-bag-2 flex p-[6px] flex-col items-center rounded-[24px] bg-Secondary transition-all duration-300 ease-in-out hover:bg-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] fill-[#ECF0F1]"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M15.9573 7.15287C15.8838 6.83543 15.7418 6.53787 15.5414 6.28095C15.338 6.02598 15.0813 5.8185 14.7894 5.67301C14.5592 5.55976 14.3093 5.49187 14.0534 5.47303C13.923 4.07326 13.3026 2.76447 12.3015 1.77741C11.1616 0.639261 9.61655 0 8.00568 0C6.3948 0 4.84977 0.639261 3.70986 1.77741C2.70878 2.76447 2.08834 4.07326 1.95794 5.47303C1.70206 5.49187 1.45219 5.55976 1.22197 5.67301C0.928589 5.81623 0.67149 6.02408 0.470004 6.28095C0.268067 6.53731 0.125928 6.83553 0.05396 7.15383C-0.0180076 7.47213 -0.0179864 7.80248 0.0540221 8.12077L1.30997 13.2643C1.52614 14.0523 1.99584 14.7473 2.6465 15.2418C3.29717 15.7363 4.09257 16.0027 4.90981 16H11.0775C11.8976 16.0008 12.6951 15.7319 13.3471 15.2346C13.9991 14.7373 14.4694 14.0393 14.6854 13.2483L15.9333 8.12077C16.0133 7.804 16.0213 7.47283 15.9573 7.15287ZM5.47779 12.2884C5.47779 12.4475 5.41458 12.6001 5.30206 12.7126C5.18954 12.8251 5.03694 12.8883 4.87781 12.8883C4.71869 12.8883 4.56608 12.8251 4.45357 12.7126C4.34105 12.6001 4.27784 12.4475 4.27784 12.2884V9.13667C4.27784 8.97755 4.34105 8.82496 4.45357 8.71245C4.56608 8.59993 4.71869 8.53673 4.87781 8.53673C5.03694 8.53673 5.18954 8.59993 5.30206 8.71245C5.41458 8.82496 5.47779 8.97755 5.47779 9.13667V12.2884ZM8.60565 12.2884C8.60565 12.3671 8.59013 12.4451 8.55998 12.5179C8.52983 12.5907 8.48564 12.6569 8.42992 12.7126C8.37421 12.7683 8.30807 12.8125 8.23528 12.8426C8.16249 12.8728 8.08447 12.8883 8.00568 12.8883C7.92689 12.8883 7.84887 12.8728 7.77608 12.8426C7.70329 12.8125 7.63715 12.7683 7.58143 12.7126C7.52572 12.6569 7.48153 12.5907 7.45138 12.5179C7.42122 12.4451 7.4057 12.3671 7.4057 12.2884V9.13667C7.4057 8.97755 7.46892 8.82496 7.58143 8.71245C7.69395 8.59993 7.84656 8.53673 8.00568 8.53673C8.1648 8.53673 8.31741 8.59993 8.42992 8.71245C8.54244 8.82496 8.60565 8.97755 8.60565 9.13667V12.2884ZM11.7335 12.2884C11.7335 12.4475 11.6703 12.6001 11.5578 12.7126C11.4453 12.8251 11.2927 12.8883 11.1335 12.8883C10.9744 12.8883 10.8218 12.8251 10.7093 12.7126C10.5968 12.6001 10.5336 12.4475 10.5336 12.2884V9.13667C10.5336 8.97755 10.5968 8.82496 10.7093 8.71245C10.8218 8.59993 10.9744 8.53673 11.1335 8.53673C11.2927 8.53673 11.4453 8.59993 11.5578 8.71245C11.6703 8.82496 11.7335 8.97755 11.7335 9.13667V12.2884ZM3.16589 5.45704C3.29745 4.38324 3.78795 3.38539 4.55783 2.62532C5.47378 1.71382 6.71344 1.20212 8.00568 1.20212C9.29792 1.20212 10.5376 1.71382 11.4535 2.62532C12.2234 3.38539 12.7139 4.38324 12.8455 5.45704H3.16589Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                        <!-- Icon 2 -->
+                        <div
+                            class="solar-bag-3 flex p-[8px_6px_6px_6px] flex-col items-center rounded-[24px] border-[0.5px] border-[#E74C3C] bg-[#FCD0CC] transition-all duration-300 ease-in-out hover:bg-[#F8B8B3] hover:border-[#D63B32] hover:scale-[1.05]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[14px]" viewBox="0 0 16 14">
+                                <path
+                                    d="M8.00016 11.8563C7.84461 11.8563 7.68638 11.832 7.5255 11.7833C7.36461 11.7347 7.22283 11.6569 7.10016 11.55L5.95016 10.6313C4.77238 9.6882 3.70838 8.75253 2.75816 7.82425C1.80794 6.89598 1.33305 5.87262 1.3335 4.75417C1.3335 3.84028 1.6835 3.07709 2.3835 2.46459C3.0835 1.85209 3.95572 1.54584 5.00016 1.54584C5.58905 1.54584 6.14461 1.65512 6.66683 1.87367C7.18905 2.09223 7.6335 2.39128 8.00016 2.77084C8.36683 2.39167 8.81127 2.09281 9.3335 1.87425C9.85572 1.6557 10.4113 1.54623 11.0002 1.54584C12.0446 1.54584 12.9168 1.85209 13.6168 2.46459C14.3168 3.07709 14.6668 3.84028 14.6668 4.75417C14.6668 5.87223 14.1946 6.89792 13.2502 7.83125C12.3057 8.76459 11.2335 9.70278 10.0335 10.6458L8.90016 11.55C8.77794 11.6569 8.63638 11.7347 8.4755 11.7833C8.31461 11.832 8.15616 11.8563 8.00016 11.8563Z"
+                                    fill="#ECF0F1" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo and Title Container -->
+                <div
+                    class="relative hidden group-hover:flex h-[96px] p-[32px_20px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100">
+                    <!-- Promo Text Container -->
+                    <div class="flex p-[6px_0_0_8px] items-start flex-col absolute left-0 top-0 z-10">
+                        <div class=" flex p-[0_8px] flex-col items-start rounded-[4px] bg-Secondary">
+                            <p class="self-stretch text-white font-quicksand text-body-medium">
+                                Promo Hari ini!</p>
+                        </div>
+                    </div>
+
+                    <!-- object Container -->
+                    <div class="icon-container absolute flex right-0 top-0">
+                        <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                    </div>
+
+                    <!-- Send Email Button -->
+                    <div
+                        class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                        <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                            type="image/svg+xml"></object>
+                    </div>
+
+
+
+                    <h4 class="self-stretch text-black font-quicksand text-body-small z-10">
+                        Product Title Product Title Product Title Product Title </h4>
+                    <div class="flex items-center justify-between self-stretch z-10">
+                        <p class="text-black font-poppins text-body-small">Rp
+                            800.000</p>
+                        <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
+                            <p class="text-white font-poppins text-body-small">Stok
+                                Terbatas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Card  -->
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer
+        class="col-span-12 flex flex-col items-center justify-end flex-shrink-0 pt-[88px] px-10 max-w-[1120px] mx-auto">
+        <section class="flex flex-col rounded-[48px_48px_0px_0px] bg-Primary w-full ">
+            <div
+                class="flex p-[48px_88px] flex-col justify-center items-center gap-6 self-stretch border-b-4 border-Primary-Colors-3 max-w-[1120]">
+                <!-- LOGO and Social Media -->
+                <div class="flex justify-between items-center self-stretch">
+                    <div class="flex items-center gap-[31px] flex-1">
+                        <div class="flex">
+                            <img src="/src/assets/tshirt-Logo.png" alt="brandU-logo" class="w-[48px] h-[48px] mt-2" />
+                            <h1 class="px-2 text-Third text-center font-playfair text-logo-medium">
+                                Brand<span class="text-Secondary">U</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-[47px] self-stretch">
+                        <div
+                            class="flex p-2 items-center rounded-full bg-Secondary shadow-[0_4px_8px_rgba(0,0,0,0.2)] cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-custom hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                            <object class="w-[30px] h-[30px]" data="/src/assets/icon/wahtsapp.svg"
+                                type="image/svg+xml"></object>
+                        </div>
+                        <div
+                            class="flex p-2 items-center  rounded-full bg-Secondary shadow-[0_4px_8px_rgba(0,0,0,0.2)] cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-custom hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                            <object class="w-[30px] h-[30px]" data="/src/assets/icon/facebook.svg"
+                                type="image/svg+xml"></object>
+                        </div>
+                        <div
+                            class="flex p-2 items-center  rounded-full bg-Secondary shadow-[0_4px_8px_rgba(0,0,0,0.2)] cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-custom hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                            <object class="w-[30px] h-[30px]" data="/src/assets/icon/instagram.svg"
+                                type="image/svg+xml"></object>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="flex justify-between items-center self-stretch">
+                    <div class="flex flex-col justify-between items-start flex-1 self-stretch">
+                        <div
+                            class="flex w-[180px] h-[25px] px-[10px] py-2 justify-center items-center gap-[10px] 
+                            rounded-[16px] bg-[#e74c3c] cursor-pointer 
+                            transition duration-300 ease-in-out hover:bg-[#d62c1a] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                            <p class="color-third text-center font-quicksand text-label-medium">Contact Us</p>
+                        </div>
+                        <span class="self-stretch font-quicksand text-body-medium text-white">Email Text Email Text
+                            Email Text
+                            Email Text</span>
+                        <span class="self-stretch font-quicksand text-body-medium text-white">Phone Text Phone Text
+                            Phone
+                            Text</span>
+                        <span class="self-stretch font-quicksand text-body-medium text-white">
+                            Addres Text Addres Text Addres Text Addres TextAddres Text</span>
+                    </div>
+                    <div class="relative email-box flex py-4 pl-10 pr-2 flex-col items-start gap-[10px]">
+                        <div
+                            class="flex h-[136px] flex-col justify-center p-[0px_16px] items-center rounded-[32px] bg-Primary-Colors-2">
+                            <form class="flex items-center gap-2">
+                                <input
+                                    class="flex w-[253px] h-[44px] p-[12px_14px] rounded-lg border-2 border-Primary-Colors-1 bg-Primary-Colors-2 text-Lofi-Layer-2 placeholder:text-Lofi-Layer-4 text-start font-quicksand text-label-medium"
+                                    aria-label="email" type="email" name="email" placeholder="example@gmail.com">
+                                <button type="submit" class="flex p-[10px_40px] justify-center items-center self-stretch rounded-lg bg-Secondary cursor-pointer 
+                                    transition duration-300 ease-in-out hover:bg-[#d62c1a] hover:scale-105">
+                                    <label class="text-Third text-center font-quicksand text-label-small "
+                                        for="subscryption"> Submit </label></button>
+                            </form>
+                        </div>s
+                        <div class="icon-container absolute flex left-0 bottom-0">
+                            <object data="/src/assets/svg/light-x.svg" type="image/svg+xml"></object>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom flex p-[24px_48px] justify-between items-center self-stretch]">
+                <span class="text-Third text-center font-quicksand text-label-small">Footer Text Footer Text Footer
+                    Text
+                    Footer Text</span>
+                <span class="text-Third text-center font-quicksand text-label-small">Privacy Policy</span>
+            </div>
+
+
+        </section>
+    </footer>
+</body>
+
+</html>

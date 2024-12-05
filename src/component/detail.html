@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../output.css" rel="stylesheet">
     <title>Detail</title>
 </head>
+
 <body class="bg-gray-100 font-default-font-family">
-    <section class="flex flex-col w-[556px] rounded-2xl border border-black bg-gradient-to-b from-transparent via-gray-50 to-Primary-Colors-Layer-3 p-4">
+    <section class="flex flex-col w-[556px] items-start rounded-2xl bg-grad-description">
         <!-- Content Section -->
-        <div class="flex flex-col gap-[130px] w-full">
+        <div class="flex flex-col items-center gap-3 self-stretch">
             <!-- Header -->
-            <header class="flex items-center gap-2 w-full">
-                <div class="flex justify-center items-center py-2 px-14 w-full">
-                    <h1 class="text-Text text-center text-2xl font-normal leading-[32px]">Detail</h1>
+            <header class="flex items-center gap-2 self-stretch">
+                <div class="flex justify-center items-center py-2 px-14 self-stretch">
+                    <h1 class="text-black text-center font-quicksand text-title-large">Detail</h1>
                 </div>
             </header>
             <!-- Description -->
-            <div class="flex px-6 items-start gap-2 w-full">
+            <div class="flex px-6 items-start gap-2 self-stretch">
                 <p class="text-black text-sm font-medium leading-5">
-                    Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk<br><br>
+                    Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi
+                    Produk Deskripsi Produk<br><br>
                     Deskripsi Produk:<br>
                     Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk<br><br>
                     Deskripsi Produk<br>Deskripsi Produk<br>Deskripsi Produk<br>
@@ -28,17 +31,23 @@
         </div>
 
         <!-- Footer Section -->
-        <footer class="flex flex-col gap-2.5 w-full py-2">
-            <button class="flex items-center gap-4 px-3 py-1 bg-Primary-Colors-1 rounded-2xl">
-                <span class="text-Third text-sm font-medium leading-5">Lihat Selengkapnya</span>
-                <div class="flex w-6 h-6 items-center justify-center bg-Secondary rounded-full">
-                    <!-- SVG Placeholder -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" fill="currentColor" class="text-Third">
-                        <path d="M5.39485 6.7437C5.72955 7.08543 6.27312 7.08543 6.60783 6.7437L11.749 1.49473C12.0837 1.153 12.0837 0.598028 11.749 0.256298C11.4143 -0.0854325 10.8707 -0.0854325 10.536 0.256298L6 4.88742L1.46402 0.259031C1.12931 -0.0826989 0.585741 -0.0826989 0.251032 0.259031C-0.0836773 0.600761 -0.0836773 1.15573 0.251032 1.49746L5.39217 6.74644L5.39485 6.7437Z"></path>
+        <section class="flex flex-col gap-2.5 py-2.5 items-start self-stretch">
+            <button type="button"
+                class=" flex p-[4px_4px_4px_12px] gap-4 items-center rounded-full bg-Primary-Colors-2 cursor-pointer transition-all duration-300 ease-linear hover:bg-gradient-to-br hover:from-[#35526f] hover:to-[#2e4860] hover:border-[#e74c3c] hover:text-[#e74c3c] hover:-translate-y-0.5 hover:shadow-lg active:bg-[#2e4860] active:translate-y-0 active:shadow-md">
+                <p class="text-Third font-quicksand text-body-medium">
+                    Lihat Selengkapnya
+                </p>
+                <div class="flex py-[9px] px-[7px] items-center flex-col justify-center rounded-3xl bg-Secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+                        <path
+                            d="M5.39485 6.7437C5.72955 7.08543 6.27312 7.08543 6.60783 6.7437L11.749 1.49473C12.0837 1.153 12.0837 0.598028 11.749 0.256298C11.4143 -0.0854325 10.8707 -0.0854325 10.536 0.256298L6 4.88742L1.46402 0.259031C1.12931 -0.0826989 0.585741 -0.0826989 0.251032 0.259031C-0.0836773 0.600761 -0.0836773 1.15573 0.251032 1.49746L5.39217 6.74644L5.39485 6.7437Z"
+                            fill="#ECF0F1" />
                     </svg>
                 </div>
             </button>
-        </footer>
+        </section>
+
     </section>
 </body>
+
 </html>
