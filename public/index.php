@@ -35,6 +35,7 @@ $reviews_page = [
 
 $admins_page = [
     'updateAdminAction',
+    'addNewAdmin',
 ];
 
 if (in_array($page, $product_pages)) {

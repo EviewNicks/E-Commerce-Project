@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $old_password = trim($_POST['old_password']);
     $new_password = trim($_POST['new_password']);
     $confirm_password = trim($_POST['confirm_password']);
-    $admin_id = 1; // Admin ID untuk admin1
+    $admin_id = 3; // Admin ID untuk admin1
 
     // Validasi password baru dan konfirmasi
     if ($new_password !== $confirm_password) {

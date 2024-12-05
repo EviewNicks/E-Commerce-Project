@@ -128,28 +128,261 @@
 
 
         <!-- Child Container Grid -->
-        <div class="self-stretch relative grid grid-cols-12 auto-rows-[80px] gap-[8px] bg-Primary-Colors-1 h-auto">
+        <div class="self-stretch relative grid grid-cols-12 auto-rows-[80px] gap-[8px] h-auto">
 
-            <!-- Container 1 -->
-            <div class="col-span-7 row-span-3 bg-red-200 rounded-lg">Container 1</div>
+            <!-- Alamat Card -->
+            <section
+                class="flex flex-col col-span-7 row-span-2 py-4 px-10 justify-between items-start flex-shrink-0 rounded-3xl bg-Primary-Layer-2">
+                <!-- Informasi Lokasi -->
+                <article class="flex flex-col gap-3 items-start self-stretch">
+                    <!-- Lokasi dan Pengguna -->
+                    <div class="flex items-center gap-2">
+                        <!-- Ikon Lokasi -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M8.75 10C8.75 9.13805 9.09241 8.3114 9.7019 7.7019C10.3114 7.09241 11.138 6.75 12 6.75C12.862 6.75 13.6886 7.09241 14.2981 7.7019C14.9076 8.3114 15.25 9.13805 15.25 10C15.25 10.862 14.9076 11.6886 14.2981 12.2981C13.6886 12.9076 12.862 13.25 12 13.25C11.138 13.25 10.3114 12.9076 9.7019 12.2981C9.09241 11.6886 8.75 10.862 8.75 10Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M3.77383 8.877C3.94017 6.86675 4.85605 4.99247 6.33979 3.62598C7.82353 2.2595 9.76671 1.50066 11.7838 1.5H12.2158C14.2329 1.50066 16.1761 2.2595 17.6599 3.62598C19.1436 4.99247 20.0595 6.86675 20.2258 8.877C20.4104 11.1214 19.7175 13.3499 18.2928 15.094L13.4998 20.956C13.3182 21.1783 13.0893 21.3575 12.8299 21.4806C12.5705 21.6036 12.287 21.6675 11.9998 21.6675C11.7127 21.6675 11.4292 21.6036 11.1697 21.4806C10.9103 21.3575 10.6815 21.1783 10.4998 20.956L5.70783 15.094C4.28279 13.3501 3.58953 11.1215 3.77383 8.877ZM11.9998 5.25C10.7401 5.25 9.53187 5.75045 8.64107 6.64124C7.75028 7.53204 7.24983 8.74022 7.24983 10C7.24983 11.2598 7.75028 12.468 8.64107 13.3588C9.53187 14.2496 10.7401 14.75 11.9998 14.75C13.2596 14.75 14.4678 14.2496 15.3586 13.3588C16.2494 12.468 16.7498 11.2598 16.7498 10C16.7498 8.74022 16.2494 7.53204 15.3586 6.64124C14.4678 5.75045 13.2596 5.25 11.9998 5.25Z"
+                                fill="currentColor" />
+                        </svg>
+                        <div class="flex items-center gap-2">
+                            <p class="text-black font-quicksand text-label-medium">Location user</p>
+                            <p class="text-black font-quicksand text-label-medium">.</p>
+                            <p class="text-black font-quicksand text-label-medium">username</p>
+                        </div>
+                    </div>
+
+                    <!-- Deskripsi Lokasi -->
+                    <p class="text-black flex-1 font-quicksand text-body-large">
+                        Deksripsi lokasi Deksripsi lokasi Deksripsi lokasi Deksripsi lokasi Deksripsi , kelurahan,
+                        kecamatan, kabupaten, provinsi
+                    </p>
+                </article>
+
+                <!-- Tombol -->
+                <button type="button"
+                    class="flex justify-center items-center border border-Primary-Colors-2 rounded-lg py-2 px-12 transition-all duration-300 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
+                    <span class="text-black font-quicksand text-label-small">Pilih Alamat</span>
+                </button>
+            </section>
 
             <!-- Container 2 -->
-            <div class="col-span-5 col-start-8 row-span-6 bg-red-200 rounded-lg">Container 2</div>
+            <div
+                class="sticky top-24 flex flex-col items-center col-span-5 col-start-8 row-span-5 py-9 bg-Primary-Colors-3 rounded-2xl">
+                <!-- Ringkasan Belanja -->
+                <div class="flex flex-col w-full border-b-2 border-[#A6A5A5] px-6">
+                    <!-- Header -->
+                    <div class="flex flex-col gap-3 w-full">
+                        <p class="self-stretch text-Third font-quicksand text-label-large">Ringkasan Belanja</p>
+                        <!-- Detail -->
+                        <div class="flex flex-col items-center gap-3 w-full py-4 border-b-2 border-[#A6A5A5]">
+                            <div class="flex justify-between items-center w-full">
+                                <span class="flex-1 text-Third font-quicksand text-body-large">Total harga (1
+                                    Barang)
+                                </span>
+                                <span class=" text-Third font-quicksand text-label-medium">Rp.800.000</span>
+                            </div>
+                            <div class="flex justify-between items-center w-full">
+                                <span class="flex-1  text-Third font-quicksand text-body-large">Total Ongkos
+                                    kirim</span>
+                                <span class="text-Third font-quicksand text-label-medium"> Rp.65.000</span>
+                            </div>
+                            <div class="flex justify-between items-center w-full">
+                                <span class="flex-1 text-Third font-quicksand text-body-large">Total Biaya
+                                    Proteksi</span>
+                                <span class="flex text-Third font-quicksand text-label-medium"> Rp.5.200</span>
+                            </div>
+                            <div class="flex justify-between items-center w-full">
+                                <span class="flex-1 text-Third font-quicksand text-body-large">Biaya Jasa
+                                    Aplikasi</span>
+                                <span class=" text-Third font-quicksand text-label-medium">Rp.1.000</span>
+                            </div>
+                            <div class="flex justify-between items-center w-full">
+                                <span class="flex-1 text-Third font-quicksand text-body-large">Potongan
+                                    Diskon</span>
+                                <span class=" text-Third font-quicksand text-label-medium">Rp.30.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Total -->
+                    <div class="flex justify-between items-start w-full py-4 ">
+                        <p class="text-Third font-quicksand text-body-large">Biaya Jasa Aplikasi</p>
+                        <p class="flex text-Third font-quicksand text-label-large">Rp.871.200
+                        </p>
+                    </div>
+
+                </div>
+                <!-- Pembayaran -->
+                <div class="flex flex-col items-center gap-2 w-full px-6 pt-4">
+                    <button type="button"
+                        class="flex justify-center items-center w-full p-3 bg-Secondary rounded-xl transition-all duration-300 ease-in-out cursor-pointer hover:bg-red-600 hover:scale-105 hover:shadow-lg active:bg-red-700 active:scale-95">
+                        <p class="text-Third font-quicksand text-label-large">Bayar Sekarang</p>
+                    </button>
+                    <div class="flex justify-center items-center w-full py-1">
+                        <p class="flex-1 text-Third text-center font-quicksand text-body-medium">Dengan melanjutkan,
+                            kamu
+                            menyetujui S&K Asuransi & Proteksi</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Container 3 -->
-            <div class="col-span-7 row-start-4 row-span-3 bg-green-200 rounded-lg">Container 3</div>
+            <div class="flex flex-col col-span-7 row-start-3 row-span-3 rounded-3xl bg-[#A6BFD3]">
+                <!-- Header -->
+                <div class="flex px-6 py-4 justify-between items-center border-b border-gray-300">
+                    <p class="text-lg font-bold text-black">Metode Pembayaran</p>
+                </div>
+
+                <!-- Daftar Metode -->
+                <ul class="px-3 py-4 space-y-3 ">
+                    <!-- Opsi 1 -->
+                    <li>
+                        <label for="payment-dana"
+                            class="flex items-center h-[45px] justify-between px-3 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                            <!-- Icon atau Logo -->
+                            <img src="/src/assets/svg/dana.svg" alt="Dana" class="h mr-4" />
+
+                            <!-- Radio Button -->
+                            <input id="payment-dana" type="radio" name="payment-method" value="dana"
+                                class="w-6 h-6 text-Primary border-gray-300 focus:ring-blue-500" />
+                        </label>
+                    </li>
+
+                    <!-- Opsi 2 -->
+                    <li>
+                        <label for="payment-ovo"
+                            class="flex items-center  h-[45px] px-3  justify-between rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                            <img src="/src/assets/svg/ovo.svg" alt="OVO" class=" mr-4" />
+
+                            <input id="payment-ovo" type="radio" name="payment-method" value="ovo"
+                                class="w-6 h-6 text-Primary border-gray-300 focus:ring-blue-500" />
+                        </label>
+                    </li>
+
+                    <!-- Opsi 3 -->
+                    <li>
+                        <label for="payment-gopay"
+                            class="flex items-center  h-[45px] px-3 justify-between rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                            <img src="/src/assets/svg/gopay.svg" alt="GoPay" class="mr-4" />
+
+                            <input id="payment-gopay" type="radio" name="payment-method" value="gopay"
+                                class="w-6 h-6 text-Primary border-gray-300 focus:ring-blue-500" />
+                        </label>
+                    </li>
+                </ul>
+            </div>
 
             <!-- Container 4 -->
-            <div class="col-span-7 row-start-7 row-span-2 bg-blue-200 rounded-lg">Container 4</div>
+            <article
+                class="flex flex-col justify-between items-center col-span-7 row-start-6 row-span-2 p-[8px_24px_4px_24px] flex-shrink-0 rounded-2xl bg-Primary-Layer-2">
+                <h2 class="self-stretch text-black font-quicksand text-label-medium">
+                    Produk Name Produk Name Produk Name Produk Name A
+                </h2>
+                <section class="flex items-center gap-6 self-stretch">
+                    <!-- Gambar produk -->
+                    <img src="/public/uploads/products/673e6d3da599f_2a92aa6365879563e325a0a483dc6346.jpg"
+                        alt="product-container"
+                        class="w-[97px] h-[124px] rounded-[24px] bg-cover bg-center border border-gray-400">
+                    <section class="flex flex-col justify-between flex-1 self-stretch rounded-md bg-primary-layer-1">
+                        <!-- Informasi delivery -->
+                        <header
+                            class="flex items-center justify-between p-[4px_24px] rounded-t-md border border-primary-layer-3">
+                            <p class="text-black font-quicksand text-label-medium">Reguler</p>
+                        </header>
+                        <!-- Informasi estimasi dan harga -->
+                        <section class="flex justify-between items-center flex-1 px-6">
+                            <div class="flex flex-col gap-1">
+                                <p class="self-stretch text-black  font-quicksand text-label-small">Kurir
+                                    Rekomendasi</p>
+                                <p class="self-stretch text-black  font-quicksand text-body-medium">Estimasi tiba 14
+                                    - 19 Nov
+                                </p>
+                            </div>
+                            <p class="text-black font-quicksand text-label-small">Rp.950.000</p>
+                        </section>
+                        <!-- Opsi asuransi -->
+                        <footer class="flex items-start gap-4 p-[4px_24px]  rounded-b-md border border-primary-layer-3">
+                            <!-- Checkbox -->
+                            <div class="flex ">
+                                <input id="link-checkbox" type="checkbox" value=""
+                                    class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="link-checkbox" class="sr-only">checkbox</label>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path opacity="0.5"
+                                        d="M3.378 5.082C3 5.62 3 7.22 3 10.417V11.991C3 17.629 7.239 20.366 9.899 21.527C10.62 21.842 10.981 22 12 22C13.02 22 13.38 21.842 14.101 21.527C16.761 20.365 21 17.63 21 11.991V10.417C21 7.219 21 5.62 20.622 5.082C20.245 4.545 18.742 4.03 15.735 3.001L15.162 2.805C13.595 2.268 12.812 2 12 2C11.188 2 10.405 2.268 8.838 2.805L8.265 3C5.258 4.03 3.755 4.545 3.378 5.082Z"
+                                        fill="#E74C3C" />
+                                    <path
+                                        d="M10.861 8.363L10.731 8.598C10.586 8.857 10.514 8.986 10.402 9.071C10.29 9.156 10.15 9.188 9.86997 9.251L9.61597 9.309C8.63197 9.531 8.13997 9.643 8.02297 10.019C7.90597 10.396 8.24097 10.788 8.91197 11.572L9.08597 11.775C9.27597 11.998 9.37097 12.109 9.41397 12.247C9.45697 12.385 9.44297 12.534 9.41397 12.831L9.38797 13.101C9.28597 14.148 9.23597 14.671 9.54197 14.904C9.84797 15.137 10.309 14.924 11.23 14.501L11.469 14.391C11.73 14.271 11.861 14.21 12 14.21C12.139 14.21 12.27 14.27 12.531 14.39L12.77 14.5C13.69 14.925 14.152 15.137 14.458 14.904C14.764 14.671 14.714 14.148 14.612 13.102L14.586 12.831C14.557 12.534 14.543 12.385 14.586 12.247C14.629 12.109 14.724 11.997 14.914 11.775L15.088 11.572C15.758 10.788 16.094 10.396 15.977 10.019C15.86 9.643 15.368 9.531 14.384 9.309L14.13 9.251C13.85 9.188 13.71 9.156 13.598 9.071C13.486 8.986 13.414 8.857 13.27 8.599L13.139 8.363C12.632 7.454 12.379 7 12 7C11.621 7 11.368 7.454 10.861 8.363Z"
+                                        fill="#E74C3C" />
+                                </svg>
+                                <p class="text-black font-quicksand text-body-medium">
+                                    Pakai asuransi pengiriman (Rp.800)
+                                </p>
+                            </div>
+                        </footer>
+                    </section>
+                </section>
+            </article>
 
             <!-- Container 5 -->
-            <div class="col-span-7 row-start-9 row-span-2 bg-purple-200 rounded-lg">Container 5</div>
-
-            <!-- Container 6 -->
-            <div class="col-span-7 row-start-11 row-span-2 bg-pink-200 rounded-lg">Container 6</div>
-
-            <!-- Container 7 -->
-            <div class="col-span-7 row-start-13 row-span-2 bg-pink-200 rounded-lg">Container 7</div>
+            <article
+                class="flex flex-col justify-between items-center col-span-7 row-start-8 row-span-2 p-[8px_24px_4px_24px] flex-shrink-0 rounded-2xl bg-Primary-Layer-2">
+                <h2 class="self-stretch text-black font-quicksand text-label-medium">
+                    Produk Name Produk Name Produk Name Produk Name A
+                </h2>
+                <section class="flex items-center gap-6 self-stretch">
+                    <!-- Gambar produk -->
+                    <img src="/public/uploads/products/673e6d3da599f_2a92aa6365879563e325a0a483dc6346.jpg"
+                        alt="product-container"
+                        class="w-[97px] h-[124px] rounded-[24px] bg-cover bg-center border border-gray-400">
+                    <section class="flex flex-col justify-between flex-1 self-stretch rounded-md bg-primary-layer-1">
+                        <!-- Informasi delivery -->
+                        <header
+                            class="flex items-center justify-between p-[4px_24px] rounded-t-md border border-primary-layer-3">
+                            <p class="text-black font-quicksand text-label-medium">Reguler</p>
+                        </header>
+                        <!-- Informasi estimasi dan harga -->
+                        <section class="flex justify-between items-center flex-1 px-6">
+                            <div class="flex flex-col gap-1">
+                                <p class="self-stretch text-black  font-quicksand text-label-small">Kurir
+                                    Rekomendasi</p>
+                                <p class="self-stretch text-black  font-quicksand text-body-medium">Estimasi tiba 14
+                                    - 19 Nov
+                                </p>
+                            </div>
+                            <p class="text-black font-quicksand text-label-small">Rp.950.000</p>
+                        </section>
+                        <!-- Opsi asuransi -->
+                        <footer class="flex items-start gap-4 p-[4px_24px]  rounded-b-md border border-primary-layer-3">
+                            <!-- Checkbox -->
+                            <div class="flex ">
+                                <input id="link-checkbox" type="checkbox" value=""
+                                    class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="link-checkbox" class="sr-only">checkbox</label>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path opacity="0.5"
+                                        d="M3.378 5.082C3 5.62 3 7.22 3 10.417V11.991C3 17.629 7.239 20.366 9.899 21.527C10.62 21.842 10.981 22 12 22C13.02 22 13.38 21.842 14.101 21.527C16.761 20.365 21 17.63 21 11.991V10.417C21 7.219 21 5.62 20.622 5.082C20.245 4.545 18.742 4.03 15.735 3.001L15.162 2.805C13.595 2.268 12.812 2 12 2C11.188 2 10.405 2.268 8.838 2.805L8.265 3C5.258 4.03 3.755 4.545 3.378 5.082Z"
+                                        fill="#E74C3C" />
+                                    <path
+                                        d="M10.861 8.363L10.731 8.598C10.586 8.857 10.514 8.986 10.402 9.071C10.29 9.156 10.15 9.188 9.86997 9.251L9.61597 9.309C8.63197 9.531 8.13997 9.643 8.02297 10.019C7.90597 10.396 8.24097 10.788 8.91197 11.572L9.08597 11.775C9.27597 11.998 9.37097 12.109 9.41397 12.247C9.45697 12.385 9.44297 12.534 9.41397 12.831L9.38797 13.101C9.28597 14.148 9.23597 14.671 9.54197 14.904C9.84797 15.137 10.309 14.924 11.23 14.501L11.469 14.391C11.73 14.271 11.861 14.21 12 14.21C12.139 14.21 12.27 14.27 12.531 14.39L12.77 14.5C13.69 14.925 14.152 15.137 14.458 14.904C14.764 14.671 14.714 14.148 14.612 13.102L14.586 12.831C14.557 12.534 14.543 12.385 14.586 12.247C14.629 12.109 14.724 11.997 14.914 11.775L15.088 11.572C15.758 10.788 16.094 10.396 15.977 10.019C15.86 9.643 15.368 9.531 14.384 9.309L14.13 9.251C13.85 9.188 13.71 9.156 13.598 9.071C13.486 8.986 13.414 8.857 13.27 8.599L13.139 8.363C12.632 7.454 12.379 7 12 7C11.621 7 11.368 7.454 10.861 8.363Z"
+                                        fill="#E74C3C" />
+                                </svg>
+                                <p class="text-black font-quicksand text-body-medium">
+                                    Pakai asuransi pengiriman (Rp.800)
+                                </p>
+                            </div>
+                        </footer>
+                    </section>
+                </section>
+            </article>
         </div>
     </div>
 
