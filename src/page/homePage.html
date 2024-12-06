@@ -16,7 +16,7 @@
         class="fixed mt-4 px-4 inset-x-0 z-50 flex max-w-[926px] mx-auto justify-between items-center p-2 rounded-full bg-primary text-white bg-Primary-Colors-4">
         <!-- Logo -->
         <h2 class="text-logo-small">
-            <a href="/homepage" class="no-underline text-white">BrandU</a>
+            <a href="/src/page/homePage.html" class="no-underline text-white">BrandU</a>
         </h2>
 
         <!-- Search Container -->
@@ -39,7 +39,7 @@
         <!-- Action Container -->
         <div class="flex justify-center items-center gap-8">
             <!-- Cart Button -->
-            <a aria-label="keranjang-button" href="./keranjang">
+            <a aria-label="keranjang-button" href="/src/page/keranjang.html">
                 <div
                     class="flex p-2 flex-col items-center rounded-full bg-red-500 transition-all duration-300 ease-in-out cursor-pointer hover:bg-red-600 hover:scale-110 hover:shadow-lg active:bg-red-700 active:scale-95">
                     <!-- Add SVG/Content here -->
@@ -54,18 +54,19 @@
             <!-- Login & Register Buttons -->
             <div class="flex justify-center items-center gap-2">
                 <!-- Login Button -->
-                <button type="button"
+                <button type="button" onclick="window.location.href='tlogin.html'"
                     class="flex px-3 py-1 justify-center items-center gap-2 border border-red-500 rounded-lg text-white bg-transparent transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
                     <span class="font-bold text-sm">Masuk</span>
                 </button>
                 <!-- Register Button -->
-                <button type="button"
+                <button type="button" onclick="window.location.href='tregister.html'"
                     class="flex px-3 py-1 justify-center items-center gap-2 rounded-lg text-white bg-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
                     <span class="font-bold text-sm">Daftar</span>
                 </button>
             </div>
         </div>
     </nav>
+
     <!-- Headline 1 Brand U -->
     <div class="col-span-12 flex flex-col items-center justify-center px-20 pt-3">
         <div
@@ -315,6 +316,7 @@
 
             <!-- Category Container -->
             <div class="grid grid-cols-6 grid-rows-6 min-w-[560px] gap-2 flex-[1_0_0] self-stretch">
+
                 <!-- Container 1 -->
                 <div
                     class="relative flex col-span-3 row-span-2 py-6 pl-6 pr-10 flex-col items-start gap-2.5 rounded-[24px]">
@@ -1020,7 +1022,7 @@
 
 
                     <!-- Card Kedua -->
-                    <div
+                    <div onclick="window.location.href='product-descryption.html'"
                         class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
 
                         <!-- object Container -->

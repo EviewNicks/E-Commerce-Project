@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer- Priority</title>
-    <link href="./../output.css" rel="stylesheet">
-    <style>
-    </style>
-
-</head>
-
 <body class="grid  grid-cols-12 gap-2 lg:grid-cols-12">
     <div class="col-span-12 flex flex-col items-center justify-end flex-shrink-0 pt-[88px] px-10">
         <section

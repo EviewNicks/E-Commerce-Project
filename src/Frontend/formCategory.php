@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
-include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 $action = $_GET['action'] ?? 'add'; // Default adalah 'add'
 $category_id = $_GET['id'] ?? null;

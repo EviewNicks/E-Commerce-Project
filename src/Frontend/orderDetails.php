@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
-include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 $order_id = intval($_GET['id'] ?? 0);
 if (!$order_id) {

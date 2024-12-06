@@ -1,5 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 // Query untuk mengambil data promosi
 $sql = "SELECT promotion_id, name, discount, start_date, end_date FROM promotions";

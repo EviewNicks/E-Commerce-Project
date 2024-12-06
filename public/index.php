@@ -1,7 +1,7 @@
 <?php
 define('BASE_PATH', __DIR__ . '/../src/');
 // Routing sederhana
-$page = $_GET['page'] ?? 'register';
+$page = $_GET['page'] ?? 'products';
 
 // File khusus proses (tanpa HTML)
 $product_pages = [
@@ -36,6 +36,8 @@ $reviews_page = [
 $admins_page = [
     'updateAdminAction',
     'addNewAdmin',
+    'addNewUser',
+    'loginAction',
 ];
 
 if (in_array($page, $product_pages)) {
@@ -58,10 +60,11 @@ if (in_array($page, $product_pages)) {
 if ($file_path && file_exists($file_path)) {
     include $file_path;
     exit;
-} elseif ($file_path === null) {
-    http_response_code(404);
-    echo json_encode(['success' => false, 'message' => 'Page not found']);
 }
+// } elseif ($file_path === null) {
+//     http_response_code(404);
+//     echo json_encode(['success' => false, 'message' => 'Page not found']);
+// }
 
 ?>
 
@@ -71,15 +74,19 @@ if ($file_path && file_exists($file_path)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <link rel="icon" type="image/svg+xml" href="../src/assets/tshirt-Logo.png" />
+    <title>BrandU</title>
     <link href="./../src/output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 ">
+
+    <!-- <body class="bg-gray-100 text-gray-800 grid grid-cols-12 gap-2 lg:grid-cols-12"> -->
 
     <!-- Main Content -->
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto ">
         <?php
+
         switch ($page) {
             case 'products':
                 include BASE_PATH . 'Frontend/product.php';
@@ -113,6 +120,12 @@ if ($file_path && file_exists($file_path)) {
                 break;
             case 'register':
                 include BASE_PATH . 'Frontend/user/register.php';
+                break;
+            case 'login':
+                include BASE_PATH . 'Frontend/user/login.php';
+                break;
+            case 'homePageUser':
+                include BASE_PATH . 'Frontend/user/HomePageUser.php';
                 break;
             default:
                 http_response_code(404);

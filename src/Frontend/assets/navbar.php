@@ -1,22 +1,22 @@
-<nav class="bg-blue-600 text-white px-6 py-4 shadow-lg relative">
-    <ul class="flex space-x-6">
+<nav class="bg-blue-600 text-white px-6 py-2 shadow-lg relative mb-4">
+    <ul class="flex space-x-6 justify-between">
         <li>
-            <a href="?page=products" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Products</a>
+            <a href="?page=products" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium  self-stretch">Products</a>
         </li>
         <li>
-            <a href="?page=categories" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Categories</a>
+            <a href="?page=categories" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium  self-stretch">Categories</a>
         </li>
         <li>
-            <a href="?page=orders" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Orders</a>
+            <a href="?page=orders" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium   self-stretch">Orders</a>
         </li>
         <li>
-            <a href="?page=promotions" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Promotions</a>
+            <a href="?page=promotions" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium  self-stretch">Promotions</a>
         </li>
         <li>
-            <a href="?page=adminReviews" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Ulasan</a>
+            <a href="?page=adminReviews" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium  self-stretch">Ulasan</a>
         </li>
         <li>
-            <a href="?page=adminManagement" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium">Manajemen Akun</a>
+            <a href="?page=adminManagement" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium self-stretch">Manajemen Akun</a>
         </li>
 
 

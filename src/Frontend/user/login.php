@@ -3,60 +3,47 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
 ?>
 
 <section class="flex flex-1 items-center justify-center gap-8 px-8 py-4 h-screen">
-    <!-- Right Side (Image) -->
-    <img src="<?= $base_url ?>Outfit/outfit-4.jpg" alt="img-register" class="flex-1 h-full rounded-2xl bg-cover bg-center bg-no-repeat max-w-[450px]">
-
-
     <div class="flex flex-col items-center justify-center flex-1 h-full max-w-[450px]">
         <!-- Left Side -->
         <div class="flex flex-col items-center justify-between w-full max-w-md gap-4">
             <!-- Login Intro -->
-            <div class="flex flex-col items-start w-full gap-2">
-                <h2 class="text-logo-small font-medium text-primary">Welcome </h2>
-                <p class="text-title-small text-primary">
-                    Today is a new day. It's your day. You shape it. Sign Up to start
+            <div class="flex flex-col items-start w-full gap-4">
+                <h2 class="text-logo-small font-medium text-primary">Log In</h2>
+                <p class="text-title-small text-secondary">
+                    Today is a new day. It's your day. You shape it. Sign in to start
                     managing your projects.
                 </p>
             </div>
 
-            <!-- Register Form -->
-            <form action="?page=addNewUser" method="POST" class="flex flex-col items-end w-full gap-2">
-
-                <div class="flex flex-col w-full">
-                    <label for="username" class="text-label-small font-semibold text-primary">Username</label>
-                    <input type="text" id="username" name="username" placeholder="username" required class=" h-10 w-full rounded-lg border border-grey-1 bg-whiteLayer-1 px-4 transition hover:border-info hover:bg-[#EEF6FD] focus:border-info focus:bg-white focus:outline-none placeholder:text-grey-2 placeholder:text-body-large">
-                </div>
-
+            <!-- Login Form -->
+            <form action="?page=loginAction" method="POST" class="flex flex-col items-end w-full gap-4">
                 <!-- Email Field -->
                 <div class="flex flex-col w-full gap-2">
                     <label for="email" class="text-label-small font-semibold text-primary">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Example@gmail.com" required
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required
                         class="h-10 w-full rounded-lg border border-grey-1 bg-whiteLayer-1 px-4 transition hover:border-info hover:bg-[#EEF6FD] focus:border-info focus:bg-white focus:outline-none placeholder:text-grey-2 placeholder:text-body-large" />
                 </div>
 
                 <!-- Password Field -->
                 <div class="flex flex-col w-full gap-2">
                     <label for="password" class="text-label-small font-semibold text-primary">Password</label>
-                    <input type="password" id="password" name="password" placeholder="At least 8 characters" required
+                    <input type="password" id="password" name="password" placeholder="Enter your password"
+                        pattern=".{8,}" title="Password must be at least 8 characters long" required
                         class="h-10 w-full rounded-lg border border-grey-1 bg-whiteLayer-1 px-4 transition hover:border-info hover:bg-[#EEF6FD] focus:border-info focus:bg-white focus:outline-none placeholder:text-grey-2 placeholder:text-body-large" />
                 </div>
 
-                <!-- Verify Password Field -->
-                <div class="flex flex-col w-full gap-2">
-                    <label for="confirm_password" class="text-label-small font-semibold text-primary">Verify Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat password" required
-                        class="h-10 w-full rounded-lg border border-grey-1 bg-whiteLayer-1 px-4 transition hover:border-info hover:bg-[#EEF6FD] focus:border-info focus:bg-white focus:outline-none placeholder:text-grey-2 placeholder:text-body-large" />
-                </div>
+                <span class="text-label-medium font-bold text-Info cursor-pointer hover:text-Info hover:underline">
+                    Forgot Password?
+                </span>
 
                 <button type="submit"
                     class="flex items-center justify-center w-full h-12 rounded-lg bg-Primary transition hover:bg-Primary-Colors-3 hover:scale-105 active:scale-95">
-                    <span class="text-label-medium font-bold text-white">Sign Up</span>
+                    <span class="text-label-medium font-bold text-white">Sign in</span>
                 </button>
             </form>
 
-
             <!-- Social Sign-In -->
-            <div class="flex flex-col items-center w-full gap-4">
+            <div class="flex flex-col items-center w-full gap-6">
                 <!-- Or Divider -->
                 <div class="flex items-center w-full justify-between">
                     <div><svg width="170" height="1" viewBox="0 0 170 1" fill="none"
@@ -71,7 +58,7 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
                 </div>
 
                 <!-- Social Buttons -->
-                <div class="flex flex-col items-center w-full gap-2">
+                <div class="flex flex-col items-center w-full gap-4">
                     <button type="button"
                         class="flex items-center justify-center w-full h-12 gap-4 rounded-lg bg-Primary-Layer-1` hover:bg-Primary-Layer-2">
                         <!-- SVG Placeholder -->
@@ -97,51 +84,51 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
                                 </clipPath>
                             </defs>
                         </svg>
-                        <p class="text-label-small font-semibold text-primary">Log in with Google</p>
+                        <p class="text-label-small font-semibold text-secondary">Log in with Google</p>
                     </button>
                 </div>
             </div>
 
             <!-- Sign-Up Link -->
-            <span class="text-label-medium font-bold text-primary text-center">
+            <span class="text-label-medium font-bold text-secondary text-center">
                 Don't you have an account?
-                <a href="?page=login" class="text-info hover:text-[#1b5bcc] hover:underline">Sign In</a>
+                <a href="?page=register" class="text-Info hover:text-[#1b5bcc] hover:underline">Sign up</a>
             </span>
         </div>
     </div>
+    <!-- Right Side (Image) -->
+    <img src="<?= $base_url ?>Outfit/login-image.jpg" alt="img-register" class="flex-1 h-full rounded-2xl bg-cover bg-center bg-no-repeat max-w-[450px]">
+
+</section>
 
 
-    <?php if (isset($_GET['error']) || isset($_GET['success'])): ?>
-        <div id="popup-modal" tabindex="-1" class="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-screen">
-            <div class="relative p-4 w-full max-w-md max-h-full">
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                    <div class="p-6 text-center">
-                        <?php if (isset($_GET['error'])): ?>
-                            <h3 class="mb-5 text-lg font-normal text-red-500">
-                                <?= htmlspecialchars($_GET['error']); ?>
-                            </h3>
-                        <?php elseif (isset($_GET['success'])): ?>
-                            <h3 class="mb-5 text-lg font-normal text-green-500">
-                                Registration successful! Redirecting to login...
-                            </h3>
-                            <script>
-                                setTimeout(() => {
-                                    window.location.href = '?page=login';
-                                }, 3000);
-                            </script>
-                        <?php endif; ?>
-                        <button data-modal-hide="popup-modal" type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">Close</button>
-                    </div>
+<?php if (isset($_GET['error']) || isset($_GET['success'])): ?>
+    <div id="popup-modal" tabindex="-1" class="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-screen">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <div class="p-6 text-center">
+                    <?php if (isset($_GET['error'])): ?>
+                        <h3 class="mb-5 text-lg font-normal text-red-500">
+                            <?= htmlspecialchars($_GET['error']); ?>
+                        </h3>
+                    <?php elseif (isset($_GET['success'])): ?>
+                        <h3 class="mb-5 text-lg font-normal text-green-500">
+                            Login berhasil! Mengarahkan ke dashboard...
+                        </h3>
+                        <script>
+                            setTimeout(() => {
+                                window.location.href = '?page=products';
+                            }, 3000);
+                        </script>
+                    <?php endif; ?>
+                    <button data-modal-hide="popup-modal" type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">Tutup</button>
                 </div>
             </div>
         </div>
-    <?php endif; ?>
-
-
-
-</section>
+    </div>
+<?php endif; ?>

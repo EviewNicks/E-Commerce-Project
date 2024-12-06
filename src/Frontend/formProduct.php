@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php'; // Koneksi database
-include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 // Cek mode (add atau edit)
 $action = $_GET['action'] ?? 'add';

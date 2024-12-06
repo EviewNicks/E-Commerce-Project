@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH . '/backend/connection.php';
-include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 // Ambil daftar produk untuk filter
 $sql_products = "SELECT product_id, name FROM products";
@@ -29,32 +29,39 @@ $reviews_result = $conn->query($sql_reviews);
     <h2 class="text-2xl font-semibold mb-4">Daftar Ulasan Produk</h2>
 
     <!-- Filter Produk -->
-    <form id="filter-reviews-form" class="mb-4">
-        <select name="product_id" id="product-select" class="border rounded px-2 py-1">
-            <option value="">Semua Produk</option>
-            <?php foreach ($products as $product): ?>
-                <option value="<?= $product['product_id'] ?>">
-                    <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>
-                </option>
-            <?php endforeach; ?>
-            <!-- Tambahkan opsi produk dari database -->
-        </select>
-        <select name="rating" id="rating-select" class="border rounded px-2 py-1">
-            <option value="">Semua Rating</option>
-            <option value="5">5 Bintang</option>
-            <option value="4">4 Bintang</option>
-            <option value="3">3 Bintang</option>
-            <option value="2">2 Bintang</option>
-            <option value="1">1 Bintang</option>
-        </select>
-        <input type="date" name="start_date" class="border rounded px-2 py-1" />
-        <input type="date" name="end_date" class="border rounded px-2 py-1" />
-        <button type="button" onclick="applyFilter()" class="bg-blue-500 text-white px-3 py-2 rounded">
-            Filter
-        </button>
-        <button type="button" onclick="resetFilter()" class="bg-gray-500 text-white px-3 py-2 rounded">
-            Reset
-        </button>
+    <form id="filter-reviews-form" class="flex flex-col mb-4 gap-2">
+        <div class="flex">
+            <select name="product_id" id="product-select" class="border rounded px-2 py-1">
+                <option value="">Semua Produk</option>
+                <?php foreach ($products as $product): ?>
+                    <option value="<?= $product['product_id'] ?>">
+                        <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>
+                    </option>
+                <?php endforeach; ?>
+                <!-- Tambahkan opsi produk dari database -->
+            </select>
+            <select name="rating" id="rating-select" class="border rounded px-2 py-1">
+                <option value="">Semua Rating</option>
+                <option value="5">5 Bintang</option>
+                <option value="4">4 Bintang</option>
+                <option value="3">3 Bintang</option>
+                <option value="2">2 Bintang</option>
+                <option value="1">1 Bintang</option>
+            </select>
+        </div>
+        <div class="flex">
+            <input type="date" name="start_date" class="border rounded px-2 py-1" />
+            <input type="date" name="end_date" class="border rounded px-2 py-1" />
+        </div>
+
+        <div class="flex gap-2">
+            <button type="button" onclick="applyFilter()" class="bg-blue-500 text-white px-8 py-2 min-w-[80px] rounded">
+                Filter
+            </button>
+            <button type="button" onclick="resetFilter()" class="bg-gray-500 text-white px-8 py-2 rounded">
+                Reset
+            </button>
+        </div>
     </form>
 
 

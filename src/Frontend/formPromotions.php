@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH . 'backend/connection.php'; // Menghubungkan database
-include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 $promotion = null;
 if ($_GET['action'] == 'edit' && isset($_GET['id'])) {

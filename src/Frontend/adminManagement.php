@@ -1,6 +1,6 @@
 <?php include BASE_PATH . '/backend/connection.php';
 
-include __DIR__ . '/../src/Frontend/assets/navbar.php'; 
+include BASE_PATH . '/Frontend/assets/navbar.php';
 
 if (isset($_GET['error']) || isset($_GET['add_error'])) {
     $error = $_GET['error'] ?? $_GET['add_error']; // Gunakan parameter yang sesuai
