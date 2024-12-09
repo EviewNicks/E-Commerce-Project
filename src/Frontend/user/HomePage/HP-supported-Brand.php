@@ -32,35 +32,35 @@
             <!-- daftar Brand-Brand -->
             <div class="brands flex justify-center items-center content-center gap-[14px_80px] self-stretch flex-wrap">
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/Uber.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/Uber.png") ?> " alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/Mailchimp.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/Mailchimp.png") ?>" alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/airbnb.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/airbnb.png") ?> " alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/LinkedIdn.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/LinkedIdn.png") ?> " alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/Tesla.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/Tesla.png") ?> " alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/Amex.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/Amex.png") ?> " alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/facebook.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/facebook.png") ?> " alt="uber-logo"
                         class="w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
                 <div class="group cursor-pointer">
-                    <img src="/public/Brand/slack.png" alt="uber-logo"
+                    <img src="<?= asset_url("/public/Brand/slack.png") ?> " alt="uber-logo"
                         class=" w-[200px] transition-all duration-300 ease-in-out filter grayscale group-hover:grayscale-0">
                 </div>
             </div>

@@ -15,11 +15,12 @@ if (isset($_GET['status'])) {
 }
 
 // Tombol tambah produk
-echo "<div class='mb-4'>
-        <a href='?page=formProduct&action=add' class='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'>
+echo "
+<section class='mb-4 pt-16'>
+        <a href='?page=formProduct&action=add' class='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4'>
             Tambah Produk Baru
         </a>
-      </div>";
+      ";
 
 // Query untuk mengambil data produk
 $sql = "
@@ -32,7 +33,7 @@ $result = $conn->query($sql);
 // Menampilkan data produk
 if ($result->num_rows > 0) {
     echo "
-    <div class='overflow-x-auto'>
+    <div class='overflow-x-auto '>
         <table class='min-w-full border-collapse border border-gray-300 shadow-md rounded-lg'>
         <thead class='bg-blue-600 text-white'>
             <tr>
@@ -80,7 +81,9 @@ if ($result->num_rows > 0) {
     echo "
         </tbody>
         </table>
-    </div>";
+    </div>
+    </section>
+";
 } else {
     echo "<p class='text-gray-600'>Tidak ada data yang ditemukan.</p>";
 }

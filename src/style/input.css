@@ -8,7 +8,7 @@
 
 @layer utilities {
   .border-image-headline {
-    border: 4px solid var(--Primary-Colors-Layer-3, #35526F);
+    border: 4px solid var(--Primary-Colors-Layer-3, #35526f);
   }
 }
 
@@ -24,4 +24,12 @@ body {
   /* border: 1px solid red; */
   @apply text-base text-gray-800;
   /* Tailwind defaults */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }

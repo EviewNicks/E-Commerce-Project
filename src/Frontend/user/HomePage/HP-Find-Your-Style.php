@@ -10,16 +10,16 @@ $categories = [
         "description" => "Tampil keren di acara formal!"
     ],
     [
-        "title" => "Stylish di Kampus",
+        "title" => "Stylish Man",
         "description" => "Ciptakan gaya yang keren di kampus!"
+    ],
+    [
+        "title" => "Stylish Woman",
+        "description" => "Apa kata pelanggan tentang kami!"
     ],
     [
         "title" => "Aksesories",
         "description" => "Lengkapi penampilanmu dengan aksesoris!"
-    ],
-    [
-        "title" => "Testimony",
-        "description" => "Apa kata pelanggan tentang kami!"
     ]
 ];
 ?>

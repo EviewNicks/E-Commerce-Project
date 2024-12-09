@@ -59,14 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     // Update database
-    $sql = "UPDATE products SET category_id = ?, name = ?, description = ?, price = ?, is_featured = ?, tags = ?" .
-        ($image_url ? ", image_url = ?" : "") . " WHERE product_id = ?";
-    $stmt = $conn->prepare($sql);
-
     if ($image_url) {
+        $sql = "UPDATE products SET category_id = ?, name = ?, description = ?, price = ?, is_featured = ?, tags = ?, image_url = ? WHERE product_id = ?";
+        $stmt = $conn->prepare($sql);
         $stmt->bind_param("issdissi", $category_id, $name, $description, $price, $is_featured, $tags, $image_url, $product_id);
     } else {
-        $stmt->bind_param("issdissi", $category_id, $name, $description, $price, $is_featured, $tags, $product_id);
+        $sql = "UPDATE products SET category_id = ?, name = ?, description = ?, price = ?, is_featured = ?, tags = ? WHERE product_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("issdiss", $category_id, $name, $description, $price, $is_featured, $tags, $product_id);
     }
 
     if ($stmt->execute()) {

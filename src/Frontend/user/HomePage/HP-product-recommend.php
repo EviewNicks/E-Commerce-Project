@@ -3,6 +3,7 @@
 // Data Produk
 $products = [
     [
+        "id" => 1,
         "title" => "Kemeja Formal Slim Fit",
         "description" => "Cocok untuk gaya formal mahasiswa.",
         "rating" => 4.5,
@@ -10,9 +11,10 @@ $products = [
         "promo" => true,
         "harga" => 250.000,
         "jumlah_stok" => 50,
-        "image" => asset_url("public/Outfit/outfit-2.jpg")
+        "image" => asset_url("public/Outfit/outfit-9.jpg")
     ],
     [
+        "id" => 2,
         "title" => "Kaos Santai Anak Muda",
         "description" => "Gaya kasual yang cocok untuk aktivitas santai.",
         "rating" => 4.8,
@@ -20,9 +22,10 @@ $products = [
         "promo" => false,
         "harga" => 150.000,
         "jumlah_stok" => 200,
-        "image" => asset_url("public/Outfit/outfit-2.jpg")
+        "image" => asset_url("public/Outfit/outfit-4.jpg")
     ],
     // [
+    // "id" => 2,
     //     "title" => "Blazer Keren untuk Kampus",
     //     "description" => "Tampil profesional dan keren.",
     //     "rating" => 4.9,
@@ -64,10 +67,11 @@ $products = [
     // ],
 ];
 
-
 // Sebelum rendering elemen HTML
-$id = str_replace(' ', '_', $product['title']) . uniqid();
 ?>
+
+
+
 
 
 
@@ -255,18 +259,19 @@ $id = str_replace(' ', '_', $product['title']) . uniqid();
                         class="relative card-product group flex w-[200px] h-[256px] pt-4 px-3 pb-3 flex-col justify-between items-center rounded-3xl hover:cursor-pointer active:scale-95 active:shadow-inner transition-all">
 
                         <!-- object Container -->
+                        <!-- object Container -->
                         <div class="icon-container absolute flex left-0 top-0 ">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="256" viewBox="0 0 200 256" fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M80.8415 5.5C76.4137 1.94045 70.903 0 65.2219 0H32C14.3269 0 0 14.3269 0 32V224C0 241.673 14.3269 256 32 256H168C185.673 256 200 241.673 200 224V32C200 14.3269 185.673 0 168 0H133.778C128.097 0 122.586 1.94045 118.159 5.5V5.5C113.731 9.05955 108.22 11 102.539 11H96.4611C90.7799 11 85.2692 9.05955 80.8415 5.5V5.5Z"
-                                    fill="url(#pattern<?= $id ?>)" stroke="#95A5A6" stroke-width="2" />
+                                    fill="url(#pattern<?= $product['id'] ?>)" stroke="#95A5A6" stroke-width="2" />
                                 <defs>
                                     <!-- Pattern Definition -->
-                                    <pattern id="pattern<?= $id ?>" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                        <use xlink:href="#image<?= $id ?>" transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
+                                    <pattern id="pattern<?= $product['id'] ?>" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image<?= $product['id'] ?>" transform="matrix(0.00147929 0 0 0.0011557 0 -0.193995)" />
                                     </pattern>
                                     <!-- Image Definition -->
-                                    <image id="image<?= $id ?>" width="676" height="1201" xlink:href="<?= $product['image'] ?>" />
+                                    <image id="image<?= $product['id'] ?>" width="676" height="1201" xlink:href="<?= $product['image'] ?>" />
                                 </defs>
                             </svg>
                         </div>
@@ -333,13 +338,13 @@ $id = str_replace(' ', '_', $product['title']) . uniqid();
 
                             <!-- object Container -->
                             <div class="icon-container absolute flex right-0 top-0">
-                                <object data="/src/assets/svg/product-container.svg" type="image/svg+xml"></object>
+                                <object data="<?= asset_url("/src/assets/svg/product-container.svg") ?>" type="image/svg+xml"></object>
                             </div>
 
                             <!-- Send Email Button -->
                             <div
                                 class="absolute top-1 right-1 flex items-center p-1 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
-                                <object data="/src/assets/icon/chevron-right.svg" width="26" height="26"
+                                <object data="<?= asset_url("/src/assets/icon/chevron-right.svg") ?> " width="26" height="26"
                                     type="image/svg+xml"></object>
                             </div>
 
