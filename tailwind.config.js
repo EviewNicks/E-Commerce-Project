@@ -216,5 +216,6 @@ module.exports = {
       });
     }),
     require("flowbite/plugin"), // Tambahkan Flowbite di sini
+    require("tailwind-scrollbar-hide"),
   ],
 };

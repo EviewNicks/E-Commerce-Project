@@ -1,13 +1,17 @@
-<nav
-    class="fixed mt-4 px-4 inset-x-0 z-50 flex max-w-[926px] mx-auto justify-between items-center py-2 rounded-full bg-primary text-white bg-Primary-Colors-4">
+<?php
+// session_start();
+$isLoggedIn = isset($_SESSION['user_id']); // Menentukan apakah pengguna sudah login
+?>
+
+<nav class="fixed mt-4 px-4 inset-x-0 z-50 flex max-w-[926px] mx-auto justify-between items-center py-2 rounded-full bg-Primary text-white">
     <!-- Logo -->
     <div class="flex items-center gap-[31px]">
-        <div class="flex">
+        <a href="?page=homePageUser" class="flex items-center">
             <img src="<?= asset_url('src/assets/tshirt-Logo.png') ?>" alt="brandU-logo" class="w-[28px] h-[28px] mt-2" />
             <h1 class="px-2 text-Third text-center font-playfair text-logo-small">
                 Brand<span class="text-Secondary">U</span>
             </h1>
-        </div>
+        </a>
     </div>
 
     <!-- Search Container -->
@@ -22,38 +26,51 @@
                 </svg>
             </div>
             <input type="text" id="simple-search"
-                class="bg-Primary-Colors-3 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 px-2.5 py-1.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="bg-Primary-Colors-3 border border-gray-300 text-gray-900 text-sm rounded-full block w-full ps-10 px-2.5 py-1.5"
                 placeholder="Search branch name..." required />
         </div>
     </form>
 
     <!-- Action Container -->
     <div class="flex justify-center items-center gap-8">
-        <!-- Cart Button -->
-        <a aria-label="keranjang-button" href="./keranjang">
-            <div
-                class="flex p-2 flex-col items-center rounded-full bg-red-500 transition-all duration-300 ease-in-out cursor-pointer hover:bg-red-600 hover:scale-110 hover:shadow-lg active:bg-red-700 active:scale-95">
-                <!-- Add SVG/Content here -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path
-                        d="M23.936 10.7293C23.8256 10.2531 23.6127 9.80681 23.312 9.42143C23.0069 9.03896 22.622 8.72774 22.1841 8.50952C21.8387 8.33965 21.4639 8.23781 21.0801 8.20955C20.8845 6.1099 19.9539 4.14671 18.4522 2.66611C16.7424 0.958891 14.4248 0 12.0085 0C9.59221 0 7.27466 0.958891 5.5648 2.66611C4.06317 4.14671 3.13251 6.1099 2.93691 8.20955C2.55309 8.23781 2.17829 8.33965 1.83296 8.50952C1.39288 8.72434 1.00724 9.03613 0.705006 9.42143C0.402101 9.80597 0.188891 10.2533 0.0809399 10.7307C-0.0270114 11.2082 -0.0269796 11.7037 0.0810332 12.1812L1.96495 19.8964C2.28921 21.0785 2.99376 22.121 3.96976 22.8627C4.94575 23.6044 6.13885 24.0041 7.36472 24H16.6163C17.8464 24.0013 19.0427 23.5978 20.0207 22.8519C20.9987 22.1059 21.7041 21.0589 22.0281 19.8724L23.9 12.1812C24.02 11.706 24.032 11.2093 23.936 10.7293ZM8.21668 18.4325C8.21668 18.6712 8.12186 18.9001 7.95309 19.0689C7.78431 19.2376 7.55541 19.3324 7.31672 19.3324C7.07804 19.3324 6.84913 19.2376 6.68035 19.0689C6.51158 18.9001 6.41676 18.6712 6.41676 18.4325V13.705C6.41676 13.4663 6.51158 13.2374 6.68035 13.0687C6.84913 12.8999 7.07804 12.8051 7.31672 12.8051C7.55541 12.8051 7.78431 12.8999 7.95309 13.0687C8.12186 13.2374 8.21668 13.4663 8.21668 13.705V18.4325ZM12.9085 18.4325C12.9085 18.5507 12.8852 18.6677 12.84 18.7769C12.7947 18.8861 12.7285 18.9853 12.6449 19.0689C12.5613 19.1524 12.4621 19.2187 12.3529 19.2639C12.2437 19.3092 12.1267 19.3324 12.0085 19.3324C11.8903 19.3324 11.7733 19.3092 11.6641 19.2639C11.5549 19.2187 11.4557 19.1524 11.3721 19.0689C11.2886 18.9853 11.2223 18.8861 11.1771 18.7769C11.1318 18.6677 11.1086 18.5507 11.1086 18.4325V13.705C11.1086 13.4663 11.2034 13.2374 11.3721 13.0687C11.5409 12.8999 11.7698 12.8051 12.0085 12.8051C12.2472 12.8051 12.4761 12.8999 12.6449 13.0687C12.8137 13.2374 12.9085 13.4663 12.9085 13.705V18.4325ZM17.6003 18.4325C17.6003 18.6712 17.5055 18.9001 17.3367 19.0689C17.1679 19.2376 16.939 19.3324 16.7003 19.3324C16.4616 19.3324 16.2327 19.2376 16.0639 19.0689C15.8952 18.9001 15.8004 18.6712 15.8004 18.4325V13.705C15.8004 13.4663 15.8952 13.2374 16.0639 13.0687C16.2327 12.8999 16.4616 12.8051 16.7003 12.8051C16.939 12.8051 17.1679 12.8999 17.3367 13.0687C17.5055 13.2374 17.6003 13.4663 17.6003 13.705V18.4325ZM4.74883 8.18555C4.94618 6.57486 5.68193 5.07808 6.83674 3.93798C8.21067 2.57074 10.0702 1.80318 12.0085 1.80318C13.9469 1.80318 15.8064 2.57074 17.1803 3.93798C18.3351 5.07808 19.0709 6.57486 19.2682 8.18555H4.74883Z"
-                        fill="#ECF0F1" />
-                </svg>
-            </div>
-        </a>
+        <!-- Keranjang Button untuk User -->
+        <?php if ($isLoggedIn && $_SESSION['role'] === 'user'): ?>
+            <a aria-label="keranjang-button" href="?page=Wishlist">
+                <div class="flex p-2 flex-col items-center rounded-full bg-red-500 hover:bg-red-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M23.936 10.7293C23.8256 10.2531 23.6127 9.80681 23.312 9.42143C23.0069 9.03896 22.622 8.72774 22.1841 8.50952C21.8387 8.33965 21.4639 8.23781 21.0801 8.20955C20.8845 6.1099 19.9539 4.14671 18.4522 2.66611C16.7424 0.958891 14.4248 0 12.0085 0C9.59221 0 7.27466 0.958891 5.5648 2.66611C4.06317 4.14671 3.13251 6.1099 2.93691 8.20955C2.55309 8.23781 2.17829 8.33965 1.83296 8.50952C1.39288 8.72434 1.00724 9.03613 0.705006 9.42143C0.402101 9.80597 0.188891 10.2533 0.0809399 10.7307C-0.0270114 11.2082 -0.0269796 11.7037 0.0810332 12.1812L1.96495 19.8964C2.28921 21.0785 2.99376 22.121 3.96976 22.8627C4.94575 23.6044 6.13885 24.0041 7.36472 24H16.6163C17.8464 24.0013 19.0427 23.5978 20.0207 22.8519C20.9987 22.1059 21.7041 21.0589 22.0281 19.8724L23.9 12.1812C24.02 11.706 24.032 11.2093 23.936 10.7293ZM8.21668 18.4325C8.21668 18.6712 8.12186 18.9001 7.95309 19.0689C7.78431 19.2376 7.55541 19.3324 7.31672 19.3324C7.07804 19.3324 6.84913 19.2376 6.68035 19.0689C6.51158 18.9001 6.41676 18.6712 6.41676 18.4325V13.705C6.41676 13.4663 6.51158 13.2374 6.68035 13.0687C6.84913 12.8999 7.07804 12.8051 7.31672 12.8051C7.55541 12.8051 7.78431 12.8999 7.95309 13.0687C8.12186 13.2374 8.21668 13.4663 8.21668 13.705V18.4325ZM12.9085 18.4325C12.9085 18.5507 12.8852 18.6677 12.84 18.7769C12.7947 18.8861 12.7285 18.9853 12.6449 19.0689C12.5613 19.1524 12.4621 19.2187 12.3529 19.2639C12.2437 19.3092 12.1267 19.3324 12.0085 19.3324C11.8903 19.3324 11.7733 19.3092 11.6641 19.2639C11.5549 19.2187 11.4557 19.1524 11.3721 19.0689C11.2886 18.9853 11.2223 18.8861 11.1771 18.7769C11.1318 18.6677 11.1086 18.5507 11.1086 18.4325V13.705C11.1086 13.4663 11.2034 13.2374 11.3721 13.0687C11.5409 12.8999 11.7698 12.8051 12.0085 12.8051C12.2472 12.8051 12.4761 12.8999 12.6449 13.0687C12.8137 13.2374 12.9085 13.4663 12.9085 13.705V18.4325ZM17.6003 18.4325C17.6003 18.6712 17.5055 18.9001 17.3367 19.0689C17.1679 19.2376 16.939 19.3324 16.7003 19.3324C16.4616 19.3324 16.2327 19.2376 16.0639 19.0689C15.8952 18.9001 15.8004 18.6712 15.8004 18.4325V13.705C15.8004 13.4663 15.8952 13.2374 16.0639 13.0687C16.2327 12.8999 16.4616 12.8051 16.7003 12.8051C16.939 12.8051 17.1679 12.8999 17.3367 13.0687C17.5055 13.2374 17.6003 13.4663 17.6003 13.705V18.4325ZM4.74883 8.18555C4.94618 6.57486 5.68193 5.07808 6.83674 3.93798C8.21067 2.57074 10.0702 1.80318 12.0085 1.80318C13.9469 1.80318 15.8064 2.57074 17.1803 3.93798C18.3351 5.07808 19.0709 6.57486 19.2682 8.18555H4.74883Z"
+                            fill="#ECF0F1" />
+                    </svg>
+                </div>
+            </a>
+        <?php endif; ?>
 
-        <!-- Login & Register Buttons -->
-        <div class="flex justify-center items-center gap-2">
-            <!-- Login Button -->
-            <button type="button"
-                class="flex px-3 py-1 justify-center items-center gap-2 border border-red-500 rounded-lg text-white bg-transparent transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
-                <span class="font-bold text-sm">Masuk</span>
-            </button>
-            <!-- Register Button -->
-            <button type="button"
-                class="flex px-3 py-1 justify-center items-center gap-2 rounded-lg text-white bg-red-500 transition-all duration-300 hover:shadow-md hover:-translate-y-1 active:translate-y-0 active:shadow-sm">
-                <span class="font-bold text-sm">Daftar</span>
-            </button>
-        </div>
+        <!-- Login & Register Buttons / Profile -->
+        <?php if ($isLoggedIn): ?>
+            <!-- Profile User -->
+            <a href="?page=Profile">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                        <img src="<?= asset_url('public/profile/profile-1.jpg') ?>" alt="foto-profile" class="w-10 h-10 rounded-full">
+                    </div>
+                    <span class="text-white font-quicksand text-label-small"><?= $_SESSION['username']; ?> (<?= ucfirst($_SESSION['role']); ?>)</span>
+                </div>
+            </a>
+            <!-- Tombol Logout -->
+            <form action="?page=logoutAction" method="POST" class="ml-4">
+                <button type="submit" class="bg-secondary hover:bg-secondary-layer-2 px-4 py-2 rounded-md font-medium">Logout</button>
+            </form>
+        <?php else: ?>
+            <!-- Login & Register Buttons -->
+            <div class="flex gap-2">
+                <a href="?page=login">
+                    <button class="px-3 py-1 border border-red-500 rounded-lg text-white hover:bg-red-500">Masuk</button>
+                </a>
+                <a href="?page=register">
+                    <button class="px-3 py-1 rounded-lg text-white bg-red-500 hover:shadow-md">Daftar</button>
+                </a>
+            </div>
+        <?php endif; ?>
     </div>
 </nav>

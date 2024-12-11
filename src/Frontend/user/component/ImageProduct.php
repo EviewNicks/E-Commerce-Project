@@ -8,18 +8,16 @@
                 height="518" viewBox="0 0 364 518" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M150.413 9.61859C144.393 3.46713 136.149 0 127.542 0H32C14.3269 0 0 14.3269 0 32V486C0 503.673 14.3269 518 32 518H332C349.673 518 364 503.673 364 486V32C364 14.3269 349.673 0 332 0H236.458C227.851 0 219.607 3.46713 213.587 9.61858L210.413 12.8624C204.393 19.0139 196.149 22.481 187.542 22.481H176.458C167.851 22.481 159.607 19.0139 153.587 12.8624L150.413 9.61859Z"
-                    fill="url(#pattern0_242_514)" stroke="#95A5A6" stroke-width="2" />
+                    fill="url(#pattern0_<?= $product['product_id'] ?>)" stroke="#95A5A6" stroke-width="2" />
                 <defs>
-                    <pattern id="pattern0_242_514" patternContentUnits="objectBoundingBox" width="1"
+                    <pattern id="pattern0_<?= $product['product_id'] ?>" patternContentUnits="objectBoundingBox" width="1"
                         height="1">
-                        <use xlink:href="#image0_242_514"
-                            transform="matrix(0.00147929 0 0 0.0010395 0 -0.12422)" />
+                        <use xlink:href="#image0_<?= $product['product_id'] ?>" transform="matrix(0.00147929 0 0 0.0010395 0 -0.12422)" />
                     </pattern>
-                    <image id="image0_242_514" width="676" height="1201"
-                        xlink:href=" <?= asset_url("/public/Outfit/outfit-7.jpg") ?>" />
+                    <image id="image0_<?= $product['product_id'] ?>" width="676" height="1201"
+                        xlink:href="<?= htmlspecialchars($product['image_url']) ?>" />
                 </defs>
             </svg>
-
 
         </div>
 
@@ -41,7 +39,7 @@
                             4.9/5</p>
                     </div>
                     <p class="sales-count text-[#1E1E1E] font-poppins text-label-medium">
-                        Terjual 25+</p>
+                        Terjual 32+</p>
                 </div>
             </div>
             <!-- Icons Container -->
@@ -71,37 +69,18 @@
         <!-- Promo and Title Container -->
         <div
             class="relative hidden group-hover:flex h-[114px] p-[32px_52px_8px_20px] flex-col justify-between items-center flex-shrink-0 self-stretch rounded-[24px] drop-shadow-shadow-product transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
-            <!-- Promo Text Container -->
-            <div class="flex p-[4px_8px] items-start flex-col absolute left-0 top-0 z-10">
-                <div class=" flex p-[4px_8px] flex-col items-start rounded-[8px] bg-Secondary">
-                    <p class="self-stretch text-white font-quicksand text-label-small">
-                        Promo Hari ini!</p>
-                </div>
-            </div>
 
             <!-- object Container -->
             <div class="icon-container absolute flex right-0 top-0">
                 <object data="<?= asset_url("/src/assets/svg/large-product-conatiner.svg") ?>"
                     type="image/svg+xml"></object>
             </div>
-            <!-- Send Email Button -->
-            <div
-                class="absolute top-2 right-2 flex items-center p-2 rounded-full bg-Secondary shadow-custom cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
-                <object data="<?= asset_url("/src/assets/icon/chevron-right.svg") ?> " width="24" height="24"
-                    type="image/svg+xml"></object>
-            </div>
-
-
 
             <h4 class="self-stretch text-black font-quicksand text-body-medium z-10">
-                Product Title Product Title Product Title Product Title Product Title</h4>
+                <?= htmlspecialchars($product['name']) ?></h4>
             <div class="flex items-center gap-3 self-stretch z-10">
-                <p class="text-black font-poppins text-label-small">Rp
-                    800.000</p>
-                <div class="flex p-[0_2px] justify-center items-center rounded-[4px] bg-Secondary">
-                    <p class="text-white font-poppins text-body-small">Stok
-                        Terbatas</p>
-                </div>
+                <p class="text-black font-poppins text-label-small">Rp <?= number_format($product['price'], 0, ',', '.') ?></p>
+
             </div>
         </div>
     </div>

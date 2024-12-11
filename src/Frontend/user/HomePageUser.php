@@ -1,10 +1,5 @@
 <?php
-function asset_url($path)
-{
-    $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/";
-    return $base_url . $path;
-}
-
+session_start();
 function render_section($section_name)
 {
     include BASE_PATH . "Frontend/user/HomePage/$section_name.php";

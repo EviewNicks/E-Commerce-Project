@@ -1,13 +1,76 @@
 <?php
+include BASE_PATH . '/backend/connection.php';
+session_start();
 
-function render_decsripsi($section_name)
+// Periksa apakah keranjang kosong
+if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+    echo "<p>Keranjang Anda kosong. <a href='index.php?page=products'>Belanja sekarang</a></p>";
+    exit();
+}
+
+
+
+// Query untuk mendapatkan data produk berdasarkan ID
+$cart = $_SESSION['cart'];
+$product_ids = array_column($cart, 'product_id');
+
+// Validasi apakah product_ids ada
+if (empty($product_ids)) {
+    die("Keranjang Anda kosong. <a href='index.php?page=products'>Belanja sekarang</a>");
+}
+
+$placeholders = implode(',', array_fill(0, count($product_ids), '?'));
+
+// Periksa koneksi database
+if (!$conn) {
+    die("Koneksi database gagal: " . $conn->connect_error);
+}
+
+$stmt = $conn->prepare("SELECT product_id, name, price, image_url FROM products WHERE product_id IN ($placeholders)");
+if (!$stmt) {
+    die("Query gagal: " . $conn->error);
+}
+
+$stmt->bind_param(str_repeat('i', count($product_ids)), ...$product_ids);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$products = [];
+while ($row = $result->fetch_assoc()) {
+    $products[$row['product_id']] = $row;
+}
+
+$total = 0; // Inisialisasi total
+
+// echo "<h3>Total: Rp " . number_format($total, 2, ',', '.') . "</h3>";
+// echo "<a href='index.php?page=checkout'>Lanjut ke Pembayaran</a>";
+
+$data = [
+    'cart' => $cart,
+    'products' => $products,
+    'total' => $total
+];
+
+
+function render_chart($section_name, $data)
 {
+    // Pastikan variabel yang akan digunakan di dalam komponen tersedia
+    if (is_array($data)) {
+        extract($data); // Mengubah array menjadi variabel
+    }
     include BASE_PATH . "Frontend/user/component/$section_name.php";
 }
 
-include BASE_PATH . 'Frontend/assets/usernavbar.php';
 
+// Tutup koneksi
+$stmt->close();
+$conn->close();
 ?>
+
+<?php
+include BASE_PATH . 'Frontend/assets/userNavbar.php';
+?>
+
 
 <div class="col-span-12 gap-2 flex flex-col items-start content-start pt-[88px] w-[1120px] mx-auto">
 
@@ -54,20 +117,12 @@ include BASE_PATH . 'Frontend/assets/usernavbar.php';
     <div class="self-stretch flex  items-start gap-2">
         <?php
 
-        render_decsripsi('list-keranjang');
-        render_decsripsi('ringkasan-belanja');
-
+        render_chart('list-keranjang', $data);
+        render_chart('ringkasan-belanja', $data);
 
         ?>
     </div>
 
-    <?php
-
-    include BASE_PATH . "Frontend/user/HomePage/HP-list-product.php";
-
-    include BASE_PATH . "Frontend/user/HomePage/HP-list-product.php";
-
-    ?>
 
 </div>
 

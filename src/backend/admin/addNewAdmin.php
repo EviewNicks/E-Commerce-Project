@@ -1,52 +1,78 @@
 <?php
-include BASE_PATH . '/backend/connection.php';
+include BASE_PATH . '/backend/connection.php'; // Koneksi database
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Ambil data dari form
+    $email = trim($_POST['new_email']);
     $username = trim($_POST['new_username']);
-    $password = $_POST['new_password'];
-    $confirm_password = $_POST['confirm_new_password'];
+    $password = trim($_POST['new_password']);
+    $confirm_password = trim($_POST['confirm_new_password']);
 
-    // Validasi sederhana untuk username (panjang minimum 3 karakter)
-    if (strlen($username) < 3) {
-        header("Location: ?page=adminManagement&add_error=username_invalid");
+    // Validasi sederhana
+    if (empty($email) || empty($username) || empty($password) || empty($confirm_password)) {
+        header('Location: ?page=addAdmin&error=Semua kolom wajib diisi');
         exit;
     }
 
-    // Validasi sederhana untuk password (panjang minimum 6 karakter)
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header('Location: ?page=addAdmin&error=Format email tidak valid');
+        exit;
+    }
+
     if (strlen($password) < 6) {
-        header("Location: ?page=adminManagement&add_error=password_too_short");
+        header('Location: ?page=addAdmin&error=Password minimal 6 karakter');
         exit;
     }
 
-    // Validasi konfirmasi password
     if ($password !== $confirm_password) {
-        header("Location: ?page=adminManagement&add_error=password_mismatch");
+        header('Location: ?page=addAdmin&error=Password tidak cocok');
+        exit;
+    }
+
+    // Cek apakah email sudah ada
+    $checkEmailQuery = $conn->prepare("SELECT COUNT(*) FROM admin WHERE email = ?");
+    $checkEmailQuery->bind_param("s", $email);
+    $checkEmailQuery->execute();
+    $checkEmailQuery->bind_result($emailExists);
+    $checkEmailQuery->fetch();
+    $checkEmailQuery->close();
+
+    if ($emailExists) {
+        header('Location: ?page=addAdmin&error=Email sudah digunakan');
         exit;
     }
 
     // Cek apakah username sudah ada
-    $stmt = $conn->prepare("SELECT admin_id FROM admin WHERE username = ?");
-    $stmt->bind_param('s', $username);
-    $stmt->execute();
-    $stmt->store_result();
-    if ($stmt->num_rows > 0) {
-        header("Location: ?page=adminManagement&add_error=username_taken");
+    $checkUsernameQuery = $conn->prepare("SELECT COUNT(*) FROM admin WHERE username = ?");
+    $checkUsernameQuery->bind_param("s", $username);
+    $checkUsernameQuery->execute();
+    $checkUsernameQuery->bind_result($userExists);
+    $checkUsernameQuery->fetch();
+    $checkUsernameQuery->close();
+
+    if ($userExists) {
+        header('Location: ?page=addAdmin&error=Username sudah digunakan');
         exit;
     }
 
     // Hash password
-    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-    // Insert admin baru ke database
-    $stmt = $conn->prepare("INSERT INTO admin (username, password, created_at, updated_at) VALUES (?, ?, NOW(), NOW())");
-    $stmt->bind_param('ss', $username, $hashed_password);
+    // Simpan admin baru ke database
+    $insertAdminQuery = $conn->prepare("INSERT INTO admin (email, username, password, created_at) VALUES (?, ?, ?, NOW())");
+    $insertAdminQuery->bind_param("sss", $email, $username, $hashedPassword);
 
-    if ($stmt->execute()) {
-        header("Location: ?page=adminManagement&add_success=1");
+    if ($insertAdminQuery->execute()) {
+        $insertAdminQuery->close();
+        header('Location: ?page=adminManagement&success=Admin baru berhasil ditambahkan');
+        exit;
     } else {
-        header("Location: ?page=adminManagement&add_error=add_failed");
+        error_log("Query Error: " . $insertAdminQuery->error);
+        $insertAdminQuery->close();
+        header('Location: ?page=adminManagement&error=Pesan kesalahan yang relevan');
+        exit;
     }
-
-    $stmt->close();
-    $conn->close();
+} else {
+    header('Location: ?page=addAdmin&error=Metode request tidak valid');
+    exit;
 }

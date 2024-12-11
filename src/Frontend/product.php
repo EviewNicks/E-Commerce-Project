@@ -23,17 +23,21 @@ echo "
       ";
 
 // Query untuk mengambil data produk
-$sql = "
-    SELECT p.product_id, p.name, p.price, p.image_url, p.is_featured, c.name AS category_name
-    FROM products p
-    JOIN categories c ON p.category_id = c.category_id
-";
+$sql = "SELECT 
+            p.product_id, p.name, p.price, p.created_at, p.image_url, p.is_featured, 
+            c.name AS category_name
+          FROM 
+            products p
+          INNER JOIN 
+            categories c ON p.category_id = c.category_id
+          ORDER BY 
+            p.created_at DESC";
 $result = $conn->query($sql);
 
 // Menampilkan data produk
 if ($result->num_rows > 0) {
     echo "
-    <div class='overflow-x-auto '>
+    <div class='overflow-x-auto'>
         <table class='min-w-full border-collapse border border-gray-300 shadow-md rounded-lg'>
         <thead class='bg-blue-600 text-white'>
             <tr>
@@ -51,10 +55,9 @@ if ($result->num_rows > 0) {
     $no = 1; // Nomor urut
     while ($row = $result->fetch_assoc()) {
         $featured_checkbox = $row["is_featured"] ? "checked" : "";
-        error_log("Image URL: " . $row["image_url"]);
         $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
         $image_html = $row["image_url"]
-            ? "<img src='" . $base_url . $row["image_url"] . "' alt='Product Image'style='max-width: 80px; height: auto;' class='max-w-[80px] h-auto object-cover rounded '>"
+            ? "<img src='" . $base_url . $row["image_url"] . "' alt='Product Image' style='max-width: 80px; height: auto;' class='max-w-[80px] h-auto object-cover rounded '>"
             : "<span class='text-gray-500'>No Image</span>";
         echo "
             <tr class='border border-gray-300 hover:bg-gray-100'>
@@ -69,8 +72,7 @@ if ($result->num_rows > 0) {
                     data-id='" . $row["product_id"] . "' 
                     class='featured-checkbox' 
                     $featured_checkbox 
-                    onchange='toggleFeatured(this)'
-                >
+                    onchange='toggleFeatured(this)'>
                 </td>
                 <td class='px-4 py-2 text-center'>
                     <a href='?page=formProduct&action=edit&id=" . $row["product_id"] . "' class='text-blue-500 hover:underline'>Edit</a>
@@ -81,11 +83,9 @@ if ($result->num_rows > 0) {
     echo "
         </tbody>
         </table>
-    </div>
-    </section>
-";
+    </div>";
 } else {
-    echo "<p class='text-gray-600'>Tidak ada data yang ditemukan.</p>";
+    echo "<p class='text-center'>Tidak ada data produk.</p>";
 }
 
 // Menutup koneksi

@@ -139,12 +139,13 @@
             <div class="flex flex-col items-end gap-2 self-stretch">
                 <!-- Quantity Stock -->
                 <div class="flex justify-between items-center self-stretch px-2">
+
                     <!-- Quantity Selector -->
                     <div
                         class="flex justify-center py-1 px-2 items-center gap-[20px] bg-Primary-Colors-2 rounded-lg ">
                         <!-- Button Decrease -->
-                        <button type="button" aria-label="minus"
-                            class="flex items-center justify-center px-1 py-[10px] bg-Primary-Colors-1 rounded-full">
+                        <button id="btn-decrease" type="button" aria-label="minus"
+                            class="flex items-center justify-center px-1 py-[10px] bg-Primary-Colors-1 rounded-full disabled:opacity-50">
                             <!-- SVG Minus -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="4" viewBox="0 0 16 4"
                                 fill="none">
@@ -155,10 +156,10 @@
                             <label for="minus" class="sr-only">minus</label>
                         </button>
                         <!-- Quantity -->
-                        <span class="text-Third font-quicksand text-label-medium ">122</span>
+                        <span id="quantity" class="text-Third font-quicksand text-label-medium ">1</span>
                         <!-- Button Increase -->
-                        <button type="button"
-                            class="flex items-center justify-center p-1 bg-Primary-Colors-1 rounded-full">
+                        <button id="btn-increase" type="button"
+                            class="flex items-center justify-center p-1 bg-Primary-Colors-1 rounded-full disabled:opacity-50">
                             <!-- SVG Plus -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                 viewBox="0 0 18 18" fill="none">
@@ -170,13 +171,13 @@
                         </button>
                     </div>
                     <!-- Stock Information -->
-                    <p class="text-Third font-quicksand text-body-large">Stok Total 420</p>
+                    <p class="text-Third font-quicksand text-body-large">Stok Total <span id="stock-total">420</span></p>
                 </div>
 
                 <!-- Subtotal -->
                 <div class="flex justify-between items-center px-3 w-full">
-                    <p class="flex-1 text-Third font-quicksand text-body-large">SubTotal</p>
-                    <p class="text-Third  text-center font-quicksand text-title-medium">Rp165.000</p>
+                    <p class="flex-1 text-Third font-quicksand text-body-large">Subtotal</p>
+                    <p id="subtotal" class="text-Third text-center font-quicksand text-title-medium">Rp 0</p>
                 </div>
             </div>
 
@@ -184,10 +185,9 @@
             <!-- Actions -->
             <div class="flex px-8 flex-col justify-center items-center gap-[12px] self-stretch">
                 <!-- Add to Cart -->
-                <button type="button" onclick="window.location.href='keranjang.html'"
+                <button id="add-to-cart" type="button"
                     class="flex py-[10px] justify-center items-center self-stretch rounded-xl border border-Secondary bg-Secondary-Colors-5 transition-all duration-300 cursor-pointer hover:bg-Secondary-Colors-2 hover:shadow-md hover:-translate-y-1 hover:text-Third active:translate-y-0 active:shadow-sm">
-                    <label class="text-black font-quicksand text-label-medium" for="keranjang">+
-                        Keranjang</label>
+                    <label class="text-black font-quicksand text-label-medium" for="keranjang">+ Keranjang</label>
                 </button>
                 <!-- Buy Button -->
                 <button type="button" onclick="window.location.href='Delivery.html'"
@@ -213,13 +213,9 @@
                 <!-- Description -->
                 <div class="flex px-6 items-start gap-2 self-stretch">
                     <p class="text-black text-sm font-medium leading-5">
-                        Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk
-                        Deskripsi
-                        Produk Deskripsi Produk<br><br>
-                        Deskripsi Produk:<br>
-                        Deskripsi Produk Deskripsi Produk Deskripsi Produk Deskripsi Produk<br><br>
-                        Deskripsi Produk<br>Deskripsi Produk<br>Deskripsi Produk<br>
+                        <?= nl2br(htmlspecialchars($product['description'])) ?>
                     </p>
+
                 </div>
             </div>
 

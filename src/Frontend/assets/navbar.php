@@ -19,4 +19,8 @@
             <a href="?page=adminManagement" class="hover:bg-blue-500 px-3 py-2 rounded-md font-medium self-stretch">Manajemen Akun</a>
         </li>
     </ul>
+    <!-- Tombol Logout -->
+    <form action="?page=logoutAction" method="POST" class="ml-4">
+        <button type="submit" class="bg-red-600 hover:bg-red-800 px-4 py-2 rounded-md font-medium">Logout</button>
+    </form>
 </nav>

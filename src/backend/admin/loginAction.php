@@ -11,16 +11,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Ambil data pengguna berdasarkan email
-    $stmt = $conn->prepare("SELECT user_id, username, password FROM users WHERE email = ?");
+    // Pertama cek apakah email ada di tabel admin
+    $stmt = $conn->prepare("SELECT admin_id AS id, username, password, 'admin' AS role FROM admin WHERE email = ?");
     $stmt->bind_param('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
-        // Email tidak ditemukan
-        header("Location: ?page=login&error=email_not_found");
-        exit;
+        // Jika tidak ditemukan di tabel admin, cek di tabel users
+        $stmt = $conn->prepare("SELECT user_id AS id, username, password, 'user' AS role FROM users WHERE email = ?");
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 0) {
+            // Email tidak ditemukan di kedua tabel
+            header("Location: ?page=login&error=email_not_found");
+            exit;
+        }
     }
 
     $user = $result->fetch_assoc();
@@ -34,13 +42,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Jika login berhasil, arahkan ke halaman dashboard atau berikan modal sukses
     session_start();
-    $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
+    $_SESSION['role'] = $user['role'];
 
-    if ($stmt->execute()) {
-        header("Location: ?page=login&success=1");
+    // Tentukan halaman tujuan berdasarkan role
+    if ($user['role'] === 'admin') {
+        header("Location: ?page=products"); // Admin ke halaman produk
     } else {
-        header("Location: ?page=login&error=add_failed");
+        header("Location: ?page=homePageUser"); // User ke halaman beranda
     }
     exit;
 }

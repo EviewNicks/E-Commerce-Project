@@ -1,5 +1,12 @@
 <?php
 $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
+
+session_start();
+if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+    header("Location: ?page=homePageUser");
+    exit;
+}
+
 ?>
 
 <section class="flex flex-1 items-center justify-center gap-8 px-8 py-4 h-screen">
@@ -100,10 +107,16 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
     <img src="<?= $base_url ?>Outfit/login-image.jpg" alt="img-register" class="flex-1 h-full rounded-2xl bg-cover bg-center bg-no-repeat max-w-[450px]">
 
 </section>
-
+<?php
+session_start();
+if (isset($_GET['success']) && !isset($_SESSION['role'])) {
+    header("Location: ?page=login&error=session_not_found");
+    exit;
+}
+?>
 
 <?php if (isset($_GET['error']) || isset($_GET['success'])): ?>
-    <div id="popup-modal" tabindex="-1" class="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-screen">
+    <div id="popup-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 right-0 left-0 z-50 hidden justify-center items-center w-full h-screen">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
@@ -121,14 +134,33 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . "/E-Commerce-Project/public/";
                             Login berhasil! Mengarahkan ke dashboard...
                         </h3>
                         <script>
-                            setTimeout(() => {
-                                window.location.href = '?page=products';
-                            }, 3000);
+                            document.addEventListener('DOMContentLoaded', () => {
+                                setTimeout(() => {
+                                    window.location.href =
+                                        <?= $_SESSION['role'] === 'admin' ? "'?page=products'" : "'?page=homePageUser'" ?>;
+                                }, 3000);
+                            });
                         </script>
                     <?php endif; ?>
-                    <button data-modal-hide="popup-modal" type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">Tutup</button>
+                    <a href="?page=login" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">Tutup</a>
                 </div>
             </div>
         </div>
     </div>
 <?php endif; ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('popup-modal');
+        if (window.location.search.includes('error') || window.location.search.includes('success')) {
+            modal.classList.remove('hidden');
+        }
+
+        const closeModalButtons = document.querySelectorAll('[data-modal-hide="popup-modal"]');
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+        });
+    });
+</script>

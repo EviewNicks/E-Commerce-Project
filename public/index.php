@@ -1,5 +1,7 @@
 <?php
 define('BASE_PATH', __DIR__ . '/../src/');
+
+
 // Routing sederhana
 $page = $_GET['page'] ?? 'products';
 
@@ -25,7 +27,8 @@ $promotion_pages = [
 
 $order_pages = [
     'updateOrderStatusAction',
-    'deleteOrderAction'
+    'deleteOrderAction',
+    'productOrder'
 ];
 
 $reviews_page = [
@@ -38,6 +41,7 @@ $admins_page = [
     'addNewAdmin',
     'addNewUser',
     'loginAction',
+    'logoutAction',
 ];
 
 if (in_array($page, $product_pages)) {
@@ -138,6 +142,12 @@ function asset_url($path)
             break;
         case 'Delivery':
             include BASE_PATH . 'Frontend/user/Delivery.php';
+            break;
+        case 'Wishlist':
+            include BASE_PATH . 'Frontend/user/Wishlist.php';
+            break;
+        case 'Profile':
+            include BASE_PATH . 'Frontend/user/Profile.php';
             break;
         default:
             http_response_code(404);
