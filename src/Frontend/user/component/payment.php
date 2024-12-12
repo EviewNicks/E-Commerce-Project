@@ -16,7 +16,7 @@
 
                 <!-- Radio Button -->
                 <input id="payment-dana" type="radio" name="payment-method" value="dana"
-                    class="w-6 h-6 text-Primary border-gray-300 focus:ring-blue-500" />
+                    class="w-6 h-6 text-Primary border-gray-300 focus:ring-blue-500" checked />
             </label>
         </li>
 

@@ -4,7 +4,7 @@ session_start();
 
 // Periksa apakah keranjang kosong
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-    echo "<p>Keranjang Anda kosong. <a href='index.php?page=products'>Belanja sekarang</a></p>";
+    echo "<p>Keranjang Anda kosong. <a href='index.php?page=homePageUser'>Belanja sekarang</a></p>";
     exit();
 }
 
@@ -13,6 +13,8 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 // Query untuk mendapatkan data produk berdasarkan ID
 $cart = $_SESSION['cart'];
 $product_ids = array_column($cart, 'product_id');
+
+
 
 // Validasi apakah product_ids ada
 if (empty($product_ids)) {
@@ -41,6 +43,8 @@ while ($row = $result->fetch_assoc()) {
 }
 
 $total = 0; // Inisialisasi total
+// Format total harga
+
 
 // echo "<h3>Total: Rp " . number_format($total, 2, ',', '.') . "</h3>";
 // echo "<a href='index.php?page=checkout'>Lanjut ke Pembayaran</a>";
@@ -48,8 +52,10 @@ $total = 0; // Inisialisasi total
 $data = [
     'cart' => $cart,
     'products' => $products,
-    'total' => $total
+    'total' => $total,
 ];
+
+$productCount = count($cart);
 
 
 function render_chart($section_name, $data)
@@ -58,16 +64,21 @@ function render_chart($section_name, $data)
     if (is_array($data)) {
         extract($data); // Mengubah array menjadi variabel
     }
+
     include BASE_PATH . "Frontend/user/component/$section_name.php";
 }
 
 
-// Tutup koneksi
+
+
 $stmt->close();
 $conn->close();
 ?>
 
 <?php
+
+
+
 include BASE_PATH . 'Frontend/assets/userNavbar.php';
 ?>
 
@@ -129,3 +140,59 @@ include BASE_PATH . 'Frontend/assets/userNavbar.php';
 <?php
 include BASE_PATH . 'Frontend/assets/footer.php';
 ?>
+
+<script>
+    // Hapus produk tertentu
+    function deleteProduct(productId) {
+        console.log("ID Produk yang akan dihapus:", productId); // Debug
+        if (confirm("Apakah Anda yakin ingin menghapus produk ini dari keranjang?")) {
+            window.location.href = "?page=deleteProduct&product_id=" + productId;
+        }
+    }
+
+    // Hapus semua produk
+    function deleteAllProducts() {
+        if (confirm("Apakah Anda yakin ingin menghapus semua produk dari keranjang?")) {
+            window.location.href = "?page=deleteAllProducts";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            // Ambil promo dari server
+            const response = await fetch('promo-api.php'); // Ubah ke path PHP yang sesuai
+            const data = await response.json();
+
+            const promoContainer = document.getElementById('promo-container');
+            const promotions = data.promotions;
+
+            // Bersihkan kontainer
+            promoContainer.innerHTML = '';
+
+            if (promotions.length > 0) {
+                promotions.forEach(promo => {
+                    const promoHTML = `
+                    <div class="flex items-center justify-between p-[6px_12px] w-full rounded-[12px] border border-Secondary bg-Secondary-Colors-4">
+                        <div class="flex items-center gap-[14px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-[32px] h-[32px]" viewBox="0 0 32 32" fill="none">
+                                <!-- SVG Content -->
+                            </svg>
+                            <p class="text-Primary font-quicksand text-body-medium">
+                                Kamu Dapat ${promo.name}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                    promoContainer.insertAdjacentHTML('beforeend', promoHTML);
+                });
+            } else {
+                promoContainer.innerHTML = `
+                <div class="flex items-center justify-between p-[6px_12px] w-full rounded-[12px] border border-Secondary bg-Secondary-Colors-4">
+                    <p class="text-Primary font-quicksand text-body-medium">Makin Hemat pakai promo</p>
+                </div>`;
+            }
+        } catch (error) {
+            console.error('Error fetching promotions:', error);
+        }
+    });
+</script>

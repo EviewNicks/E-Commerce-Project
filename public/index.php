@@ -28,7 +28,10 @@ $promotion_pages = [
 $order_pages = [
     'updateOrderStatusAction',
     'deleteOrderAction',
-    'productOrder'
+    'productOrder',
+    'deleteProduct',
+    'deleteAllProducts',
+    'saveOrders'
 ];
 
 $reviews_page = [

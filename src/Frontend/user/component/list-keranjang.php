@@ -1,38 +1,5 @@
 <?php
-// $orderItems = [
-//     [
-//         'product_name' => 'Product 1',
-//         'image_url' => '/public/Outfit/outfit-1.jpg',
-//         'price' => 800000,
-//         'quantity' => 2,
-//         'stock' => 10, 
-//         'total_price' => 1600000,
-//     ],
-//     [
-//         'product_name' => 'Product 2',
-//         'image_url' => '/public/Outfit/outfit-2.jpg',
-//         'price' => 500000,
-//         'quantity' => 1,
-//         'stock' => 15, 
-//         'total_price' => 500000,
-//     ],
-//     [
-//         'product_name' => 'Product 3',
-//         'image_url' => '/public/Outfit/outfit-3.jpg',
-//         'price' => 250000,
-//         'quantity' => 3,
-//         'stock' => 8, 
-//         'total_price' => 750000,
-//     ],
-//     [
-//         'product_name' => 'Product 4',
-//         'image_url' => '/public/Outfit/outfit-4.jpg',
-//         'price' => 1000000,
-//         'quantity' => 1,
-//         'stock' => 5, 
-//         'total_price' => 1000000,
-//     ],
-// ];
+$productCount = count($cart);
 ?>
 
 
@@ -41,19 +8,13 @@
     <section
         class="flex px-8 py-6 justify-between items-center self-stretch rounded-[32px_32px_8px_8px] bg-Primary-Layer-2">
         <div class="flex items-center gap-8">
-            <!-- Checkbox Section -->
-            <div class="flex ">
-                <input id="link-checkbox" type="checkbox" value=""
-                    class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                <label for="link-checkbox" class="sr-only">checkbox</label>
-            </div>
             <div class="flex items-center gap-4">
-                <p class="text-xl font-bold text-gray-800 tracking-wide">Pilih Semua</p>
-                <p class="text-xl font-bold text-gray-800 tracking-wide">( 5 )</p>
+                <p class="text-xl font-bold text-gray-800 tracking-wide">Order Item</p>
+                <p class="text-xl font-bold text-gray-800 tracking-wide">( <?= $productCount ?> )</p>
             </div>
         </div>
         <!-- Hapus -->
-        <button type="button" class="text-xl font-bold text-secondary-main tracking-wide">
+        <button type="button" onclick="deleteAllProducts()" class="text-xl font-bold text-secondary-main tracking-wide">
             Hapus
         </button>
     </section>
@@ -72,12 +33,7 @@
             ?>
 
             <article class="flex py-1 px-4 gap-4 self-stretch rounded-lg bg-white border border-Third">
-                <!-- Checkbox Section -->
-                <div class="flex pt-4">
-                    <input id="link-checkbox" type="checkbox" value=""
-                        class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="link-checkbox-<?= $item['product_id'] ?>" class="sr-only">checkbox</label>
-                </div>
+
 
                 <!-- Produk Information -->
                 <section class="flex py-1 justify-center items-center gap-6 flex-1 self-stretch">
@@ -109,7 +65,8 @@
                         <div class="flex items-center gap-2">
                             <!-- Add to Cart Button -->
                             <button type="button"
-                                class="flex p-[5px_4px_4px_4px] rounded-full bg-Secondary-Colors-3 cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-custom hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]">
+                                class="flex p-[5px_4px_4px_4px] rounded-full bg-Secondary-Colors-3 cursor-pointer transition-all duration-300 hover:bg-[#c0392b] hover:shadow-custom hover:scale-105 active:scale-95 active:shadow-[0_4px_8px_rgba(0,0,0,0.2)]"
+                                onclick="deleteProduct(<?= $product['product_id']; ?>)">
                                 <!-- SVG Placeholder -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none">

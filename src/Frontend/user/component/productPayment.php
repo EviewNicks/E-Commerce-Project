@@ -1,31 +1,4 @@
 <?php
-// Dummy data untuk produk yang telah dicentang di keranjang
-$productPayments = [
-    [
-        'product_name' => 'Product 1',
-        'image_url' => '/public/Outfit/outfit-1.jpg',
-        'price' => 800000,
-        'delivery_type' => 'Reguler',
-        'estimated_arrival' => '14 - 19 Nov',
-        'insurance_cost' => 800,
-    ],
-    [
-        'product_name' => 'Product 2',
-        'image_url' => '/public/Outfit/outfit-2.jpg',
-        'price' => 500000,
-        'delivery_type' => 'Reguler',
-        'estimated_arrival' => '15 - 20 Nov',
-        'insurance_cost' => 800,
-    ],
-    [
-        'product_name' => 'Product 3',
-        'image_url' => '/public/Outfit/outfit-3.jpg',
-        'price' => 250000,
-        'delivery_type' => 'Reguler',
-        'estimated_arrival' => '16 - 21 Nov',
-        'insurance_cost' => 800,
-    ],
-];
 
 $rowStart = 6;
 foreach ($productPayments as $payment):
@@ -37,18 +10,20 @@ foreach ($productPayments as $payment):
         class="flex flex-col justify-between items-center col-span-7 row-start-<?= $rowStart ?> row-span-2 p-[8px_24px_4px_24px] flex-shrink-0 rounded-2xl bg-Primary-Layer-2">
 
         <h2 class="self-stretch text-black font-quicksand text-label-medium">
-            <?= $payment['product_name'] ?>
+            <?= (strlen($payment['product_name']) > 60)
+                ? substr($payment['product_name'], 0, 60) . '...'
+                : $payment['product_name']; ?>
         </h2>
         <section class="flex items-center gap-6 self-stretch">
             <!-- Gambar produk -->
-            <img src="<?= asset_url($payment['image_url']) ?>"
-                alt="product-container"
+            <img src="<?= ($payment['image_url']) ?>"
+                alt="<?= $payment['product_name'] ?>"
                 class="w-[97px] h-[124px] rounded-[24px] bg-cover bg-center border border-gray-400">
             <section class="flex flex-col justify-between flex-1 self-stretch rounded-md bg-primary-layer-1">
                 <!-- Informasi delivery -->
                 <header
                     class="flex items-center justify-between p-[4px_24px] rounded-t-md border border-primary-layer-3">
-                    <p class="text-black font-quicksand text-label-medium"><?= $payment['delivery_type'] ?></p>
+                    <p class="text-black font-quicksand text-label-medium">Reguler</p>
                 </header>
                 <!-- Informasi estimasi dan harga -->
                 <section class="flex justify-between items-center flex-1 px-6">
@@ -58,14 +33,14 @@ foreach ($productPayments as $payment):
                         <p class="self-stretch text-black  font-quicksand text-body-medium">Estimasi tiba <?= $payment['estimated_arrival'] ?>
                         </p>
                     </div>
-                    <p class="text-black font-quicksand text-label-small">Rp.<?= number_format($payment['price'], 0, ',', '.') ?></p>
+                    <p class="text-black font-quicksand text-label-small">Rp <?= number_format($payment['price'], 0, ',', '.') ?></p>
                 </section>
                 <!-- Opsi asuransi -->
                 <footer class="flex items-start gap-4 p-[4px_24px]  rounded-b-md border border-primary-layer-3">
                     <!-- Checkbox -->
                     <div class="flex ">
                         <input id="link-checkbox" type="checkbox" value=""
-                            class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            class="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" checked>
                         <label for="link-checkbox" class="sr-only">checkbox</label>
                     </div>
                     <div class="flex items-center gap-2">
@@ -79,7 +54,7 @@ foreach ($productPayments as $payment):
                                 fill="#E74C3C" />
                         </svg>
                         <p class="text-black font-quicksand text-body-medium">
-                            Pakai asuransi pengiriman (Rp.800)
+                            Biaya Asuransi: Rp <?= number_format($payment['insurance_cost'], 0, ',', '.') ?>
                         </p>
                     </div>
                 </footer>
